@@ -1,0 +1,22 @@
+{
+  "experiment_date": "2025-08-23T15:39:03.861069",
+  "environment": {
+    "os": "macOS (Darwin 24.6.0)",
+    "docker": "Docker Desktop 28.3.2",
+    "python": "3.9.6",
+    "gcc": "latest"
+  },
+  "methodology": {
+    "repetitions": 10,
+    "reliability_threshold": "IQR < 15%",
+    "container_isolation": true,
+    "overhead_analysis": true
+  },
+  "summary": {
+    "o1_python_advantage": "37.4%",
+    "olog_python_advantage": "40.6%",
+    "consistent_pattern": true,
+    "hypothesis_refuted": true,
+    "scientific_significance": "High - contradicts common assumptions"
+  }
+}

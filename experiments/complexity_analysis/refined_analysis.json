@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-08-23T15:32:38.327687",
+  "analysis_type": "refined_overhead_separation",
+  "overhead": {
+    "cpp_overhead": 0.2942037582397461,
+    "python_overhead": 0.18036699295043945,
+    "overhead_difference": 0.11383676528930664
+  },
+  "algorithmic": {
+    "cpp_algorithmic": 106208.0,
+    "python_algorithmic": 63820.0,
+    "algorithmic_ratio": 0.6008963543235915
+  },
+  "conclusion": {
+    "overhead_explains_difference": false,
+    "true_algorithmic_winner": "python"
+  }
+}
