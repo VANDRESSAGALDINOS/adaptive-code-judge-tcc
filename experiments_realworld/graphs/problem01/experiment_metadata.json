@@ -1,0 +1,70 @@
+{
+  "problem_metadata": {
+    "platform": "CSES",
+    "problem_id": "1672",
+    "problem_name": "Shortest Routes II",
+    "url": "https://cses.fi/problemset/task/1672/",
+    "category": "Graph Algorithms",
+    "subcategory": "All-Pairs Shortest Paths",
+    "tags": ["Floyd-Warshall", "APSP", "Distance Matrix", "Multiple Queries"]
+  },
+  "platform_constraints": {
+    "time_limit": "1.00s",
+    "memory_limit": "512 MB",
+    "typical_cpp_acceptance": "~95%",
+    "typical_python_acceptance": "~40%",
+    "injustice_evidence": "9/16 test cases cause Python TLE"
+  },
+  "algorithmic_properties": {
+    "optimal_algorithm": "Floyd-Warshall",
+    "time_complexity": "O(n³) preprocessing + O(1) per query",
+    "space_complexity": "O(n²)",
+    "critical_operations": ["triple nested loops", "matrix access", "min comparisons"],
+    "bottleneck_factors": ["interpreter overhead", "cache locality", "numeric operations"]
+  },
+  "experimental_design": {
+    "test_case_selection": ["largest official case", "2 medium cases"],
+    "repetitions_per_case": 30,
+    "timeout_limit": "2.0s",
+    "statistical_metrics": ["p50", "p90", "IQR"],
+    "reliability_criteria": {
+      "cpp_iqr_threshold": "< 15%",
+      "python_iqr_threshold": "< 20%"
+    }
+  },
+  "hypotheses": {
+    "h1_injustice": {
+      "description": "Python TLE on large cases with fixed 1.00s limit",
+      "expected_failure_rate": "> 50%"
+    },
+    "h2_adaptive_solution": {
+      "description": "Adaptive limits achieve fairness",
+      "expected_python_success": "> 95%",
+      "expected_adjustment_factor": "1.5x - 2.5x"
+    },
+    "h3_algorithmic_equivalence": {
+      "description": "Identical outputs from both implementations",
+      "validation_method": "output comparison across all test cases"
+    }
+  },
+  "performance_predictions": {
+    "cpp_expected_time": "0.3 - 0.5s for n=500",
+    "python_expected_time": "1.2 - 1.8s for n=500",
+    "predicted_adjustment_factor": "2.4x - 3.6x",
+    "confidence_level": "Based on empirical CSES submission data"
+  },
+  "scientific_value": {
+    "tcc_contributions": [
+      "Empirical quantification of language injustice",
+      "Validation of adaptive judge solution",
+      "Generalizable methodology framework",
+      "Pedagogical impact evidence"
+    ],
+    "expected_insights": [
+      "Loop density amplifies language differences", 
+      "Matrix access patterns favor compiled languages",
+      "Interpreter overhead scales linearly with operations",
+      "Compiler optimizations critical for dense loops"
+    ]
+  }
+}
