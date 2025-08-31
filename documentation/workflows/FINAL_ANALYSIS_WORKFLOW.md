@@ -33,8 +33,8 @@ Contexto: Completei todos os 15 experimentos do TCC Adaptive Code Judge seguindo
 - Export para LaTeX
 
 🛠️ ARQUIVOS DE REFERÊNCIA:
-- experiments_realworld/ESQUELETO_NOTEBOOK_FINAL.md (código base)
-- experiments_realworld/AUTO_CHECKLIST.py (estrutura de dados)
+- documentation/workflows/NOTEBOOK_TEMPLATE.md (código base otimizado)
+- documentation/workflows/AUTO_CHECKLIST.py (estrutura de dados)
 - Todos os metadata_graficos.json (dados estruturados)
 
 🎓 OBJETIVO TCC:
