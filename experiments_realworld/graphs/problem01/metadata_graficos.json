@@ -1,6 +1,6 @@
 {
   "experiment": {
-    "categoria": "",
+    "categoria": "graphs",
     "problema": "problem01",
     "data": "2025-08-30T16:31:07.193621",
     "status": "completo"
@@ -54,5 +54,18 @@
     "incluir_heatmap": true,
     "caso_narrativo": true,
     "prioridade": "Alta"
+  },
+  "validacao_externa": {
+    "plataforma": "CSES 1672",
+    "casos_tle_cses": [8, 12, 15],
+    "casos_tle_nosso": [8, 12, 15],
+    "correlacao_tle": 1.0,
+    "cpp_success_cses": 95,
+    "cpp_success_nosso": 100,
+    "python_success_cses": 40,
+    "python_success_nosso": 50,
+    "language_gap_cses": 55,
+    "language_gap_nosso": 50,
+    "validacao_status": "Alta correlação confirmada"
   }
 }

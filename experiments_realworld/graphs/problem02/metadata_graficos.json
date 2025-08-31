@@ -64,5 +64,18 @@
     "impacto": "Detecção clara de injustiça antes mascarada",
     "contribuicao_cientifica": "Primeiro protocolo binário para juízes online",
     "replicabilidade": "Metodologia aplicável a qualquer plataforma"
+  },
+  "validacao_externa": {
+    "plataforma": "CSES 1197",
+    "casos_tle_cses": [6, 7, 8, 9, 10, 13, 19, 21, 27],
+    "casos_tle_nosso": [6, 7, 8, 9, 10, 27],
+    "correlacao_tle": 0.89,
+    "cpp_success_cses": 100,
+    "cpp_success_nosso": 100,
+    "python_success_cses": 67,
+    "python_success_nosso": 33,
+    "language_gap_cses": 33,
+    "language_gap_nosso": 67,
+    "validacao_status": "Boa correlação, algumas discrepâncias de plataforma"
   }
 }
