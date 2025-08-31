@@ -1,0 +1,44 @@
+{
+  "traditional_system": {
+    "cpp": {
+      "final_verdict": "ACCEPTED",
+      "total_cases_tested": 6,
+      "had_tle": false
+    },
+    "python": {
+      "final_verdict": "REJECTED",
+      "total_cases_tested": 2,
+      "had_tle": true
+    }
+  },
+  "adaptive_system": {
+    "cpp": {
+      "final_verdict": "ACCEPTED",
+      "total_cases_tested": 6,
+      "had_tle": false
+    },
+    "python": {
+      "final_verdict": "ACCEPTED",
+      "total_cases_tested": 6,
+      "had_tle": false
+    }
+  },
+  "summary": {
+    "injustice_detected": true,
+    "injustice_corrected": true,
+    "traditional_system": {
+      "cpp_verdict": "ACCEPTED",
+      "python_verdict": "REJECTED",
+      "language_parity": false
+    },
+    "adaptive_system": {
+      "cpp_verdict": "ACCEPTED",
+      "python_verdict": "ACCEPTED",
+      "language_parity": true
+    },
+    "improvement": {
+      "python_rescued": true,
+      "selectivity_preserved": true
+    }
+  }
+}

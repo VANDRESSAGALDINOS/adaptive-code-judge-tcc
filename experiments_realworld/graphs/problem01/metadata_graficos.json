@@ -14,7 +14,16 @@
   "correcao": {
     "tradicional_python": 50.0,
     "adaptativo_python": 100.0,
-    "melhoria": 50.0
+    "melhoria": 50.0,
+    "metodologia_binaria": {
+      "tradicional_cpp": "ACCEPTED",
+      "tradicional_python": "REJECTED", 
+      "adaptativo_cpp": "ACCEPTED",
+      "adaptativo_python": "ACCEPTED",
+      "injustica_detectada": true,
+      "injustica_corrigida": true,
+      "python_resgatado": true
+    }
   },
   "seletividade": {
     "preservada": true
