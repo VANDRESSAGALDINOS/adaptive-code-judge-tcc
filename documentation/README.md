@@ -10,11 +10,21 @@ Esta pasta contém toda a documentação técnica e metodológica do projeto Ada
 documentation/
 ├── README.md                    # Este arquivo - índice geral
 ├── methodology/                 # Metodologias desenvolvidas
-│   ├── ANALISE_BINARIA_VEREDICTO.md  # Metodologia principal
-│   └── [futuras metodologias]
-├── insights/                    # Descobertas científicas gerais
+│   └── ANALISE_BINARIA_VEREDICTO.md  # Metodologia principal
 ├── protocols/                   # Protocolos experimentais
-└── frameworks/                  # Frameworks reutilizáveis
+│   └── PROTOCOLO_EXPERIMENTAL_GERAL.md  # Protocolo padronizado
+├── frameworks/                  # Frameworks reutilizáveis
+│   └── BINARY_VERDICT_FRAMEWORK.md  # Framework de implementação
+├── workflows/                   # Workflows e processos organizacionais
+│   ├── README.md                # Índice de workflows
+│   ├── EXPERIMENTAL_WORKFLOW.md # Processo por experimento
+│   ├── FINAL_ANALYSIS_WORKFLOW.md # Processo análise final
+│   ├── NOTEBOOK_TEMPLATE.md     # Template notebook Python
+│   ├── CHECKLIST_AUTOMATION.md  # Automação de validação
+│   ├── AUTO_CHECKLIST.py        # Script checklist automático
+│   ├── CHECKLIST_EXPERIMENTO.py # Script checklist interativo
+│   └── TEMPLATE_EXPERIMENTO.md  # Template experimento
+└── insights/                    # Descobertas científicas gerais
 ```
 
 ## Metodologias Desenvolvidas
@@ -33,6 +43,35 @@ documentation/
 **Aplicabilidade**: CSES, AtCoder, LeetCode, HackerRank, qualquer juiz online
 
 **Status**: ✅ Validada e pronta para replicação
+
+## Workflows e Processos
+
+### 🔄 Workflow Experimental
+**Arquivo**: `workflows/EXPERIMENTAL_WORKFLOW.md`
+
+**Descrição**: Processo completo para execução de experimentos individuais com checklist automático e critérios de validação.
+
+**Aplicabilidade**: Todos os experimentos do projeto
+
+**Status**: ✅ Testado e validado
+
+### 📊 Workflow de Análise Final
+**Arquivo**: `workflows/FINAL_ANALYSIS_WORKFLOW.md`
+
+**Descrição**: Processo para geração automática de notebook Python com todos os gráficos e análises finais para TCC.
+
+**Aplicabilidade**: Após completar todos os 15 experimentos
+
+**Status**: ✅ Framework completo e pronto
+
+### 🤖 Automação de Checklists
+**Arquivo**: `workflows/CHECKLIST_AUTOMATION.md`
+
+**Descrição**: Scripts automatizados para validação de qualidade e geração de metadados estruturados.
+
+**Aplicabilidade**: Todos os experimentos
+
+**Status**: ✅ Implementado e funcional
 
 ## Descobertas Científicas
 
