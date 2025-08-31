@@ -204,7 +204,7 @@ class CSES1672Benchmark:
                     'error': str(e)
                 }
     
-    def run_calibration(self, case_id=8, repetitions=30):
+    def run_calibration(self, case_id=8, repetitions=30, time_limit=2.0):
         """
         Phase 1: Calibration on primary test case.
         Following experiment_plan.md: Test #8, 30 repetitions.
@@ -235,7 +235,7 @@ class CSES1672Benchmark:
         print(f"\n📊 Measuring C++ performance...")
         for i in range(repetitions):
             print(f"  Run {i+1}/{repetitions}", end=" ", flush=True)
-            result = self.execute_solution(cpp_solution, case_id, "cpp", time_limit=30.0)
+            result = self.execute_solution(cpp_solution, case_id, "cpp", time_limit=time_limit)
             results['cpp']['results'].append(result)
             
             if result['status'] == 'ACCEPTED':
@@ -248,7 +248,7 @@ class CSES1672Benchmark:
         print(f"\n🐍 Measuring Python performance...")
         for i in range(repetitions):
             print(f"  Run {i+1}/{repetitions}", end=" ", flush=True)
-            result = self.execute_solution(python_solution, case_id, "python", time_limit=30.0)
+            result = self.execute_solution(python_solution, case_id, "python", time_limit=time_limit)
             results['python']['results'].append(result)
             
             if result['status'] == 'ACCEPTED':
@@ -288,7 +288,7 @@ class CSES1672Benchmark:
         print(f"\n💾 Results saved to: {calibration_file}")
         return results
     
-    def run_validation(self, cases=None, repetitions=10, adjustment_factor=None):
+    def run_validation(self, cases=None, repetitions=10, adjustment_factor=None, time_limit=2.0):
         """
         Phase 2: Validation on all test cases.
         Following experiment_plan.md: All 16 cases, traditional vs adaptive.
@@ -342,14 +342,14 @@ class CSES1672Benchmark:
             # C++ traditional
             print(f"    C++ ", end="", flush=True)
             for i in range(repetitions):
-                result = self.execute_solution(cpp_solution, case_id, "cpp", time_limit=1.0)
+                result = self.execute_solution(cpp_solution, case_id, "cpp", time_limit=time_limit)
                 case_results['traditional']['cpp'].append(result)
                 print("✓" if result['status'] == 'ACCEPTED' else "✗", end="", flush=True)
             
             # Python traditional
             print(f"\n    Python ", end="", flush=True)
             for i in range(repetitions):
-                result = self.execute_solution(python_solution, case_id, "python", time_limit=1.0)
+                result = self.execute_solution(python_solution, case_id, "python", time_limit=time_limit)
                 case_results['traditional']['python'].append(result)
                 print("✓" if result['status'] == 'ACCEPTED' else "✗", end="", flush=True)
             
@@ -360,7 +360,7 @@ class CSES1672Benchmark:
             # C++ adaptive (same as traditional)
             print(f"    C++ ", end="", flush=True)
             for i in range(repetitions):
-                result = self.execute_solution(cpp_solution, case_id, "cpp", time_limit=1.0)
+                result = self.execute_solution(cpp_solution, case_id, "cpp", time_limit=time_limit)
                 case_results['adaptive']['cpp'].append(result)
                 print("✓" if result['status'] == 'ACCEPTED' else "✗", end="", flush=True)
             
@@ -465,6 +465,8 @@ def main():
                         help='Number of repetitions (default: 30 for calibration, 10 for validation)')
     parser.add_argument('--adjustment-factor', type=float, default=None,
                         help='Manual adjustment factor for validation')
+    parser.add_argument('--time-limit', type=float, default=2.0,
+                        help='Time limit in seconds (default: 2.0)')
     
     args = parser.parse_args()
     
@@ -473,7 +475,8 @@ def main():
     
     if args.phase == 'calibration':
         repetitions = args.repetitions or 30
-        benchmark.run_calibration(case_id=args.case, repetitions=repetitions)
+        benchmark.run_calibration(case_id=args.case, repetitions=repetitions, 
+                                 time_limit=args.time_limit)
     
     elif args.phase == 'validation':
         if args.cases:
@@ -483,7 +486,8 @@ def main():
         
         repetitions = args.repetitions or 10
         benchmark.run_validation(cases=cases, repetitions=repetitions, 
-                                adjustment_factor=args.adjustment_factor)
+                                adjustment_factor=args.adjustment_factor,
+                                time_limit=args.time_limit)
 
 
 if __name__ == '__main__':
