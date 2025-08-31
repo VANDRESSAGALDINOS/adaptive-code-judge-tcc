@@ -43,6 +43,20 @@ Sistema completo de avaliação automática de algoritmos para competições de 
 - **API**: REST com JSON
 - **Monitoramento**: Health checks e logging
 
+## 📚 **Documentação Técnica**
+
+O projeto inclui documentação completa organizada em:
+
+- **`documentation/methodology/`** - Metodologias científicas desenvolvidas
+  - Análise Binária de Veredicto (metodologia principal)
+- **`documentation/protocols/`** - Protocolos experimentais padronizados
+- **`documentation/frameworks/`** - Frameworks reutilizáveis
+- **`experiments_realworld/`** - Experimentos com problemas reais do CSES
+
+### 🔬 Contribuições Metodológicas
+
+**Análise Binária de Veredicto**: Primeira metodologia formalizada para detecção objetiva de injustiças linguísticas em juízes online, com simulação exata da lógica de plataformas reais.
+
 ## 📋 **Pré-requisitos**
 
 - **macOS** (testado no macOS)
