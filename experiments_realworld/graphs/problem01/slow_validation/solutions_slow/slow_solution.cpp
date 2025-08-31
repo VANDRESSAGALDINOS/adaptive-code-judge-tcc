@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <cstdio>
 using namespace std;
 
 const int SLOW_FACTOR = 100;  // Multiplier for deliberate inefficiency

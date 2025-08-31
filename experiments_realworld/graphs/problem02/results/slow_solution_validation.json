@@ -1,0 +1,294 @@
+{
+  "experiment_metadata": {
+    "validation_type": "selectivity_preservation",
+    "test_cases": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      19,
+      21,
+      27
+    ],
+    "adjustment_factor": 4.33,
+    "timestamp": "2025-08-30T21:33:40.847056",
+    "protocol": "experiment_plan.md"
+  },
+  "traditional_system": {
+    "6": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.268284797668457,
+        "wall_time": 1.268284797668457,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 1.2780756950378418,
+        "wall_time": 1.2780756950378418,
+        "returncode": 124
+      }
+    },
+    "7": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.2454478740692139,
+        "wall_time": 1.2454478740692139,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 1.2585341930389404,
+        "wall_time": 1.2585341930389404,
+        "returncode": 124
+      }
+    },
+    "8": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.2415966987609863,
+        "wall_time": 1.2415966987609863,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 1.2366220951080322,
+        "wall_time": 1.2366220951080322,
+        "returncode": 124
+      }
+    },
+    "9": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.2406930923461914,
+        "wall_time": 1.2406930923461914,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 1.247910499572754,
+        "wall_time": 1.247910499572754,
+        "returncode": 124
+      }
+    },
+    "10": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.2429695129394531,
+        "wall_time": 1.2429695129394531,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 1.2395164966583252,
+        "wall_time": 1.2395164966583252,
+        "returncode": 124
+      }
+    },
+    "19": {
+      "cpp": {
+        "status": "ACCEPTED",
+        "execution_time": 0.9951076507568359,
+        "wall_time": 0.9951076507568359,
+        "returncode": 0
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 1.221724510192871,
+        "wall_time": 1.221724510192871,
+        "returncode": 124
+      }
+    },
+    "21": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.2408926486968994,
+        "wall_time": 1.2408926486968994,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 1.2530667781829834,
+        "wall_time": 1.2530667781829834,
+        "returncode": 124
+      }
+    },
+    "27": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.2503268718719482,
+        "wall_time": 1.2503268718719482,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 1.2421841621398926,
+        "wall_time": 1.2421841621398926,
+        "returncode": 124
+      }
+    }
+  },
+  "adaptive_system": {
+    "6": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.2180204391479492,
+        "wall_time": 1.2180204391479492,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 4.581680059432983,
+        "wall_time": 4.581680059432983,
+        "returncode": 124
+      }
+    },
+    "7": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.2459876537322998,
+        "wall_time": 1.2459876537322998,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 4.587555408477783,
+        "wall_time": 4.587555408477783,
+        "returncode": 124
+      }
+    },
+    "8": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.2215607166290283,
+        "wall_time": 1.2215607166290283,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 4.576001405715942,
+        "wall_time": 4.576001405715942,
+        "returncode": 124
+      }
+    },
+    "9": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.2444326877593994,
+        "wall_time": 1.2444326877593994,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 4.608048677444458,
+        "wall_time": 4.608048677444458,
+        "returncode": 124
+      }
+    },
+    "10": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.2305285930633545,
+        "wall_time": 1.2305285930633545,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 4.5944414138793945,
+        "wall_time": 4.5944414138793945,
+        "returncode": 124
+      }
+    },
+    "19": {
+      "cpp": {
+        "status": "ACCEPTED",
+        "execution_time": 0.9635171890258789,
+        "wall_time": 0.9635171890258789,
+        "returncode": 0
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 4.591497182846069,
+        "wall_time": 4.591497182846069,
+        "returncode": 124
+      }
+    },
+    "21": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.2415549755096436,
+        "wall_time": 1.2415549755096436,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 4.584931135177612,
+        "wall_time": 4.584931135177612,
+        "returncode": 124
+      }
+    },
+    "27": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.2535085678100586,
+        "wall_time": 1.2535085678100586,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 4.583922863006592,
+        "wall_time": 4.583922863006592,
+        "returncode": 124
+      }
+    }
+  },
+  "selectivity_analysis": {
+    "6": {
+      "selectivity_preserved": true,
+      "all_systems_tle": true,
+      "explanation": "All slow solutions correctly receive TLE"
+    },
+    "7": {
+      "selectivity_preserved": true,
+      "all_systems_tle": true,
+      "explanation": "All slow solutions correctly receive TLE"
+    },
+    "8": {
+      "selectivity_preserved": true,
+      "all_systems_tle": true,
+      "explanation": "All slow solutions correctly receive TLE"
+    },
+    "9": {
+      "selectivity_preserved": true,
+      "all_systems_tle": true,
+      "explanation": "All slow solutions correctly receive TLE"
+    },
+    "10": {
+      "selectivity_preserved": true,
+      "all_systems_tle": true,
+      "explanation": "All slow solutions correctly receive TLE"
+    },
+    "19": {
+      "selectivity_preserved": false,
+      "all_systems_tle": false,
+      "explanation": "Some slow solutions unexpectedly passed"
+    },
+    "21": {
+      "selectivity_preserved": true,
+      "all_systems_tle": true,
+      "explanation": "All slow solutions correctly receive TLE"
+    },
+    "27": {
+      "selectivity_preserved": true,
+      "all_systems_tle": true,
+      "explanation": "All slow solutions correctly receive TLE"
+    }
+  },
+  "overall_selectivity": {
+    "preserved": false,
+    "test_cases_count": 8,
+    "successful_cases": 7,
+    "analysis": "Selectivity compromised - some inefficient solutions incorrectly passed"
+  }
+}

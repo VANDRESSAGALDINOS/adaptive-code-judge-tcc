@@ -1,0 +1,71 @@
+{
+  "problem_metadata": {
+    "platform": "CSES",
+    "problem_id": "1197",
+    "problem_name": "Cycle Finding",
+    "url": "https://cses.fi/problemset/task/1197/",
+    "category": "Graph Algorithms",
+    "subcategory": "Negative Cycle Detection",
+    "tags": ["Bellman-Ford", "Negative Cycle", "Graph Theory", "Shortest Path"]
+  },
+  "platform_constraints": {
+    "time_limit": "1.00s",
+    "memory_limit": "512 MB",
+    "typical_cpp_acceptance": "~100%",
+    "typical_python_acceptance": "~63%",
+    "injustice_evidence": "10/27 test cases cause Python TLE"
+  },
+  "algorithmic_properties": {
+    "optimal_algorithm": "Bellman-Ford",
+    "time_complexity": "O(nm) where n=nodes, m=edges",
+    "space_complexity": "O(n + m)",
+    "critical_operations": ["edge relaxation", "distance updates", "cycle reconstruction"],
+    "bottleneck_factors": ["interpreter overhead", "loop iterations", "array access patterns"]
+  },
+  "experimental_design": {
+    "test_case_selection": ["largest official cases", "medium complexity cases"],
+    "repetitions_per_case": 30,
+    "timeout_limit": "2.0s",
+    "statistical_metrics": ["p50", "p90", "IQR"],
+    "reliability_criteria": {
+      "cpp_iqr_threshold": "< 15%",
+      "python_iqr_threshold": "< 20%"
+    }
+  },
+  "hypotheses": {
+    "h1_injustice": {
+      "description": "Python TLE on large cases with fixed 1.00s limit",
+      "expected_failure_rate": "> 30%"
+    },
+    "h2_adaptive_solution": {
+      "description": "Adaptive limits achieve fairness",
+      "expected_python_success": "> 95%",
+      "expected_adjustment_factor": "3.0x - 8.0x"
+    },
+    "h3_algorithmic_equivalence": {
+      "description": "Identical outputs from both implementations",
+      "validation_method": "output comparison across all test cases"
+    }
+  },
+  "performance_predictions": {
+    "cpp_expected_time": "0.05 - 0.15s for n=2500, m=5000",
+    "python_expected_time": "0.20 - 0.80s for n=2500, m=5000",
+    "predicted_adjustment_factor": "4.0x - 6.0x",
+    "confidence_level": "Based on empirical CSES submission data"
+  },
+  "scientific_value": {
+    "tcc_contributions": [
+      "Empirical quantification of Bellman-Ford language bias",
+      "Validation of adaptive judge for graph algorithms",
+      "Comparison with Floyd-Warshall complexity patterns",
+      "Evidence for category-specific adjustment factors"
+    ],
+    "expected_insights": [
+      "Loop-heavy algorithms amplify interpreter overhead",
+      "Edge relaxation patterns favor compiled languages",
+      "Graph density affects language performance gap",
+      "Bellman-Ford vs Floyd-Warshall bias comparison"
+    ]
+  }
+}
+

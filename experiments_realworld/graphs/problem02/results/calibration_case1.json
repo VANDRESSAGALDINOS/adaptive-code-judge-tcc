@@ -1,0 +1,70 @@
+{
+  "experiment_metadata": {
+    "phase": "calibration",
+    "test_case": 1,
+    "repetitions": 3,
+    "timestamp": "2025-08-30T20:45:38.866569",
+    "protocol": "experiment_plan.md"
+  },
+  "cpp": {
+    "times": [],
+    "results": [
+      {
+        "status": "WRONG_ANSWER",
+        "execution_time": 0.21638870239257812,
+        "wall_time": 0.21638870239257812,
+        "stdout": "YES\n18 5 13 4 2 18\n",
+        "stderr": "",
+        "returncode": 0
+      },
+      {
+        "status": "WRONG_ANSWER",
+        "execution_time": 0.19268536567687988,
+        "wall_time": 0.19268536567687988,
+        "stdout": "YES\n18 5 13 4 2 18\n",
+        "stderr": "",
+        "returncode": 0
+      },
+      {
+        "status": "WRONG_ANSWER",
+        "execution_time": 0.2395002841949463,
+        "wall_time": 0.2395002841949463,
+        "stdout": "YES\n18 5 13 4 2 18\n",
+        "stderr": "",
+        "returncode": 0
+      }
+    ]
+  },
+  "python": {
+    "times": [],
+    "results": [
+      {
+        "status": "WRONG_ANSWER",
+        "execution_time": 0.2419905662536621,
+        "wall_time": 0.2419905662536621,
+        "stdout": "YES\n18 5 13 4 2 18\n",
+        "stderr": "",
+        "returncode": 0
+      },
+      {
+        "status": "WRONG_ANSWER",
+        "execution_time": 0.2955629825592041,
+        "wall_time": 0.2955629825592041,
+        "stdout": "YES\n18 5 13 4 2 18\n",
+        "stderr": "",
+        "returncode": 0
+      },
+      {
+        "status": "WRONG_ANSWER",
+        "execution_time": 0.29698920249938965,
+        "wall_time": 0.29698920249938965,
+        "stdout": "YES\n18 5 13 4 2 18\n",
+        "stderr": "",
+        "returncode": 0
+      }
+    ]
+  },
+  "statistics": {
+    "error": "insufficient_data"
+  }
+}

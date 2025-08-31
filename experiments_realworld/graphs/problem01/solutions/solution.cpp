@@ -2,7 +2,8 @@
 // Algorithmically equivalent to Python solution (see formal_proof.md)
 // Floyd-Warshall All-Pairs Shortest Path - O(n³)
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {

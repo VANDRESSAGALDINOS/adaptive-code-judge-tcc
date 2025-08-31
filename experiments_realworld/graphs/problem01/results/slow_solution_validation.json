@@ -1,0 +1,90 @@
+{
+  "experiment_metadata": {
+    "validation_type": "selectivity_preservation",
+    "test_cases": [
+      8,
+      15
+    ],
+    "adjustment_factor": 36.84,
+    "timestamp": "2025-08-30T15:57:59.426245",
+    "protocol": "experiment_plan.md"
+  },
+  "traditional_system": {
+    "8": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.1237773895263672,
+        "wall_time": 1.1237773895263672,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 1.1284618377685547,
+        "wall_time": 1.1284618377685547,
+        "returncode": 124
+      }
+    },
+    "15": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.1420810222625732,
+        "wall_time": 1.1420810222625732,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 1.1539266109466553,
+        "wall_time": 1.1539266109466553,
+        "returncode": 124
+      }
+    }
+  },
+  "adaptive_system": {
+    "8": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.1296813488006592,
+        "wall_time": 1.1296813488006592,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 36.987311363220215,
+        "wall_time": 36.987311363220215,
+        "returncode": 124
+      }
+    },
+    "15": {
+      "cpp": {
+        "status": "TLE",
+        "execution_time": 1.1471691131591797,
+        "wall_time": 1.1471691131591797,
+        "returncode": 124
+      },
+      "python": {
+        "status": "TLE",
+        "execution_time": 36.988622188568115,
+        "wall_time": 36.988622188568115,
+        "returncode": 124
+      }
+    }
+  },
+  "selectivity_analysis": {
+    "8": {
+      "selectivity_preserved": true,
+      "all_systems_tle": true,
+      "explanation": "All slow solutions correctly receive TLE"
+    },
+    "15": {
+      "selectivity_preserved": true,
+      "all_systems_tle": true,
+      "explanation": "All slow solutions correctly receive TLE"
+    }
+  },
+  "overall_selectivity": {
+    "preserved": true,
+    "test_cases_count": 2,
+    "successful_cases": 2,
+    "analysis": "Selectivity preserved - adaptive limits do not compromise algorithmic discrimination"
+  }
+}

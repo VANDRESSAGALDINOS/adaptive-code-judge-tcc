@@ -1,0 +1,49 @@
+{
+  "experiment": {
+    "categoria": "",
+    "problema": "problem01",
+    "data": "2025-08-30T16:31:07.193621",
+    "status": "completo"
+  },
+  "fatores": {
+    "ajuste_mediano": 36.843425060563355,
+    "confiabilidade": "Alta",
+    "iqr_cpp": 0.025056666515122977,
+    "iqr_python": 0.0552657959196049
+  },
+  "correcao": {
+    "tradicional_python": 50.0,
+    "adaptativo_python": 100.0,
+    "melhoria": 50.0
+  },
+  "seletividade": {
+    "preservada": true
+  },
+  "validacao": {
+    "score": 100.0,
+    "all_valid": true,
+    "criteria": {
+      "fator_realista": true,
+      "tres_tamanhos": true,
+      "slow_solutions_tle": true,
+      "correlacao_verificada": true,
+      "insights_documentados": true,
+      "anomalias_identificadas": true,
+      "confiabilidade_alta": true,
+      "estabilidade_boa": true
+    }
+  },
+  "classificacao": {
+    "emblematico": true,
+    "representa_categoria": true,
+    "dados_suficientes": true,
+    "prioridade": "Alta",
+    "score": 100.0
+  },
+  "para_graficos": {
+    "incluir_executivo": true,
+    "incluir_heatmap": true,
+    "caso_narrativo": true,
+    "prioridade": "Alta"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "experiment_metadata": {
+    "phase": "calibration",
+    "test_case": 11,
+    "repetitions": 5,
+    "timestamp": "2025-08-30T20:46:20.944079",
+    "protocol": "experiment_plan.md"
+  },
+  "cpp": {
+    "times": [
+      0.22823643684387207,
+      0.2201709747314453,
+      0.25008320808410645,
+      0.2245805263519287,
+      0.21721339225769043
+    ],
+    "results": [
+      {
+        "status": "ACCEPTED",
+        "execution_time": 0.22823643684387207,
+        "wall_time": 0.22823643684387207,
+        "stdout": "NO\n",
+        "stderr": "",
+        "returncode": 0
+      },
+      {
+        "status": "ACCEPTED",
+        "execution_time": 0.2201709747314453,
+        "wall_time": 0.2201709747314453,
+        "stdout": "NO\n",
+        "stderr": "",
+        "returncode": 0
+      },
+      {
+        "status": "ACCEPTED",
+        "execution_time": 0.25008320808410645,
+        "wall_time": 0.25008320808410645,
+        "stdout": "NO\n",
+        "stderr": "",
+        "returncode": 0
+      },
+      {
+        "status": "ACCEPTED",
+        "execution_time": 0.2245805263519287,
+        "wall_time": 0.2245805263519287,
+        "stdout": "NO\n",
+        "stderr": "",
+        "returncode": 0
+      },
+      {
+        "status": "ACCEPTED",
+        "execution_time": 0.21721339225769043,
+        "wall_time": 0.21721339225769043,
+        "stdout": "NO\n",
+        "stderr": "",
+        "returncode": 0
+      }
+    ]
+  },
+  "python": {
+    "times": [
+      0.29039955139160156,
+      0.31087779998779297,
+      0.31218957901000977,
+      0.25847768783569336,
+      0.29484081268310547
+    ],
+    "results": [
+      {
+        "status": "ACCEPTED",
+        "execution_time": 0.29039955139160156,
+        "wall_time": 0.29039955139160156,
+        "stdout": "NO\n",
+        "stderr": "",
+        "returncode": 0
+      },
+      {
+        "status": "ACCEPTED",
+        "execution_time": 0.31087779998779297,
+        "wall_time": 0.31087779998779297,
+        "stdout": "NO\n",
+        "stderr": "",
+        "returncode": 0
+      },
+      {
+        "status": "ACCEPTED",
+        "execution_time": 0.31218957901000977,
+        "wall_time": 0.31218957901000977,
+        "stdout": "NO\n",
+        "stderr": "",
+        "returncode": 0
+      },
+      {
+        "status": "ACCEPTED",
+        "execution_time": 0.25847768783569336,
+        "wall_time": 0.25847768783569336,
+        "stdout": "NO\n",
+        "stderr": "",
+        "returncode": 0
+      },
+      {
+        "status": "ACCEPTED",
+        "execution_time": 0.29484081268310547,
+        "wall_time": 0.29484081268310547,
+        "stdout": "NO\n",
+        "stderr": "",
+        "returncode": 0
+      }
+    ]
+  },
+  "statistics": {
+    "cpp_median": 0.2245805263519287,
+    "python_median": 0.29484081268310547,
+    "adjustment_factor": 1.3128511962834901,
+    "cpp_success_rate": 1.0,
+    "python_success_rate": 1.0
+  }
+}

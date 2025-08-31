@@ -1,0 +1,5282 @@
+{
+  "experiment_metadata": {
+    "phase": "validation",
+    "test_cases": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      19,
+      21,
+      27,
+      1,
+      2,
+      3,
+      4,
+      5,
+      11,
+      12
+    ],
+    "repetitions": 10,
+    "adjustment_factor": 4.334789886219493,
+    "timestamp": "2025-08-30T21:07:04.441638",
+    "protocol": "experiment_plan.md"
+  },
+  "traditional_system": {
+    "6": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2901875972747803,
+            "wall_time": 0.2901875972747803,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2758970260620117,
+            "wall_time": 0.2758970260620117,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25425100326538086,
+            "wall_time": 0.25425100326538086,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2911949157714844,
+            "wall_time": 0.2911949157714844,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29004502296447754,
+            "wall_time": 0.29004502296447754,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3113241195678711,
+            "wall_time": 0.3113241195678711,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3187062740325928,
+            "wall_time": 0.3187062740325928,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3040633201599121,
+            "wall_time": 0.3040633201599121,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3010571002960205,
+            "wall_time": 0.3010571002960205,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3166184425354004,
+            "wall_time": 0.3166184425354004,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 0,
+        "success_rate": 0.0,
+        "detailed_results": [
+          {
+            "status": "TLE",
+            "execution_time": 1.2047009468078613,
+            "wall_time": 1.2047009468078613,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.225632667541504,
+            "wall_time": 1.225632667541504,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.200721025466919,
+            "wall_time": 1.200721025466919,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2330009937286377,
+            "wall_time": 1.2330009937286377,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2239820957183838,
+            "wall_time": 1.2239820957183838,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.201814889907837,
+            "wall_time": 1.201814889907837,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2101125717163086,
+            "wall_time": 1.2101125717163086,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.213695764541626,
+            "wall_time": 1.213695764541626,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2124946117401123,
+            "wall_time": 1.2124946117401123,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2273318767547607,
+            "wall_time": 1.2273318767547607,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          }
+        ]
+      }
+    },
+    "7": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25315213203430176,
+            "wall_time": 0.25315213203430176,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3078463077545166,
+            "wall_time": 0.3078463077545166,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2964746952056885,
+            "wall_time": 0.2964746952056885,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.31952524185180664,
+            "wall_time": 0.31952524185180664,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2956416606903076,
+            "wall_time": 0.2956416606903076,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.32605719566345215,
+            "wall_time": 0.32605719566345215,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3116874694824219,
+            "wall_time": 0.3116874694824219,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3016369342803955,
+            "wall_time": 0.3016369342803955,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30063700675964355,
+            "wall_time": 0.30063700675964355,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25974106788635254,
+            "wall_time": 0.25974106788635254,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 0,
+        "success_rate": 0.0,
+        "detailed_results": [
+          {
+            "status": "TLE",
+            "execution_time": 1.1954371929168701,
+            "wall_time": 1.1954371929168701,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2427630424499512,
+            "wall_time": 1.2427630424499512,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2448744773864746,
+            "wall_time": 1.2448744773864746,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2607719898223877,
+            "wall_time": 1.2607719898223877,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2269341945648193,
+            "wall_time": 1.2269341945648193,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2199828624725342,
+            "wall_time": 1.2199828624725342,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2238380908966064,
+            "wall_time": 1.2238380908966064,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2272989749908447,
+            "wall_time": 1.2272989749908447,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2195539474487305,
+            "wall_time": 1.2195539474487305,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2086529731750488,
+            "wall_time": 1.2086529731750488,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          }
+        ]
+      }
+    },
+    "8": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28232574462890625,
+            "wall_time": 0.28232574462890625,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2957456111907959,
+            "wall_time": 0.2957456111907959,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.33083510398864746,
+            "wall_time": 0.33083510398864746,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2990868091583252,
+            "wall_time": 0.2990868091583252,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2661571502685547,
+            "wall_time": 0.2661571502685547,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.26566410064697266,
+            "wall_time": 0.26566410064697266,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3346874713897705,
+            "wall_time": 0.3346874713897705,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.27292919158935547,
+            "wall_time": 0.27292919158935547,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.33660292625427246,
+            "wall_time": 0.33660292625427246,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30705928802490234,
+            "wall_time": 0.30705928802490234,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 0,
+        "success_rate": 0.0,
+        "detailed_results": [
+          {
+            "status": "TLE",
+            "execution_time": 1.2252357006072998,
+            "wall_time": 1.2252357006072998,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.230311632156372,
+            "wall_time": 1.230311632156372,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.240868330001831,
+            "wall_time": 1.240868330001831,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2231426239013672,
+            "wall_time": 1.2231426239013672,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2313003540039062,
+            "wall_time": 1.2313003540039062,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2220399379730225,
+            "wall_time": 1.2220399379730225,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2164926528930664,
+            "wall_time": 1.2164926528930664,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2262139320373535,
+            "wall_time": 1.2262139320373535,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2379279136657715,
+            "wall_time": 1.2379279136657715,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.219921588897705,
+            "wall_time": 1.219921588897705,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          }
+        ]
+      }
+    },
+    "9": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3409843444824219,
+            "wall_time": 0.3409843444824219,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30609655380249023,
+            "wall_time": 0.30609655380249023,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2889218330383301,
+            "wall_time": 0.2889218330383301,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28650546073913574,
+            "wall_time": 0.28650546073913574,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2792181968688965,
+            "wall_time": 0.2792181968688965,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2953464984893799,
+            "wall_time": 0.2953464984893799,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3069634437561035,
+            "wall_time": 0.3069634437561035,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.32688021659851074,
+            "wall_time": 0.32688021659851074,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.31352829933166504,
+            "wall_time": 0.31352829933166504,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2981576919555664,
+            "wall_time": 0.2981576919555664,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 0,
+        "success_rate": 0.0,
+        "detailed_results": [
+          {
+            "status": "TLE",
+            "execution_time": 1.2196106910705566,
+            "wall_time": 1.2196106910705566,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2332468032836914,
+            "wall_time": 1.2332468032836914,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2351200580596924,
+            "wall_time": 1.2351200580596924,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2507717609405518,
+            "wall_time": 1.2507717609405518,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.238276720046997,
+            "wall_time": 1.238276720046997,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2200350761413574,
+            "wall_time": 1.2200350761413574,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2241125106811523,
+            "wall_time": 1.2241125106811523,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2200405597686768,
+            "wall_time": 1.2200405597686768,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.233888864517212,
+            "wall_time": 1.233888864517212,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2288432121276855,
+            "wall_time": 1.2288432121276855,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          }
+        ]
+      }
+    },
+    "10": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.309985876083374,
+            "wall_time": 0.309985876083374,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25209641456604004,
+            "wall_time": 0.25209641456604004,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2797083854675293,
+            "wall_time": 0.2797083854675293,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2823021411895752,
+            "wall_time": 0.2823021411895752,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28265905380249023,
+            "wall_time": 0.28265905380249023,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2716338634490967,
+            "wall_time": 0.2716338634490967,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.312091588973999,
+            "wall_time": 0.312091588973999,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2807941436767578,
+            "wall_time": 0.2807941436767578,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.268984317779541,
+            "wall_time": 0.268984317779541,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2503776550292969,
+            "wall_time": 0.2503776550292969,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 0,
+        "success_rate": 0.0,
+        "detailed_results": [
+          {
+            "status": "TLE",
+            "execution_time": 1.2202308177947998,
+            "wall_time": 1.2202308177947998,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.233966588973999,
+            "wall_time": 1.233966588973999,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2231554985046387,
+            "wall_time": 1.2231554985046387,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2154994010925293,
+            "wall_time": 1.2154994010925293,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2287845611572266,
+            "wall_time": 1.2287845611572266,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2068629264831543,
+            "wall_time": 1.2068629264831543,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2106528282165527,
+            "wall_time": 1.2106528282165527,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2378041744232178,
+            "wall_time": 1.2378041744232178,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2076964378356934,
+            "wall_time": 1.2076964378356934,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          },
+          {
+            "status": "TLE",
+            "execution_time": 1.2212400436401367,
+            "wall_time": 1.2212400436401367,
+            "stdout": "",
+            "stderr": "",
+            "returncode": 124
+          }
+        ]
+      }
+    },
+    "19": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2320539951324463,
+            "wall_time": 0.2320539951324463,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2398219108581543,
+            "wall_time": 0.2398219108581543,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22562122344970703,
+            "wall_time": 0.22562122344970703,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.222548246383667,
+            "wall_time": 0.222548246383667,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22383594512939453,
+            "wall_time": 0.22383594512939453,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24533462524414062,
+            "wall_time": 0.24533462524414062,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24993062019348145,
+            "wall_time": 0.24993062019348145,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22185587882995605,
+            "wall_time": 0.22185587882995605,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2513301372528076,
+            "wall_time": 0.2513301372528076,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.26218652725219727,
+            "wall_time": 0.26218652725219727,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.41802430152893066,
+            "wall_time": 0.41802430152893066,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3795630931854248,
+            "wall_time": 0.3795630931854248,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.4430694580078125,
+            "wall_time": 0.4430694580078125,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.4056508541107178,
+            "wall_time": 0.4056508541107178,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3746795654296875,
+            "wall_time": 0.3746795654296875,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.4357619285583496,
+            "wall_time": 0.4357619285583496,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.40714097023010254,
+            "wall_time": 0.40714097023010254,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3812532424926758,
+            "wall_time": 0.3812532424926758,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.4019896984100342,
+            "wall_time": 0.4019896984100342,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.4056203365325928,
+            "wall_time": 0.4056203365325928,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "21": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24537992477416992,
+            "wall_time": 0.24537992477416992,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24431753158569336,
+            "wall_time": 0.24431753158569336,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.26917314529418945,
+            "wall_time": 0.26917314529418945,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2231907844543457,
+            "wall_time": 0.2231907844543457,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2244565486907959,
+            "wall_time": 0.2244565486907959,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22856450080871582,
+            "wall_time": 0.22856450080871582,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24886298179626465,
+            "wall_time": 0.24886298179626465,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24693059921264648,
+            "wall_time": 0.24693059921264648,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24906349182128906,
+            "wall_time": 0.24906349182128906,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24907684326171875,
+            "wall_time": 0.24907684326171875,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.6248211860656738,
+            "wall_time": 0.6248211860656738,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5627076625823975,
+            "wall_time": 0.5627076625823975,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5355002880096436,
+            "wall_time": 0.5355002880096436,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5944275856018066,
+            "wall_time": 0.5944275856018066,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5536975860595703,
+            "wall_time": 0.5536975860595703,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5684468746185303,
+            "wall_time": 0.5684468746185303,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5669775009155273,
+            "wall_time": 0.5669775009155273,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5108437538146973,
+            "wall_time": 0.5108437538146973,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5041558742523193,
+            "wall_time": 0.5041558742523193,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5564589500427246,
+            "wall_time": 0.5564589500427246,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "27": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25989437103271484,
+            "wall_time": 0.25989437103271484,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25373029708862305,
+            "wall_time": 0.25373029708862305,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.21755504608154297,
+            "wall_time": 0.21755504608154297,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2460803985595703,
+            "wall_time": 0.2460803985595703,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2379593849182129,
+            "wall_time": 0.2379593849182129,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25138068199157715,
+            "wall_time": 0.25138068199157715,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.243760347366333,
+            "wall_time": 0.243760347366333,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.26134324073791504,
+            "wall_time": 0.26134324073791504,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.26912593841552734,
+            "wall_time": 0.26912593841552734,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2671499252319336,
+            "wall_time": 0.2671499252319336,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.0940930843353271,
+            "wall_time": 1.0940930843353271,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.0866279602050781,
+            "wall_time": 1.0866279602050781,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.062056303024292,
+            "wall_time": 1.062056303024292,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.1089048385620117,
+            "wall_time": 1.1089048385620117,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.128249168395996,
+            "wall_time": 1.128249168395996,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.0734670162200928,
+            "wall_time": 1.0734670162200928,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.1004478931427002,
+            "wall_time": 1.1004478931427002,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.094921588897705,
+            "wall_time": 1.094921588897705,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.0728545188903809,
+            "wall_time": 1.0728545188903809,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.1542904376983643,
+            "wall_time": 1.1542904376983643,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "1": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2118675708770752,
+            "wall_time": 0.2118675708770752,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22160673141479492,
+            "wall_time": 0.22160673141479492,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24968290328979492,
+            "wall_time": 0.24968290328979492,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2420198917388916,
+            "wall_time": 0.2420198917388916,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23940157890319824,
+            "wall_time": 0.23940157890319824,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22946691513061523,
+            "wall_time": 0.22946691513061523,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2425229549407959,
+            "wall_time": 0.2425229549407959,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24907445907592773,
+            "wall_time": 0.24907445907592773,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23518633842468262,
+            "wall_time": 0.23518633842468262,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.21266698837280273,
+            "wall_time": 0.21266698837280273,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2849762439727783,
+            "wall_time": 0.2849762439727783,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25536322593688965,
+            "wall_time": 0.25536322593688965,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28926873207092285,
+            "wall_time": 0.28926873207092285,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.26710963249206543,
+            "wall_time": 0.26710963249206543,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25568294525146484,
+            "wall_time": 0.25568294525146484,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28910136222839355,
+            "wall_time": 0.28910136222839355,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28738880157470703,
+            "wall_time": 0.28738880157470703,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2881014347076416,
+            "wall_time": 0.2881014347076416,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29343700408935547,
+            "wall_time": 0.29343700408935547,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28937244415283203,
+            "wall_time": 0.28937244415283203,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "2": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.21529483795166016,
+            "wall_time": 0.21529483795166016,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22104454040527344,
+            "wall_time": 0.22104454040527344,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24436593055725098,
+            "wall_time": 0.24436593055725098,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25210022926330566,
+            "wall_time": 0.25210022926330566,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22576355934143066,
+            "wall_time": 0.22576355934143066,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22937726974487305,
+            "wall_time": 0.22937726974487305,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2504274845123291,
+            "wall_time": 0.2504274845123291,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2570939064025879,
+            "wall_time": 0.2570939064025879,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22766470909118652,
+            "wall_time": 0.22766470909118652,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2258586883544922,
+            "wall_time": 0.2258586883544922,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30567193031311035,
+            "wall_time": 0.30567193031311035,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28711771965026855,
+            "wall_time": 0.28711771965026855,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28352832794189453,
+            "wall_time": 0.28352832794189453,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2821359634399414,
+            "wall_time": 0.2821359634399414,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29287052154541016,
+            "wall_time": 0.29287052154541016,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2883303165435791,
+            "wall_time": 0.2883303165435791,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.27988696098327637,
+            "wall_time": 0.27988696098327637,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2922649383544922,
+            "wall_time": 0.2922649383544922,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2848949432373047,
+            "wall_time": 0.2848949432373047,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25858044624328613,
+            "wall_time": 0.25858044624328613,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "3": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24326729774475098,
+            "wall_time": 0.24326729774475098,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25761961936950684,
+            "wall_time": 0.25761961936950684,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22292733192443848,
+            "wall_time": 0.22292733192443848,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.21342945098876953,
+            "wall_time": 0.21342945098876953,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22643780708312988,
+            "wall_time": 0.22643780708312988,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.21025443077087402,
+            "wall_time": 0.21025443077087402,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24857473373413086,
+            "wall_time": 0.24857473373413086,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23848628997802734,
+            "wall_time": 0.23848628997802734,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23104262351989746,
+            "wall_time": 0.23104262351989746,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2089381217956543,
+            "wall_time": 0.2089381217956543,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30067992210388184,
+            "wall_time": 0.30067992210388184,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30573487281799316,
+            "wall_time": 0.30573487281799316,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.27605319023132324,
+            "wall_time": 0.27605319023132324,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3065524101257324,
+            "wall_time": 0.3065524101257324,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2982442378997803,
+            "wall_time": 0.2982442378997803,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2772369384765625,
+            "wall_time": 0.2772369384765625,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24314284324645996,
+            "wall_time": 0.24314284324645996,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29158997535705566,
+            "wall_time": 0.29158997535705566,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29543042182922363,
+            "wall_time": 0.29543042182922363,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2808201313018799,
+            "wall_time": 0.2808201313018799,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "4": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22891902923583984,
+            "wall_time": 0.22891902923583984,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24378037452697754,
+            "wall_time": 0.24378037452697754,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24770402908325195,
+            "wall_time": 0.24770402908325195,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2422313690185547,
+            "wall_time": 0.2422313690185547,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25879549980163574,
+            "wall_time": 0.25879549980163574,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25185203552246094,
+            "wall_time": 0.25185203552246094,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22134995460510254,
+            "wall_time": 0.22134995460510254,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24623680114746094,
+            "wall_time": 0.24623680114746094,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24192285537719727,
+            "wall_time": 0.24192285537719727,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2476210594177246,
+            "wall_time": 0.2476210594177246,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2679128646850586,
+            "wall_time": 0.2679128646850586,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2950263023376465,
+            "wall_time": 0.2950263023376465,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2874183654785156,
+            "wall_time": 0.2874183654785156,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.27614355087280273,
+            "wall_time": 0.27614355087280273,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2796609401702881,
+            "wall_time": 0.2796609401702881,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.27803754806518555,
+            "wall_time": 0.27803754806518555,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2919485569000244,
+            "wall_time": 0.2919485569000244,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29943275451660156,
+            "wall_time": 0.29943275451660156,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29248571395874023,
+            "wall_time": 0.29248571395874023,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2814667224884033,
+            "wall_time": 0.2814667224884033,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "5": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25707459449768066,
+            "wall_time": 0.25707459449768066,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2232036590576172,
+            "wall_time": 0.2232036590576172,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24869179725646973,
+            "wall_time": 0.24869179725646973,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.21755385398864746,
+            "wall_time": 0.21755385398864746,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22838711738586426,
+            "wall_time": 0.22838711738586426,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25356411933898926,
+            "wall_time": 0.25356411933898926,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25933265686035156,
+            "wall_time": 0.25933265686035156,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.248077392578125,
+            "wall_time": 0.248077392578125,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2317209243774414,
+            "wall_time": 0.2317209243774414,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24010753631591797,
+            "wall_time": 0.24010753631591797,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28624558448791504,
+            "wall_time": 0.28624558448791504,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2886209487915039,
+            "wall_time": 0.2886209487915039,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2836439609527588,
+            "wall_time": 0.2836439609527588,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2983379364013672,
+            "wall_time": 0.2983379364013672,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30207085609436035,
+            "wall_time": 0.30207085609436035,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2777104377746582,
+            "wall_time": 0.2777104377746582,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2873656749725342,
+            "wall_time": 0.2873656749725342,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2812831401824951,
+            "wall_time": 0.2812831401824951,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28594112396240234,
+            "wall_time": 0.28594112396240234,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2966892719268799,
+            "wall_time": 0.2966892719268799,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "11": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2511782646179199,
+            "wall_time": 0.2511782646179199,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24253082275390625,
+            "wall_time": 0.24253082275390625,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2486259937286377,
+            "wall_time": 0.2486259937286377,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2575850486755371,
+            "wall_time": 0.2575850486755371,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24615097045898438,
+            "wall_time": 0.24615097045898438,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24863195419311523,
+            "wall_time": 0.24863195419311523,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2513728141784668,
+            "wall_time": 0.2513728141784668,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.238661527633667,
+            "wall_time": 0.238661527633667,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23284316062927246,
+            "wall_time": 0.23284316062927246,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2509026527404785,
+            "wall_time": 0.2509026527404785,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2995147705078125,
+            "wall_time": 0.2995147705078125,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28191494941711426,
+            "wall_time": 0.28191494941711426,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24527835845947266,
+            "wall_time": 0.24527835845947266,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2674539089202881,
+            "wall_time": 0.2674539089202881,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29204463958740234,
+            "wall_time": 0.29204463958740234,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29012107849121094,
+            "wall_time": 0.29012107849121094,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.27835655212402344,
+            "wall_time": 0.27835655212402344,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29953908920288086,
+            "wall_time": 0.29953908920288086,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.27261996269226074,
+            "wall_time": 0.27261996269226074,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2857692241668701,
+            "wall_time": 0.2857692241668701,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "12": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23560166358947754,
+            "wall_time": 0.23560166358947754,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22272539138793945,
+            "wall_time": 0.22272539138793945,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23386526107788086,
+            "wall_time": 0.23386526107788086,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22906041145324707,
+            "wall_time": 0.22906041145324707,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2411820888519287,
+            "wall_time": 0.2411820888519287,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2608647346496582,
+            "wall_time": 0.2608647346496582,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.20293569564819336,
+            "wall_time": 0.20293569564819336,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2448132038116455,
+            "wall_time": 0.2448132038116455,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23888874053955078,
+            "wall_time": 0.23888874053955078,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23631525039672852,
+            "wall_time": 0.23631525039672852,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28162407875061035,
+            "wall_time": 0.28162407875061035,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3001406192779541,
+            "wall_time": 0.3001406192779541,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28989100456237793,
+            "wall_time": 0.28989100456237793,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29632091522216797,
+            "wall_time": 0.29632091522216797,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29815125465393066,
+            "wall_time": 0.29815125465393066,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3011612892150879,
+            "wall_time": 0.3011612892150879,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2874104976654053,
+            "wall_time": 0.2874104976654053,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.27263975143432617,
+            "wall_time": 0.27263975143432617,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2989630699157715,
+            "wall_time": 0.2989630699157715,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2946326732635498,
+            "wall_time": 0.2946326732635498,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    }
+  },
+  "adaptive_system": {
+    "6": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29517388343811035,
+            "wall_time": 0.29517388343811035,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28508591651916504,
+            "wall_time": 0.28508591651916504,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2578437328338623,
+            "wall_time": 0.2578437328338623,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3085670471191406,
+            "wall_time": 0.3085670471191406,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.32048630714416504,
+            "wall_time": 0.32048630714416504,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2888789176940918,
+            "wall_time": 0.2888789176940918,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3031740188598633,
+            "wall_time": 0.3031740188598633,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28334712982177734,
+            "wall_time": 0.28334712982177734,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30583953857421875,
+            "wall_time": 0.30583953857421875,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29219627380371094,
+            "wall_time": 0.29219627380371094,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5540180206298828,
+            "wall_time": 1.5540180206298828,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.556441068649292,
+            "wall_time": 1.556441068649292,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.564946174621582,
+            "wall_time": 1.564946174621582,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5914306640625,
+            "wall_time": 1.5914306640625,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.489354133605957,
+            "wall_time": 1.489354133605957,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5568814277648926,
+            "wall_time": 1.5568814277648926,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5474326610565186,
+            "wall_time": 1.5474326610565186,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5834789276123047,
+            "wall_time": 1.5834789276123047,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.594146490097046,
+            "wall_time": 1.594146490097046,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5976817607879639,
+            "wall_time": 1.5976817607879639,
+            "stdout": "YES\n1979 861 436 2467 1818 2003 1752 1077 394 1456 705 96 1619 286 956 2063 471 839 1851 2336 2060 707 763 1861 1057 1470 2185 3 1205 1903 1803 1848 1943 540 2293 663 1670 1430 1979\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "7": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2989165782928467,
+            "wall_time": 0.2989165782928467,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3079044818878174,
+            "wall_time": 0.3079044818878174,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3148479461669922,
+            "wall_time": 0.3148479461669922,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29634714126586914,
+            "wall_time": 0.29634714126586914,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3176000118255615,
+            "wall_time": 0.3176000118255615,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.308368444442749,
+            "wall_time": 0.308368444442749,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3290252685546875,
+            "wall_time": 0.3290252685546875,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.35536694526672363,
+            "wall_time": 0.35536694526672363,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.33724308013916016,
+            "wall_time": 0.33724308013916016,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3055126667022705,
+            "wall_time": 0.3055126667022705,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5516715049743652,
+            "wall_time": 1.5516715049743652,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.635493516921997,
+            "wall_time": 1.635493516921997,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5510962009429932,
+            "wall_time": 1.5510962009429932,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5502314567565918,
+            "wall_time": 1.5502314567565918,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5465681552886963,
+            "wall_time": 1.5465681552886963,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5178101062774658,
+            "wall_time": 1.5178101062774658,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.4648489952087402,
+            "wall_time": 1.4648489952087402,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5960326194763184,
+            "wall_time": 1.5960326194763184,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5232086181640625,
+            "wall_time": 1.5232086181640625,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5991160869598389,
+            "wall_time": 1.5991160869598389,
+            "stdout": "YES\n1727 1476 466 891 2266 1333 2276 2087 1405 2285 446 2408 507 2132 767 2495 717 540 1726 829 2361 1777 1806 1529 678 696 2190 72 1709 2275 504 983 2023 1057 766 951 1175 659 990 1689 857 216 399 1054 1856 934 962 365 872 1418 1 397 1748 319 1734 1034 622 1727\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "8": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3135244846343994,
+            "wall_time": 0.3135244846343994,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.31254076957702637,
+            "wall_time": 0.31254076957702637,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2613668441772461,
+            "wall_time": 0.2613668441772461,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28272032737731934,
+            "wall_time": 0.28272032737731934,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3200948238372803,
+            "wall_time": 0.3200948238372803,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29258108139038086,
+            "wall_time": 0.29258108139038086,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.302276611328125,
+            "wall_time": 0.302276611328125,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3026998043060303,
+            "wall_time": 0.3026998043060303,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3168203830718994,
+            "wall_time": 0.3168203830718994,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3232533931732178,
+            "wall_time": 0.3232533931732178,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.6642894744873047,
+            "wall_time": 1.6642894744873047,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.648317575454712,
+            "wall_time": 1.648317575454712,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.6830918788909912,
+            "wall_time": 1.6830918788909912,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.6261043548583984,
+            "wall_time": 1.6261043548583984,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.6214840412139893,
+            "wall_time": 1.6214840412139893,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.6903252601623535,
+            "wall_time": 1.6903252601623535,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.7009363174438477,
+            "wall_time": 1.7009363174438477,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.6960628032684326,
+            "wall_time": 1.6960628032684326,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.6193122863769531,
+            "wall_time": 1.6193122863769531,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.7138910293579102,
+            "wall_time": 1.7138910293579102,
+            "stdout": "YES\n722 1006 2491 1280 1722 1697 1110 2073 1362 1901 1771 379 2194 874 1299 1144 722\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "9": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30220651626586914,
+            "wall_time": 0.30220651626586914,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3017745018005371,
+            "wall_time": 0.3017745018005371,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.277191162109375,
+            "wall_time": 0.277191162109375,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29994702339172363,
+            "wall_time": 0.29994702339172363,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28665852546691895,
+            "wall_time": 0.28665852546691895,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2787353992462158,
+            "wall_time": 0.2787353992462158,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2887535095214844,
+            "wall_time": 0.2887535095214844,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3018839359283447,
+            "wall_time": 0.3018839359283447,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2875406742095947,
+            "wall_time": 0.2875406742095947,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28355979919433594,
+            "wall_time": 0.28355979919433594,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.4729030132293701,
+            "wall_time": 1.4729030132293701,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.527169942855835,
+            "wall_time": 1.527169942855835,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.4913556575775146,
+            "wall_time": 1.4913556575775146,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.4736547470092773,
+            "wall_time": 1.4736547470092773,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5607383251190186,
+            "wall_time": 1.5607383251190186,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5826528072357178,
+            "wall_time": 1.5826528072357178,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5448145866394043,
+            "wall_time": 1.5448145866394043,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.4918203353881836,
+            "wall_time": 1.4918203353881836,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5810933113098145,
+            "wall_time": 1.5810933113098145,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5986416339874268,
+            "wall_time": 1.5986416339874268,
+            "stdout": "YES\n603 1205 2343 1554 1650 1243 217 2216 698 2112 1801 1441 2444 2138 2185 2461 623 781 866 603\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "10": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2717900276184082,
+            "wall_time": 0.2717900276184082,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2608311176300049,
+            "wall_time": 0.2608311176300049,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.26369595527648926,
+            "wall_time": 0.26369595527648926,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2936391830444336,
+            "wall_time": 0.2936391830444336,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.274000883102417,
+            "wall_time": 0.274000883102417,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28410935401916504,
+            "wall_time": 0.28410935401916504,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2925260066986084,
+            "wall_time": 0.2925260066986084,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.32909321784973145,
+            "wall_time": 0.32909321784973145,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3177299499511719,
+            "wall_time": 0.3177299499511719,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2530529499053955,
+            "wall_time": 0.2530529499053955,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.6127910614013672,
+            "wall_time": 1.6127910614013672,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5486714839935303,
+            "wall_time": 1.5486714839935303,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.505204200744629,
+            "wall_time": 1.505204200744629,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5220141410827637,
+            "wall_time": 1.5220141410827637,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.4849257469177246,
+            "wall_time": 1.4849257469177246,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5609817504882812,
+            "wall_time": 1.5609817504882812,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.500744104385376,
+            "wall_time": 1.500744104385376,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5741963386535645,
+            "wall_time": 1.5741963386535645,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.609548807144165,
+            "wall_time": 1.609548807144165,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.5580909252166748,
+            "wall_time": 1.5580909252166748,
+            "stdout": "YES\n1856 639 854 1724 20 1564 482 1096 1214 2240 2236 1349 834 1601 1670 2260 1958 896 491 1989 665 1714 2486 1083 2411 1830 1766 2357 80 1494 2220 1420 2456 1489 2186 273 413 1514 2079 1856\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "19": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.26299309730529785,
+            "wall_time": 0.26299309730529785,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2684001922607422,
+            "wall_time": 0.2684001922607422,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23146390914916992,
+            "wall_time": 0.23146390914916992,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22382450103759766,
+            "wall_time": 0.22382450103759766,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22264647483825684,
+            "wall_time": 0.22264647483825684,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24947071075439453,
+            "wall_time": 0.24947071075439453,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.26383352279663086,
+            "wall_time": 0.26383352279663086,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2402479648590088,
+            "wall_time": 0.2402479648590088,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2257552146911621,
+            "wall_time": 0.2257552146911621,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23362231254577637,
+            "wall_time": 0.23362231254577637,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.41791367530822754,
+            "wall_time": 0.41791367530822754,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.43602466583251953,
+            "wall_time": 0.43602466583251953,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.42864418029785156,
+            "wall_time": 0.42864418029785156,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.4180755615234375,
+            "wall_time": 0.4180755615234375,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.4300236701965332,
+            "wall_time": 0.4300236701965332,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.4184384346008301,
+            "wall_time": 0.4184384346008301,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.411970853805542,
+            "wall_time": 0.411970853805542,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.4105830192565918,
+            "wall_time": 0.4105830192565918,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.45447206497192383,
+            "wall_time": 0.45447206497192383,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.36946606636047363,
+            "wall_time": 0.36946606636047363,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "21": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25259971618652344,
+            "wall_time": 0.25259971618652344,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2533130645751953,
+            "wall_time": 0.2533130645751953,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.21354317665100098,
+            "wall_time": 0.21354317665100098,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22519731521606445,
+            "wall_time": 0.22519731521606445,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2158675193786621,
+            "wall_time": 0.2158675193786621,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24759483337402344,
+            "wall_time": 0.24759483337402344,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24860024452209473,
+            "wall_time": 0.24860024452209473,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24028611183166504,
+            "wall_time": 0.24028611183166504,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25907444953918457,
+            "wall_time": 0.25907444953918457,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2579989433288574,
+            "wall_time": 0.2579989433288574,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5653853416442871,
+            "wall_time": 0.5653853416442871,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5316176414489746,
+            "wall_time": 0.5316176414489746,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5212259292602539,
+            "wall_time": 0.5212259292602539,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.49707460403442383,
+            "wall_time": 0.49707460403442383,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5432178974151611,
+            "wall_time": 0.5432178974151611,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5434567928314209,
+            "wall_time": 0.5434567928314209,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.4889364242553711,
+            "wall_time": 0.4889364242553711,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5226626396179199,
+            "wall_time": 0.5226626396179199,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5007531642913818,
+            "wall_time": 0.5007531642913818,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.5442633628845215,
+            "wall_time": 0.5442633628845215,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "27": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2559075355529785,
+            "wall_time": 0.2559075355529785,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24516916275024414,
+            "wall_time": 0.24516916275024414,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2546408176422119,
+            "wall_time": 0.2546408176422119,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.26078009605407715,
+            "wall_time": 0.26078009605407715,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25879740715026855,
+            "wall_time": 0.25879740715026855,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24854421615600586,
+            "wall_time": 0.24854421615600586,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2565279006958008,
+            "wall_time": 0.2565279006958008,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2538270950317383,
+            "wall_time": 0.2538270950317383,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23949623107910156,
+            "wall_time": 0.23949623107910156,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2727787494659424,
+            "wall_time": 0.2727787494659424,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.1688854694366455,
+            "wall_time": 1.1688854694366455,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.0657033920288086,
+            "wall_time": 1.0657033920288086,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.1364119052886963,
+            "wall_time": 1.1364119052886963,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.1288323402404785,
+            "wall_time": 1.1288323402404785,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.1060616970062256,
+            "wall_time": 1.1060616970062256,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.1683931350708008,
+            "wall_time": 1.1683931350708008,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.0832912921905518,
+            "wall_time": 1.0832912921905518,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.1308801174163818,
+            "wall_time": 1.1308801174163818,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.1788909435272217,
+            "wall_time": 1.1788909435272217,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 1.1177964210510254,
+            "wall_time": 1.1177964210510254,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "1": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28863096237182617,
+            "wall_time": 0.28863096237182617,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.21703243255615234,
+            "wall_time": 0.21703243255615234,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2448732852935791,
+            "wall_time": 0.2448732852935791,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2468104362487793,
+            "wall_time": 0.2468104362487793,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23486065864562988,
+            "wall_time": 0.23486065864562988,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23277950286865234,
+            "wall_time": 0.23277950286865234,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23736333847045898,
+            "wall_time": 0.23736333847045898,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2563939094543457,
+            "wall_time": 0.2563939094543457,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24596166610717773,
+            "wall_time": 0.24596166610717773,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2188117504119873,
+            "wall_time": 0.2188117504119873,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2988872528076172,
+            "wall_time": 0.2988872528076172,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29918861389160156,
+            "wall_time": 0.29918861389160156,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29809141159057617,
+            "wall_time": 0.29809141159057617,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3011758327484131,
+            "wall_time": 0.3011758327484131,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29854297637939453,
+            "wall_time": 0.29854297637939453,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2783975601196289,
+            "wall_time": 0.2783975601196289,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2887153625488281,
+            "wall_time": 0.2887153625488281,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28188157081604004,
+            "wall_time": 0.28188157081604004,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2951853275299072,
+            "wall_time": 0.2951853275299072,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30315232276916504,
+            "wall_time": 0.30315232276916504,
+            "stdout": "YES\n18 5 13 4 2 18\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "2": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2152881622314453,
+            "wall_time": 0.2152881622314453,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23137426376342773,
+            "wall_time": 0.23137426376342773,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24080920219421387,
+            "wall_time": 0.24080920219421387,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2535407543182373,
+            "wall_time": 0.2535407543182373,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2631993293762207,
+            "wall_time": 0.2631993293762207,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.21897101402282715,
+            "wall_time": 0.21897101402282715,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23192381858825684,
+            "wall_time": 0.23192381858825684,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2878413200378418,
+            "wall_time": 0.2878413200378418,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2532525062561035,
+            "wall_time": 0.2532525062561035,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23308086395263672,
+            "wall_time": 0.23308086395263672,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30252885818481445,
+            "wall_time": 0.30252885818481445,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29879117012023926,
+            "wall_time": 0.29879117012023926,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30957531929016113,
+            "wall_time": 0.30957531929016113,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29878950119018555,
+            "wall_time": 0.29878950119018555,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3118603229522705,
+            "wall_time": 0.3118603229522705,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.305006742477417,
+            "wall_time": 0.305006742477417,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30075573921203613,
+            "wall_time": 0.30075573921203613,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2892167568206787,
+            "wall_time": 0.2892167568206787,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2901029586791992,
+            "wall_time": 0.2901029586791992,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28374648094177246,
+            "wall_time": 0.28374648094177246,
+            "stdout": "YES\n13 4 13\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "3": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.231858491897583,
+            "wall_time": 0.231858491897583,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.243241548538208,
+            "wall_time": 0.243241548538208,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24976205825805664,
+            "wall_time": 0.24976205825805664,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2548828125,
+            "wall_time": 0.2548828125,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23332524299621582,
+            "wall_time": 0.23332524299621582,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22806835174560547,
+            "wall_time": 0.22806835174560547,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25220751762390137,
+            "wall_time": 0.25220751762390137,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2633042335510254,
+            "wall_time": 0.2633042335510254,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.21119451522827148,
+            "wall_time": 0.21119451522827148,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23571395874023438,
+            "wall_time": 0.23571395874023438,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2978389263153076,
+            "wall_time": 0.2978389263153076,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2938258647918701,
+            "wall_time": 0.2938258647918701,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.277677059173584,
+            "wall_time": 0.277677059173584,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30514001846313477,
+            "wall_time": 0.30514001846313477,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2934877872467041,
+            "wall_time": 0.2934877872467041,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2877650260925293,
+            "wall_time": 0.2877650260925293,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29875707626342773,
+            "wall_time": 0.29875707626342773,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2872741222381592,
+            "wall_time": 0.2872741222381592,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.27961230278015137,
+            "wall_time": 0.27961230278015137,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2979753017425537,
+            "wall_time": 0.2979753017425537,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "4": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24563264846801758,
+            "wall_time": 0.24563264846801758,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22221088409423828,
+            "wall_time": 0.22221088409423828,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.21828627586364746,
+            "wall_time": 0.21828627586364746,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24246549606323242,
+            "wall_time": 0.24246549606323242,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23280930519104004,
+            "wall_time": 0.23280930519104004,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2343580722808838,
+            "wall_time": 0.2343580722808838,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24665355682373047,
+            "wall_time": 0.24665355682373047,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23281407356262207,
+            "wall_time": 0.23281407356262207,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2510671615600586,
+            "wall_time": 0.2510671615600586,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24374628067016602,
+            "wall_time": 0.24374628067016602,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2918970584869385,
+            "wall_time": 0.2918970584869385,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.26375508308410645,
+            "wall_time": 0.26375508308410645,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2944321632385254,
+            "wall_time": 0.2944321632385254,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28590846061706543,
+            "wall_time": 0.28590846061706543,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2890188694000244,
+            "wall_time": 0.2890188694000244,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3041682243347168,
+            "wall_time": 0.3041682243347168,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3058016300201416,
+            "wall_time": 0.3058016300201416,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2929515838623047,
+            "wall_time": 0.2929515838623047,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.290818452835083,
+            "wall_time": 0.290818452835083,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3047363758087158,
+            "wall_time": 0.3047363758087158,
+            "stdout": "YES\n22 17 5 13 22\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "5": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22852230072021484,
+            "wall_time": 0.22852230072021484,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24869871139526367,
+            "wall_time": 0.24869871139526367,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2513866424560547,
+            "wall_time": 0.2513866424560547,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23665833473205566,
+            "wall_time": 0.23665833473205566,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23027300834655762,
+            "wall_time": 0.23027300834655762,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2505764961242676,
+            "wall_time": 0.2505764961242676,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22911405563354492,
+            "wall_time": 0.22911405563354492,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.21370196342468262,
+            "wall_time": 0.21370196342468262,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23541474342346191,
+            "wall_time": 0.23541474342346191,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23227667808532715,
+            "wall_time": 0.23227667808532715,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30077576637268066,
+            "wall_time": 0.30077576637268066,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2914164066314697,
+            "wall_time": 0.2914164066314697,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2742156982421875,
+            "wall_time": 0.2742156982421875,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29167985916137695,
+            "wall_time": 0.29167985916137695,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30060482025146484,
+            "wall_time": 0.30060482025146484,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30562806129455566,
+            "wall_time": 0.30562806129455566,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30060672760009766,
+            "wall_time": 0.30060672760009766,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.27051734924316406,
+            "wall_time": 0.27051734924316406,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.28277111053466797,
+            "wall_time": 0.28277111053466797,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2929210662841797,
+            "wall_time": 0.2929210662841797,
+            "stdout": "YES\n19 20 19\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "11": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2386946678161621,
+            "wall_time": 0.2386946678161621,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23980116844177246,
+            "wall_time": 0.23980116844177246,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2370128631591797,
+            "wall_time": 0.2370128631591797,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25842785835266113,
+            "wall_time": 0.25842785835266113,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22399449348449707,
+            "wall_time": 0.22399449348449707,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2205967903137207,
+            "wall_time": 0.2205967903137207,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23155450820922852,
+            "wall_time": 0.23155450820922852,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23638129234313965,
+            "wall_time": 0.23638129234313965,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24408769607543945,
+            "wall_time": 0.24408769607543945,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.22136306762695312,
+            "wall_time": 0.22136306762695312,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2937767505645752,
+            "wall_time": 0.2937767505645752,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30187535285949707,
+            "wall_time": 0.30187535285949707,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.27220749855041504,
+            "wall_time": 0.27220749855041504,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2962949275970459,
+            "wall_time": 0.2962949275970459,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.31069064140319824,
+            "wall_time": 0.31069064140319824,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.29434919357299805,
+            "wall_time": 0.29434919357299805,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2979166507720947,
+            "wall_time": 0.2979166507720947,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.26914525032043457,
+            "wall_time": 0.26914525032043457,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3066062927246094,
+            "wall_time": 0.3066062927246094,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3031344413757324,
+            "wall_time": 0.3031344413757324,
+            "stdout": "NO\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    },
+    "12": {
+      "cpp": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2549748420715332,
+            "wall_time": 0.2549748420715332,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.25476670265197754,
+            "wall_time": 0.25476670265197754,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.21985816955566406,
+            "wall_time": 0.21985816955566406,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.21785473823547363,
+            "wall_time": 0.21785473823547363,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24205255508422852,
+            "wall_time": 0.24205255508422852,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23047852516174316,
+            "wall_time": 0.23047852516174316,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23442363739013672,
+            "wall_time": 0.23442363739013672,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24042367935180664,
+            "wall_time": 0.24042367935180664,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.23612380027770996,
+            "wall_time": 0.23612380027770996,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24843645095825195,
+            "wall_time": 0.24843645095825195,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      },
+      "python": {
+        "accepted_count": 10,
+        "success_rate": 1.0,
+        "detailed_results": [
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2770071029663086,
+            "wall_time": 0.2770071029663086,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.24227166175842285,
+            "wall_time": 0.24227166175842285,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.30502796173095703,
+            "wall_time": 0.30502796173095703,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2943539619445801,
+            "wall_time": 0.2943539619445801,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3016841411590576,
+            "wall_time": 0.3016841411590576,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2799689769744873,
+            "wall_time": 0.2799689769744873,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.3079049587249756,
+            "wall_time": 0.3079049587249756,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.2933518886566162,
+            "wall_time": 0.2933518886566162,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.31644392013549805,
+            "wall_time": 0.31644392013549805,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          },
+          {
+            "status": "ACCEPTED",
+            "execution_time": 0.27458930015563965,
+            "wall_time": 0.27458930015563965,
+            "stdout": "YES\n2 2\n",
+            "stderr": "",
+            "returncode": 0
+          }
+        ]
+      }
+    }
+  },
+  "overall_statistics": {
+    "traditional_system": {
+      "cpp": {
+        "pass": 15,
+        "total": 15,
+        "pass_rate": 1.0
+      },
+      "python": {
+        "pass": 10,
+        "total": 15,
+        "pass_rate": 0.6666666666666666
+      }
+    },
+    "adaptive_system": {
+      "cpp": {
+        "pass": 15,
+        "total": 15,
+        "pass_rate": 1.0
+      },
+      "python": {
+        "pass": 15,
+        "total": 15,
+        "pass_rate": 1.0
+      }
+    }
+  },
+  "injustice_metrics": {
+    "traditional_python_success_rate": 0.6666666666666666,
+    "adaptive_python_success_rate": 1.0,
+    "tle_reduction_absolute": 0.33333333333333337,
+    "cases_rescued": 5
+  }
+}
