@@ -1,0 +1,202 @@
+{
+  "experiment_metadata": {
+    "problem_id": "cses_1623",
+    "problem_name": "Apple Division",
+    "category": "backtracking",
+    "subcategory": "subset_partitioning",
+    "difficulty": "medium",
+    "experiment_date": "2025-09-01",
+    "protocol_version": "rigorous_v1.0",
+    "status": "completed"
+  },
+  
+  "problem_characteristics": {
+    "algorithm_type": "backtracking",
+    "complexity_class": "exponential",
+    "time_complexity": "O(2^n)",
+    "space_complexity": "O(n)",
+    "recursion_depth": 20,
+    "pruning_complexity": "none",
+    "data_structures": ["array", "recursion_stack"],
+    "problem_domain": "numerical_optimization",
+    "spatial_component": false
+  },
+  
+  "implementation_details": {
+    "cpp_solution": {
+      "file": "solutions/solution.cpp",
+      "compiler": "g++ -O2 -std=c++17",
+      "key_features": ["recursive_backtracking", "long_long_arithmetic"],
+      "lines_of_code": 43
+    },
+    "python_solution": {
+      "file": "solutions/solution.py", 
+      "interpreter": "python3",
+      "key_features": ["recursive_backtracking", "list_reference"],
+      "lines_of_code": 28,
+      "recursion_limit": 10000
+    },
+    "algorithmic_equivalence": "proven",
+    "formal_proof": "formal_proof.md"
+  },
+  
+  "validation_results": {
+    "cses_external": {
+      "total_submissions": 4,
+      "cpp_optimized": {
+        "status": "ACCEPTED",
+        "success_rate": 1.0,
+        "tests_passed": "18/18",
+        "max_time": "0.01s",
+        "submission_time": "2025-09-01 03:29:55"
+      },
+      "python_optimized": {
+        "status": "ACCEPTED", 
+        "success_rate": 1.0,
+        "tests_passed": "18/18",
+        "max_time": "0.78s",
+        "submission_time": "2025-09-01 03:19:11"
+      },
+      "cpp_slow": {
+        "status": "TIME_LIMIT_EXCEEDED",
+        "success_rate": 0.556,
+        "tests_passed": "10/18",
+        "tle_cases": [7, 8, 9, 10, 11, 12, 17, 18],
+        "submission_time": "2025-09-01 03:32:16"
+      },
+      "python_slow": {
+        "status": "TIME_LIMIT_EXCEEDED",
+        "success_rate": 0.556,
+        "tests_passed": "10/18", 
+        "tle_cases": [7, 8, 9, 10, 11, 12, 17, 18],
+        "submission_time": "2025-09-01 03:33:12"
+      }
+    },
+    
+    "local_benchmark": {
+      "calibration": {
+        "test_case": 5,
+        "repetitions": 5,
+        "cpp_success_rate": 1.0,
+        "python_success_rate": 1.0,
+        "performance_ratio": 7.09,
+        "cpp_iqr": 13.3,
+        "python_iqr": 14.7
+      },
+      "validation": {
+        "test_cases": [1, 3, 5, 10, 15],
+        "repetitions": 5,
+        "total_executions": 50,
+        "cpp_success_rate": 1.0,
+        "python_success_rate": 1.0,
+        "performance_ratios": [11.28, 10.94, 11.75, 101.34, 7.85],
+        "mean_performance_ratio": 28.63
+      }
+    }
+  },
+  
+  "scientific_findings": {
+    "primary_discovery": "no_algorithmic_injustice",
+    "injustice_present": false,
+    "severity_level": "none",
+    "evidence_strength": "strong",
+    "statistical_significance": "not_applicable",
+    
+    "key_metrics": {
+      "success_rate_gap": 0.0,
+      "performance_gap_range": [7.09, 101.34],
+      "performance_gap_mean": 28.63,
+      "tle_rate_differential": 0.0,
+      "consistency_score": 1.0
+    },
+    
+    "contributing_factors": {
+      "moderate_recursion_depth": 20,
+      "simple_algorithm": "basic_backtracking",
+      "no_complex_pruning": true,
+      "arithmetic_operations": "minimal_overhead",
+      "problem_domain": "numerical_vs_spatial"
+    }
+  },
+  
+  "comparative_analysis": {
+    "contrast_with": "grid_paths_cses_1625",
+    "key_differences": {
+      "recursion_depth": {"apple_division": 20, "grid_paths": 48},
+      "algorithm_complexity": {"apple_division": "simple", "grid_paths": "complex_pruning"},
+      "python_success_rate": {"apple_division": 1.0, "grid_paths": 0.3},
+      "injustice_severity": {"apple_division": "none", "grid_paths": "severe"}
+    },
+    "methodological_validation": "negative_control_confirmed"
+  },
+  
+  "quality_metrics": {
+    "protocol_compliance": "full",
+    "external_validation": "completed",
+    "statistical_rigor": "high",
+    "reproducibility": "full",
+    "documentation_completeness": 1.0,
+    
+    "validation_phases": {
+      "phase1_cses": "completed",
+      "phase2_benchmark": "completed", 
+      "phase3_documentation": "completed"
+    }
+  },
+  
+  "research_implications": {
+    "for_literature": [
+      "demonstrates_methodology_robustness",
+      "establishes_negative_control",
+      "validates_problem_specificity"
+    ],
+    "for_practice": [
+      "python_viable_for_this_problem_class",
+      "performance_gaps_not_always_discriminatory",
+      "case_by_case_evaluation_needed"
+    ],
+    "for_future_research": [
+      "factor_identification_needed",
+      "threshold_analysis_required",
+      "category_expansion_recommended"
+    ]
+  },
+  
+  "limitations": {
+    "sample_size": "single_problem",
+    "constraint_specific": "n_leq_20",
+    "platform_specific": "cses_environment",
+    "generalizability": "limited_to_similar_problems"
+  },
+  
+  "files_generated": {
+    "documentation": [
+      "formal_proof.md",
+      "CSES_VALIDATION_RESULTS.md", 
+      "EXECUTIVE_SUMMARY.md",
+      "NOTEBOOK_INSIGHTS.md",
+      "STATISTICAL_ANALYSIS.md",
+      "metadata_backtracking_apple_division.json"
+    ],
+    "code": [
+      "solutions/solution.cpp",
+      "solutions/solution.py",
+      "slow_validation/solutions_slow/slow_solution.cpp",
+      "slow_validation/solutions_slow/slow_solution.py"
+    ],
+    "scripts": [
+      "run_benchmark.py"
+    ],
+    "results": [
+      "calibration_results.json",
+      "validation_results.json"
+    ]
+  },
+  
+  "experiment_summary": {
+    "conclusion": "Apple Division does not exhibit algorithmic injustice under rigorous experimental conditions",
+    "confidence_level": "high",
+    "scientific_value": "validates_methodology_and_establishes_baseline",
+    "next_steps": "expand_backtracking_sample_and_identify_critical_factors"
+  }
+}
