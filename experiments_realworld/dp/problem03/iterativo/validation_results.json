@@ -1,0 +1,118 @@
+{
+  "timestamp": "2025-08-31 18:54:40",
+  "implementation": "iterativo",
+  "test_cases": [
+    {
+      "n": 10,
+      "total_sum": 55,
+      "case_type": "\u00cdmpar (Trivial)",
+      "cpp": {
+        "time": 0.0010182629994233139,
+        "output": "0",
+        "status": "success"
+      },
+      "python": {
+        "time": 0.008556451997719705,
+        "output": "0",
+        "status": "success"
+      },
+      "performance_ratio": 8.402988228547626
+    },
+    {
+      "n": 50,
+      "total_sum": 1275,
+      "case_type": "\u00cdmpar (Trivial)",
+      "cpp": {
+        "time": 0.0011638849973678589,
+        "output": "0",
+        "status": "success"
+      },
+      "python": {
+        "time": 0.008446528001513798,
+        "output": "0",
+        "status": "success"
+      },
+      "performance_ratio": 7.257184361526896
+    },
+    {
+      "n": 100,
+      "total_sum": 5050,
+      "case_type": "Par (Complexo)",
+      "cpp": {
+        "time": 0.0020945829965057783,
+        "output": "906443459",
+        "status": "success"
+      },
+      "python": {
+        "time": 0.027674417004163843,
+        "output": "906443459",
+        "status": "success"
+      },
+      "performance_ratio": 13.212375470597637
+    },
+    {
+      "n": 200,
+      "total_sum": 20100,
+      "case_type": "Par (Complexo)",
+      "cpp": {
+        "time": 0.008236424000642728,
+        "output": "746149676",
+        "status": "success"
+      },
+      "python": {
+        "time": 0.22717790799651993,
+        "output": "746149676",
+        "status": "success"
+      },
+      "performance_ratio": 27.582104561250386
+    },
+    {
+      "n": 300,
+      "total_sum": 45150,
+      "case_type": "Par (Complexo)",
+      "cpp": {
+        "time": 0.030773776001296937,
+        "output": "65785519",
+        "status": "success"
+      },
+      "python": {
+        "time": 0.5519643060033559,
+        "output": "65785519",
+        "status": "success"
+      },
+      "performance_ratio": 17.936190410305638
+    },
+    {
+      "n": 400,
+      "total_sum": 80200,
+      "case_type": "Par (Complexo)",
+      "cpp": {
+        "time": 0.060079451999627054,
+        "output": "406976742",
+        "status": "success"
+      },
+      "python": {
+        "time": 1.3059857960033696,
+        "output": "406976742",
+        "status": "success"
+      },
+      "performance_ratio": 21.737644944089645
+    },
+    {
+      "n": 450,
+      "total_sum": 101475,
+      "case_type": "\u00cdmpar (Trivial)",
+      "cpp": {
+        "time": 0.001127003000874538,
+        "output": "0",
+        "status": "success"
+      },
+      "python": {
+        "time": 0.007964058000652585,
+        "output": "0",
+        "status": "success"
+      },
+      "performance_ratio": 7.066581006858537
+    }
+  ]
+}

@@ -1,0 +1,539 @@
+{
+  "experiment": "Chessboard and Queens - Backtracking Problem01",
+  "timestamp": "2025-08-31 19:21:42",
+  "protocol_version": "Protocolo Metodol\u00f3gico Rigoroso v1.0",
+  "key_discovery": "Seletividade Diferencial ao Overhead",
+  "algorithmic_injustice": false,
+  "differential_selectivity": true,
+  "selectivity_factor": 5.6,
+  "cses_results": {
+    "cpp_optimized": {
+      "status": "ACCEPTED",
+      "tle_rate": 0.0,
+      "tle_cases": 0,
+      "total_cases": 10,
+      "max_time": 0.01
+    },
+    "python_optimized": {
+      "status": "ACCEPTED",
+      "tle_rate": 0.0,
+      "tle_cases": 0,
+      "total_cases": 10,
+      "max_time": 0.03
+    },
+    "cpp_slow": {
+      "status": "ACCEPTED",
+      "tle_rate": 0.0,
+      "tle_cases": 0,
+      "total_cases": 10,
+      "max_time": 0.07,
+      "slowdown_factor": 7.0
+    },
+    "python_slow": {
+      "status": "TIME LIMIT EXCEEDED",
+      "tle_rate": 0.7,
+      "tle_cases": 7,
+      "total_cases": 10,
+      "tle_case_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8
+      ],
+      "max_time": 0.52,
+      "accepted_cases": [
+        7,
+        9,
+        10
+      ]
+    }
+  },
+  "local_benchmarks": {
+    "calibration": {
+      "calibration_case": "cses_example",
+      "timestamp": "2025-08-31 19:18:18",
+      "algorithm": "backtracking_n_queens",
+      "board": [
+        "........",
+        "........",
+        "..*.....",
+        "........",
+        "........",
+        ".....**..",
+        "...*....",
+        "........"
+      ],
+      "cpp": {
+        "times": [
+          0.0011181009977008216,
+          0.0012884220050182194,
+          0.0012897569977212697,
+          0.0011939549949602224,
+          0.0012489280052250251,
+          0.0012929959993925877,
+          0.0010260589988320135,
+          0.0013561029991251417,
+          0.001158387000032235,
+          0.00126496499433415
+        ],
+        "outputs": [
+          "65",
+          "65",
+          "65",
+          "65",
+          "65",
+          "65",
+          "65",
+          "65",
+          "65",
+          "65"
+        ],
+        "median_time": 0.00126496499433415,
+        "avg_time": 0.0012237672992341686,
+        "min_time": 0.0010260589988320135,
+        "max_time": 0.0013561029991251417
+      },
+      "python": {
+        "times": [
+          0.010629875003360212,
+          0.009824022003158461,
+          0.010324457995011471,
+          0.009844940002949443,
+          0.009315059003711212,
+          0.009817571000894532,
+          0.009903076999762561,
+          0.009156886000710074,
+          0.009873094997601584,
+          0.00961255300353514
+        ],
+        "outputs": [
+          "65",
+          "65",
+          "65",
+          "65",
+          "65",
+          "65",
+          "65",
+          "65",
+          "65",
+          "65"
+        ],
+        "median_time": 0.009844940002949443,
+        "avg_time": 0.00983015360106947,
+        "min_time": 0.009156886000710074,
+        "max_time": 0.010629875003360212
+      },
+      "adjustment_factor": 7.7827766357531525
+    },
+    "validation": {
+      "timestamp": "2025-08-31 19:18:18",
+      "algorithm": "backtracking_n_queens",
+      "test_cases": [
+        {
+          "case_name": "free_board",
+          "board": [
+            "........",
+            "........",
+            "........",
+            "........",
+            "........",
+            "........",
+            "........",
+            "........"
+          ],
+          "cpp": {
+            "time": 0.0014876939967507496,
+            "output": "92",
+            "status": "success"
+          },
+          "python": {
+            "time": 0.009502066997811198,
+            "output": "92",
+            "status": "success"
+          },
+          "performance_ratio": 6.387111206044066
+        },
+        {
+          "case_name": "cses_example",
+          "board": [
+            "........",
+            "........",
+            "..*.....",
+            "........",
+            "........",
+            ".....**..",
+            "...*....",
+            "........"
+          ],
+          "cpp": {
+            "time": 0.0013580079976236448,
+            "output": "65",
+            "status": "success"
+          },
+          "python": {
+            "time": 0.010224509002000559,
+            "output": "65",
+            "status": "success"
+          },
+          "performance_ratio": 7.529049180779682
+        },
+        {
+          "case_name": "restricted_board",
+          "board": [
+            ".*.*.*.*",
+            "*.*.*.*.",
+            ".*.*.*.*",
+            "*.*.*.*.",
+            ".*.*.*.*",
+            "*.*.*.*.",
+            ".*.*.*.*",
+            "*.*.*.*."
+          ],
+          "cpp": {
+            "time": 0.0011233950062887743,
+            "output": "0",
+            "status": "success"
+          },
+          "python": {
+            "time": 0.008612124001956545,
+            "output": "0",
+            "status": "success"
+          },
+          "performance_ratio": 7.666158344790395
+        },
+        {
+          "case_name": "diagonal_blocked",
+          "board": [
+            "*.......",
+            ".*......",
+            "..*.....",
+            "...*....",
+            "....*...",
+            ".....*..",
+            "......*.",
+            ".......*"
+          ],
+          "cpp": {
+            "time": 0.0011685799981933087,
+            "output": "28",
+            "status": "success"
+          },
+          "python": {
+            "time": 0.008991816001071129,
+            "output": "28",
+            "status": "success"
+          },
+          "performance_ratio": 7.69465164128514
+        },
+        {
+          "case_name": "first_row_restricted",
+          "board": [
+            "*..*..**",
+            "........",
+            "........",
+            "........",
+            "........",
+            "........",
+            "........",
+            "........"
+          ],
+          "cpp": {
+            "time": 0.0010819699964486063,
+            "output": "58",
+            "status": "success"
+          },
+          "python": {
+            "time": 0.009450524994463194,
+            "output": "58",
+            "status": "success"
+          },
+          "performance_ratio": 8.734553661823371
+        }
+      ]
+    }
+  },
+  "selectivity_analysis": {
+    "timestamp": "2025-08-31 19:19:39",
+    "algorithm": "backtracking_n_queens",
+    "extra_work": 2000,
+    "focus": "seletividade_diferencial",
+    "test_cases": [
+      [
+        "free_board_critical",
+        [
+          "........",
+          "........",
+          "........",
+          "........",
+          "........",
+          "........",
+          "........",
+          "........"
+        ],
+        "M\u00e1ximo de possibilidades - overhead extremo"
+      ],
+      [
+        "cses_example_critical",
+        [
+          "........",
+          "........",
+          "..*.....",
+          "........",
+          "........",
+          ".....**..",
+          "...*....",
+          "........"
+        ],
+        "Caso padr\u00e3o CSES"
+      ],
+      [
+        "few_restrictions",
+        [
+          "........",
+          "........",
+          "........",
+          "....*...",
+          "........",
+          "........",
+          "........",
+          "........"
+        ],
+        "Poucas restri\u00e7\u00f5es - overhead alto"
+      ],
+      [
+        "first_col_free",
+        [
+          ".......**",
+          ".......**",
+          ".......**",
+          ".......**",
+          ".......**",
+          ".......**",
+          ".......**",
+          ".......**"
+        ],
+        "For\u00e7a backtracking intenso"
+      ]
+    ],
+    "validation_results": [
+      {
+        "case_name": "free_board_critical",
+        "description": "M\u00e1ximo de possibilidades - overhead extremo",
+        "board": [
+          "........",
+          "........",
+          "........",
+          "........",
+          "........",
+          "........",
+          "........",
+          "........"
+        ],
+        "optimized": {
+          "cpp": {
+            "time": 0.0012409869959810749,
+            "output": "92",
+            "status": "success",
+            "error": null
+          },
+          "python": {
+            "time": 0.01053972500085365,
+            "output": "92",
+            "status": "success",
+            "error": null
+          }
+        },
+        "slow": {
+          "cpp": {
+            "time": 0.031602515002305154,
+            "output": "92",
+            "status": "success",
+            "error": null
+          },
+          "python": {
+            "time": 1.5122902860020986,
+            "output": "92",
+            "status": "success",
+            "error": null
+          }
+        },
+        "slowdown_factors": {
+          "cpp": 25.465629458366294,
+          "python": 143.48479546474056
+        },
+        "differential_selectivity": {
+          "cpp_slowdown": 25.465629458366294,
+          "python_slowdown": 143.48479546474056,
+          "selectivity_ratio": 5.634449197469222,
+          "cpp_tolerance": "medium",
+          "python_tolerance": "low"
+        }
+      },
+      {
+        "case_name": "cses_example_critical",
+        "description": "Caso padr\u00e3o CSES",
+        "board": [
+          "........",
+          "........",
+          "..*.....",
+          "........",
+          "........",
+          ".....**..",
+          "...*....",
+          "........"
+        ],
+        "optimized": {
+          "cpp": {
+            "time": 0.001509032998001203,
+            "output": "65",
+            "status": "success",
+            "error": null
+          },
+          "python": {
+            "time": 0.009740645000420045,
+            "output": "65",
+            "status": "success",
+            "error": null
+          }
+        },
+        "slow": {
+          "cpp": {
+            "time": 0.02531227500003297,
+            "output": "65",
+            "status": "success",
+            "error": null
+          },
+          "python": {
+            "time": 1.1388473420010996,
+            "output": "65",
+            "status": "success",
+            "error": null
+          }
+        },
+        "slowdown_factors": {
+          "cpp": 16.773837970117597,
+          "python": 116.91703598190769
+        },
+        "differential_selectivity": {
+          "cpp_slowdown": 16.773837970117597,
+          "python_slowdown": 116.91703598190769,
+          "selectivity_ratio": 6.97020182203942,
+          "cpp_tolerance": "medium",
+          "python_tolerance": "low"
+        }
+      },
+      {
+        "case_name": "few_restrictions",
+        "description": "Poucas restri\u00e7\u00f5es - overhead alto",
+        "board": [
+          "........",
+          "........",
+          "........",
+          "....*...",
+          "........",
+          "........",
+          "........",
+          "........"
+        ],
+        "optimized": {
+          "cpp": {
+            "time": 0.0011872090035467409,
+            "output": "84",
+            "status": "success",
+            "error": null
+          },
+          "python": {
+            "time": 0.010717443001340143,
+            "output": "84",
+            "status": "success",
+            "error": null
+          }
+        },
+        "slow": {
+          "cpp": {
+            "time": 0.02859385900228517,
+            "output": "84",
+            "status": "success",
+            "error": null
+          },
+          "python": {
+            "time": 1.3078469160027453,
+            "output": "84",
+            "status": "success",
+            "error": null
+          }
+        },
+        "slowdown_factors": {
+          "cpp": 24.084941166098073,
+          "python": 122.02975241755034
+        },
+        "differential_selectivity": {
+          "cpp_slowdown": 24.084941166098073,
+          "python_slowdown": 122.02975241755034,
+          "selectivity_ratio": 5.0666410839865055,
+          "cpp_tolerance": "medium",
+          "python_tolerance": "low"
+        }
+      },
+      {
+        "case_name": "first_col_free",
+        "description": "For\u00e7a backtracking intenso",
+        "board": [
+          ".......**",
+          ".......**",
+          ".......**",
+          ".......**",
+          ".......**",
+          ".......**",
+          ".......**",
+          ".......**"
+        ],
+        "optimized": {
+          "cpp": {
+            "time": 0.0010655299993231893,
+            "output": "0",
+            "status": "success",
+            "error": null
+          },
+          "python": {
+            "time": 0.009587438995367847,
+            "output": "0",
+            "status": "success",
+            "error": null
+          }
+        },
+        "slow": {
+          "cpp": {
+            "time": 0.00991816799796652,
+            "output": "0",
+            "status": "success",
+            "error": null
+          },
+          "python": {
+            "time": 0.4223405049997382,
+            "output": "0",
+            "status": "success",
+            "error": null
+          }
+        },
+        "slowdown_factors": {
+          "cpp": 9.308201556283175,
+          "python": 44.05144118296776
+        },
+        "differential_selectivity": {
+          "cpp_slowdown": 9.308201556283175,
+          "python_slowdown": 44.05144118296776,
+          "selectivity_ratio": 4.7325405360643895,
+          "cpp_tolerance": "high",
+          "python_tolerance": "medium"
+        }
+      }
+    ]
+  },
+  "scientific_significance": "Identifica\u00e7\u00e3o de novo fen\u00f4meno: sensibilidade diferencial ao overhead entre linguagens",
+  "complementarity": "Fen\u00f4meno complementa injusti\u00e7a algor\u00edtmica observada em problemas de DP",
+  "methodology_validation": "Protocolo rigoroso eficaz para revelar disparidades ocultas"
+}

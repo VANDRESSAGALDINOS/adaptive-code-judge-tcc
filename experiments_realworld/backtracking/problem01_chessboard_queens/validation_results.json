@@ -1,0 +1,126 @@
+{
+  "timestamp": "2025-08-31 20:33:54",
+  "algorithm": "backtracking_n_queens",
+  "test_cases": [
+    {
+      "case_name": "free_board",
+      "board": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........"
+      ],
+      "cpp": {
+        "time": 0.0028406850033206865,
+        "output": "92",
+        "status": "success"
+      },
+      "python": {
+        "time": 0.027674126002239063,
+        "output": "92",
+        "status": "success"
+      },
+      "performance_ratio": 9.742060795156355
+    },
+    {
+      "case_name": "cses_example",
+      "board": [
+        "........",
+        "........",
+        "..*.....",
+        "........",
+        "........",
+        ".....**..",
+        "...*....",
+        "........"
+      ],
+      "cpp": {
+        "time": 0.003281004996097181,
+        "output": "65",
+        "status": "success"
+      },
+      "python": {
+        "time": 0.028713353000057396,
+        "output": "65",
+        "status": "success"
+      },
+      "performance_ratio": 8.75138959989774
+    },
+    {
+      "case_name": "restricted_board",
+      "board": [
+        ".*.*.*.*",
+        "*.*.*.*.",
+        ".*.*.*.*",
+        "*.*.*.*.",
+        ".*.*.*.*",
+        "*.*.*.*.",
+        ".*.*.*.*",
+        "*.*.*.*."
+      ],
+      "cpp": {
+        "time": 0.0019461010015220381,
+        "output": "0",
+        "status": "success"
+      },
+      "python": {
+        "time": 0.026045655002235435,
+        "output": "0",
+        "status": "success"
+      },
+      "performance_ratio": 13.383506293797305
+    },
+    {
+      "case_name": "diagonal_blocked",
+      "board": [
+        "*.......",
+        ".*......",
+        "..*.....",
+        "...*....",
+        "....*...",
+        ".....*..",
+        "......*.",
+        ".......*"
+      ],
+      "cpp": {
+        "time": 0.0028094749941374175,
+        "output": "28",
+        "status": "success"
+      },
+      "python": {
+        "time": 0.027555827997275628,
+        "output": "28",
+        "status": "success"
+      },
+      "performance_ratio": 9.808176992063242
+    },
+    {
+      "case_name": "first_row_restricted",
+      "board": [
+        "*..*..**",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........"
+      ],
+      "cpp": {
+        "time": 0.0024774799967417493,
+        "output": "58",
+        "status": "success"
+      },
+      "python": {
+        "time": 0.02114754499780247,
+        "output": "58",
+        "status": "success"
+      },
+      "performance_ratio": 8.535909482867511
+    }
+  ]
+}

@@ -127,3 +127,8 @@ Esta descoberta transforma uma aparente "limitação" em uma **contribuição me
 - **Experimento Base**: Problem03 (CSES 1750)
 - **Validação**: Comparação CSES vs benchmark local
 - **Impacto**: Fortalece metodologia e orienta implementação futura
+
+
+
+
+

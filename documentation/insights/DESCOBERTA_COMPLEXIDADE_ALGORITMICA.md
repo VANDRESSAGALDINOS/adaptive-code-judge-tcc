@@ -71,3 +71,5 @@ Aplicar este insight nas categorias restantes:
 - **Experimentos Base**: Problem01, Problem02, Problem03 (parcial)
 - **Validação**: Pendente (Problem03 será substituído por CSES 1750)
 - **Aplicação**: Imediata para seleção de próximos problemas
+
+

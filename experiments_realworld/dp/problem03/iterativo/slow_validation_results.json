@@ -1,0 +1,237 @@
+{
+  "timestamp": "2025-08-31 18:55:36",
+  "implementation": "iterativo",
+  "extra_work": 2000,
+  "test_cases": [
+    50,
+    100,
+    150,
+    200,
+    250,
+    300
+  ],
+  "validation_results": [
+    {
+      "n": 50,
+      "total_sum": 1275,
+      "case_type": "\u00cdmpar (Trivial)",
+      "optimized": {
+        "cpp": {
+          "time": 0.001394984996295534,
+          "output": "0",
+          "status": "success",
+          "error": null
+        },
+        "python": {
+          "time": 0.009210534000885673,
+          "output": "0",
+          "status": "success",
+          "error": null
+        }
+      },
+      "slow": {
+        "cpp": {
+          "time": 0.001136730999860447,
+          "output": "0",
+          "status": "success",
+          "error": null
+        },
+        "python": {
+          "time": 0.009391895000590011,
+          "output": "0",
+          "status": "success",
+          "error": null
+        }
+      },
+      "slowdown_factors": {
+        "cpp": 0.8148696960032573,
+        "python": 1.0196906063955575
+      }
+    },
+    {
+      "n": 100,
+      "total_sum": 5050,
+      "case_type": "Par (Complexo)",
+      "optimized": {
+        "cpp": {
+          "time": 0.0020400459980010055,
+          "output": "906443459",
+          "status": "success",
+          "error": null
+        },
+        "python": {
+          "time": 0.02795745799812721,
+          "output": "906443459",
+          "status": "success",
+          "error": null
+        }
+      },
+      "slow": {
+        "cpp": {
+          "time": 0.46045612799935043,
+          "output": "906443459",
+          "status": "success",
+          "error": null
+        },
+        "python": {
+          "time": 15,
+          "output": null,
+          "status": "error",
+          "error": "Timeout"
+        }
+      },
+      "slowdown_factors": {
+        "cpp": 225.7086989462693,
+        "python": 536.5294656261241
+      }
+    },
+    {
+      "n": 150,
+      "total_sum": 11325,
+      "case_type": "\u00cdmpar (Trivial)",
+      "optimized": {
+        "cpp": {
+          "time": 0.0011973090004175901,
+          "output": "0",
+          "status": "success",
+          "error": null
+        },
+        "python": {
+          "time": 0.009119394002482295,
+          "output": "0",
+          "status": "success",
+          "error": null
+        }
+      },
+      "slow": {
+        "cpp": {
+          "time": 0.0010108400019817054,
+          "output": "0",
+          "status": "success",
+          "error": null
+        },
+        "python": {
+          "time": 0.0074774300010176376,
+          "output": "0",
+          "status": "success",
+          "error": null
+        }
+      },
+      "slowdown_factors": {
+        "cpp": 0.8442599208969036,
+        "python": 0.8199481236343429
+      }
+    },
+    {
+      "n": 200,
+      "total_sum": 20100,
+      "case_type": "Par (Complexo)",
+      "optimized": {
+        "cpp": {
+          "time": 0.009249979004380293,
+          "output": "746149676",
+          "status": "success",
+          "error": null
+        },
+        "python": {
+          "time": 0.1717856910036062,
+          "output": "746149676",
+          "status": "success",
+          "error": null
+        }
+      },
+      "slow": {
+        "cpp": {
+          "time": 3.6798022619987023,
+          "output": "746149676",
+          "status": "success",
+          "error": null
+        },
+        "python": {
+          "time": 15,
+          "output": null,
+          "status": "error",
+          "error": "Timeout"
+        }
+      },
+      "slowdown_factors": {
+        "cpp": 397.8173637211658,
+        "python": 87.31809915230434
+      }
+    },
+    {
+      "n": 250,
+      "total_sum": 31375,
+      "case_type": "\u00cdmpar (Trivial)",
+      "optimized": {
+        "cpp": {
+          "time": 0.0012834669978474267,
+          "output": "0",
+          "status": "success",
+          "error": null
+        },
+        "python": {
+          "time": 0.012864336997154169,
+          "output": "0",
+          "status": "success",
+          "error": null
+        }
+      },
+      "slow": {
+        "cpp": {
+          "time": 0.0015050520014483482,
+          "output": "0",
+          "status": "success",
+          "error": null
+        },
+        "python": {
+          "time": 0.011928389998502098,
+          "output": "0",
+          "status": "success",
+          "error": null
+        }
+      },
+      "slowdown_factors": {
+        "cpp": 1.172645657404946,
+        "python": 0.9272448320609823
+      }
+    },
+    {
+      "n": 300,
+      "total_sum": 45150,
+      "case_type": "Par (Complexo)",
+      "optimized": {
+        "cpp": {
+          "time": 0.03713739100203384,
+          "output": "65785519",
+          "status": "success",
+          "error": null
+        },
+        "python": {
+          "time": 0.714197729001171,
+          "output": "65785519",
+          "status": "success",
+          "error": null
+        }
+      },
+      "slow": {
+        "cpp": {
+          "time": 13.759960738003429,
+          "output": "65785519",
+          "status": "success",
+          "error": null
+        },
+        "python": {
+          "time": 15,
+          "output": null,
+          "status": "error",
+          "error": "Timeout"
+        }
+      },
+      "slowdown_factors": {
+        "cpp": 370.515008371209,
+        "python": 21.002587086041277
+      }
+    }
+  ]
+}

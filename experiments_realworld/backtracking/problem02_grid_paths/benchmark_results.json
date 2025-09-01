@@ -1,0 +1,37 @@
+{
+  "calibration": {
+    "simple_path_1": {
+      "cpp_time": 0.0018925666809082031,
+      "python_time": 0.02182912826538086,
+      "adjustment_factor": 11.534139581758629,
+      "output": "0"
+    },
+    "simple_path_2": {
+      "cpp_time": 0.002099275588989258,
+      "python_time": 0.01874685287475586,
+      "adjustment_factor": 8.93015332197615,
+      "output": "0"
+    },
+    "few_wildcards": {
+      "cpp_time": 0.0014891624450683594,
+      "python_time": 0.0178375244140625,
+      "adjustment_factor": 11.978226064681396,
+      "output": "0"
+    }
+  },
+  "validation": {
+    "two_wildcards": {
+      "cpp_time": 0.0022966861724853516,
+      "python_time": 0.021631240844726562,
+      "cpp_output": "0",
+      "python_output": "0",
+      "consistent": true
+    }
+  },
+  "metadata": {
+    "problem": "Grid Paths (CSES 1625)",
+    "category": "Backtracking",
+    "implementation": "Recursive",
+    "timestamp": "2025-08-31 20:58:43"
+  }
+}

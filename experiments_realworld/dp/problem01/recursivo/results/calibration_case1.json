@@ -1,0 +1,25 @@
+{
+  "test_case": 1,
+  "repetitions": 2,
+  "cpp": {
+    "times": [
+      0.27863550186157227,
+      0.32558417320251465
+    ],
+    "success_count": 2,
+    "success_rate": 1.0,
+    "median_time": 0.30210983753204346,
+    "mean_time": 0.30210983753204346
+  },
+  "python": {
+    "times": [
+      0.307894229888916,
+      0.3407318592071533
+    ],
+    "success_count": 2,
+    "success_rate": 1.0,
+    "median_time": 0.32431304454803467,
+    "mean_time": 0.32431304454803467
+  },
+  "adjustment_factor": 1.0734938232974165
+}

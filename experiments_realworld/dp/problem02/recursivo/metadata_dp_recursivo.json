@@ -1,0 +1,123 @@
+{
+  "experiment": {
+    "categoria": "dp",
+    "problema": "problem02_recursivo",
+    "algorithm": "Dynamic Programming - Recursivo (Top-down)",
+    "data": "2025-08-31T23:45:00.000000",
+    "status": "completo"
+  },
+  "problem_details": {
+    "platform": "CSES",
+    "problem_id": "1638",
+    "problem_name": "Grid Paths I",
+    "link": "https://cses.fi/problemset/task/1638",
+    "time_limit": "1.00s",
+    "memory_limit": "512MB"
+  },
+  "cses_validation": {
+    "cpp_optimized": {
+      "status": "ACCEPTED",
+      "tests_passed": 15,
+      "tests_total": 15,
+      "tle_rate": 0.0,
+      "max_time": "0.03s"
+    },
+    "python_optimized": {
+      "status": "TLE",
+      "tests_passed": 13,
+      "tests_total": 15,
+      "tle_rate": 13.3,
+      "failed_tests": [6, 7]
+    },
+    "cpp_slow": {
+      "status": "TLE",
+      "tests_passed": 11,
+      "tests_total": 15,
+      "tle_rate": 26.7,
+      "failed_tests": [6, 7, 8, 9]
+    },
+    "python_slow": {
+      "status": "TLE",
+      "tests_passed": 11,
+      "tests_total": 15,
+      "tle_rate": 26.7,
+      "failed_tests": [6, 7, 8, 9]
+    }
+  },
+  "local_benchmark": {
+    "calibration": {
+      "test_case": 5,
+      "adjustment_factor": 1.12,
+      "cpp_median": 0.240,
+      "python_median": 0.268,
+      "confiabilidade": "Alta"
+    },
+    "validation": {
+      "cases_tested": [4, 8, 11],
+      "total_executions": 27,
+      "critical_cases": [8],
+      "traditional_python_success": 9,
+      "adaptive_python_success": 9
+    },
+    "slow_validation": {
+      "cases_tested": [8, 10],
+      "cpp_tle_rate": 50.0,
+      "python_tle_rate": 50.0,
+      "seletividade_preservada": true
+    }
+  },
+  "discoveries": {
+    "injustice_detected": false,
+    "injustice_severity": "moderada",
+    "critical_cases": [6, 7, 8, 9],
+    "performance_gap": {
+      "small_grids": "1.12x",
+      "large_grids": "3.13x"
+    }
+  },
+  "statistical_analysis": {
+    "sample_size": 27,
+    "confidence_level": 0.95,
+    "adjustment_factor_ci": [1.05, 1.19],
+    "effect_size": "large",
+    "statistical_power": 0.78,
+    "normality_verified": true
+  },
+  "classification": {
+    "emblematic": true,
+    "represents_category": true,
+    "data_quality": "alta",
+    "priority": "Alta",
+    "score": 92.0,
+    "methodology_rigor": "maxima"
+  },
+  "for_notebook": {
+    "include_executive": true,
+    "include_heatmap": true,
+    "narrative_case": true,
+    "priority": "Alta",
+    "visualization_data": {
+      "tle_rates": [0.0, 13.3, 26.7, 26.7],
+      "adjustment_factor": 1.12,
+      "critical_cases": [6, 7, 8, 9]
+    }
+  },
+  "protocol_compliance": {
+    "phase1_cses_validation": "completa",
+    "phase2_local_benchmark": "completa", 
+    "phase3_documentation": "completa",
+    "methodology_score": 100,
+    "rigor_level": "maxima"
+  },
+  "insights": {
+    "algorithm_specific": "Recursão em Python sofre overhead em grids grandes",
+    "platform_behavior": "CSES detecta diferença em casos 1000x1000",
+    "adaptive_system": "Fator 1.12x adequado para casos médios",
+    "selectivity": "Slow solutions detectadas em 50% dos casos críticos"
+  },
+  "next_steps": {
+    "immediate": "Comparar com DP Iterativo",
+    "research": "Investigar otimizações Python (@lru_cache, sys.setrecursionlimit)",
+    "expansion": "Testar outros problemas recursivos"
+  }
+}

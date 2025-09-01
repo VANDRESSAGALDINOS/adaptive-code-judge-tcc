@@ -1,0 +1,581 @@
+{
+  "adjustment_factor": 1.1115798086851487,
+  "time_limit_traditional": 3.0,
+  "repetitions": 5,
+  "test_cases": {
+    "1": [
+      {
+        "repetition": 1,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.30309271812438965
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.3441922664642334
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.353102445602417,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 2,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.30117368698120117
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.33913159370422363
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.34624433517456055,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 3,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.32950258255004883
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.3458573818206787
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.3386571407318115,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 4,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.31226491928100586
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.328106164932251
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.33595776557922363,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 5,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.3027656078338623
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.3288121223449707
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.33414769172668457,
+          "time_limit": 3.334739426055446
+        }
+      }
+    ],
+    "3": [
+      {
+        "repetition": 1,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.3082916736602783
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.3205575942993164
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.3429427146911621,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 2,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.30468249320983887
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.3144962787628174
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.3289477825164795,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 3,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.3013601303100586
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.3302793502807617
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.33348894119262695,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 4,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.3147575855255127
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.32668328285217285
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.3433260917663574,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 5,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.29381275177001953
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.31498098373413086
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.32146549224853516,
+          "time_limit": 3.334739426055446
+        }
+      }
+    ],
+    "4": [
+      {
+        "repetition": 1,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.9299473762512207
+        },
+        "python_traditional": {
+          "status": "TLE",
+          "time": 3.0
+        },
+        "python_adaptive": {
+          "status": "TLE",
+          "time": 3.334739426055446,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 2,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 1.0888688564300537
+        },
+        "python_traditional": {
+          "status": "TLE",
+          "time": 3.0
+        },
+        "python_adaptive": {
+          "status": "TLE",
+          "time": 3.334739426055446,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 3,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 1.161241054534912
+        },
+        "python_traditional": {
+          "status": "TLE",
+          "time": 3.0
+        },
+        "python_adaptive": {
+          "status": "TLE",
+          "time": 3.334739426055446,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 4,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 1.3394958972930908
+        },
+        "python_traditional": {
+          "status": "TLE",
+          "time": 3.0
+        },
+        "python_adaptive": {
+          "status": "TLE",
+          "time": 3.334739426055446,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 5,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 1.6787960529327393
+        },
+        "python_traditional": {
+          "status": "TLE",
+          "time": 3.0
+        },
+        "python_adaptive": {
+          "status": "TLE",
+          "time": 3.334739426055446,
+          "time_limit": 3.334739426055446
+        }
+      }
+    ],
+    "7": [
+      {
+        "repetition": 1,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.670417070388794
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.7342708110809326
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.6443736553192139,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 2,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.6197030544281006
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.7426426410675049
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.6915323734283447,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 3,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.5721042156219482
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.7760272026062012
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.7853219509124756,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 4,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.5667405128479004
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.7705941200256348
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.613445520401001,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 5,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.7370433807373047
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.6896247863769531
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.7669734954833984,
+          "time_limit": 3.334739426055446
+        }
+      }
+    ],
+    "8": [
+      {
+        "repetition": 1,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 1.5486440658569336
+        },
+        "python_traditional": {
+          "status": "TLE",
+          "time": 3.0
+        },
+        "python_adaptive": {
+          "status": "TLE",
+          "time": 3.334739426055446,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 2,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 1.3927536010742188
+        },
+        "python_traditional": {
+          "status": "TLE",
+          "time": 3.0
+        },
+        "python_adaptive": {
+          "status": "TLE",
+          "time": 3.334739426055446,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 3,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 1.4705867767333984
+        },
+        "python_traditional": {
+          "status": "TLE",
+          "time": 3.0
+        },
+        "python_adaptive": {
+          "status": "TLE",
+          "time": 3.334739426055446,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 4,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 1.4792308807373047
+        },
+        "python_traditional": {
+          "status": "TLE",
+          "time": 3.0
+        },
+        "python_adaptive": {
+          "status": "TLE",
+          "time": 3.334739426055446,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 5,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 1.7723069190979004
+        },
+        "python_traditional": {
+          "status": "TLE",
+          "time": 3.0
+        },
+        "python_adaptive": {
+          "status": "TLE",
+          "time": 3.334739426055446,
+          "time_limit": 3.334739426055446
+        }
+      }
+    ],
+    "9": [
+      {
+        "repetition": 1,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.611760139465332
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.6013939380645752
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.5488333702087402,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 2,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.49408888816833496
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.6318130493164062
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.5873868465423584,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 3,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.5848450660705566
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.6574368476867676
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.7318596839904785,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 4,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.8905782699584961
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.5832135677337646
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.851693868637085,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 5,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.7175357341766357
+        },
+        "python_traditional": {
+          "status": "ACCEPTED",
+          "time": 0.7323455810546875
+        },
+        "python_adaptive": {
+          "status": "ACCEPTED",
+          "time": 0.699488639831543,
+          "time_limit": 3.334739426055446
+        }
+      }
+    ],
+    "11": [
+      {
+        "repetition": 1,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 1.4242677688598633
+        },
+        "python_traditional": {
+          "status": "TLE",
+          "time": 3.0
+        },
+        "python_adaptive": {
+          "status": "TLE",
+          "time": 3.334739426055446,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 2,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 1.8931620121002197
+        },
+        "python_traditional": {
+          "status": "TLE",
+          "time": 3.0
+        },
+        "python_adaptive": {
+          "status": "TLE",
+          "time": 3.334739426055446,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 3,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 1.6852824687957764
+        },
+        "python_traditional": {
+          "status": "TLE",
+          "time": 3.0
+        },
+        "python_adaptive": {
+          "status": "TLE",
+          "time": 3.334739426055446,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 4,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 1.462709903717041
+        },
+        "python_traditional": {
+          "status": "TLE",
+          "time": 3.0
+        },
+        "python_adaptive": {
+          "status": "TLE",
+          "time": 3.334739426055446,
+          "time_limit": 3.334739426055446
+        }
+      },
+      {
+        "repetition": 5,
+        "cpp_traditional": {
+          "status": "ACCEPTED",
+          "time": 1.8005383014678955
+        },
+        "python_traditional": {
+          "status": "TLE",
+          "time": 3.0
+        },
+        "python_adaptive": {
+          "status": "TLE",
+          "time": 3.334739426055446,
+          "time_limit": 3.334739426055446
+        }
+      }
+    ]
+  }
+}

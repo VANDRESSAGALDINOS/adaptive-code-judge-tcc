@@ -1,0 +1,24 @@
+{
+  "methodology": "Binary Verdict (CSES Logic)",
+  "logic": "Any TLE in any test case = REJECTED",
+  "verdicts": {
+    "traditional": {
+      "cpp": "REJECTED",
+      "python": "REJECTED"
+    },
+    "adaptive": {
+      "cpp": "REJECTED",
+      "python": "REJECTED"
+    }
+  },
+  "injustice_analysis": {
+    "detected": false,
+    "corrected": false,
+    "python_rescued": false
+  },
+  "scientific_contribution": {
+    "traditional_gap": "C++ REJECTED vs Python REJECTED",
+    "adaptive_gap": "C++ REJECTED vs Python REJECTED",
+    "methodology_impact": "Binary verdict reveals true injustice vs statistical masking"
+  }
+}

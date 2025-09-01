@@ -1,0 +1,82 @@
+{
+  "experiment_metadata": {
+    "phase": "calibration",
+    "test_case": 1,
+    "repetitions": 3,
+    "timestamp": "2025-08-30T23:24:57.428503",
+    "protocol": "experiment_plan.md"
+  },
+  "cpp": {
+    "times": [
+      0.12670540809631348,
+      0.1314694881439209,
+      0.133286714553833
+    ],
+    "results": [
+      {
+        "status": "ACCEPTED",
+        "execution_time": 0.12670540809631348,
+        "wall_time": 0.12670540809631348,
+        "stdout": "5\n9\n2\n9\n10\n2\n3\n7\n3\n8\n",
+        "stderr": "",
+        "returncode": 0
+      },
+      {
+        "status": "ACCEPTED",
+        "execution_time": 0.1314694881439209,
+        "wall_time": 0.1314694881439209,
+        "stdout": "5\n9\n2\n9\n10\n2\n3\n7\n3\n8\n",
+        "stderr": "",
+        "returncode": 0
+      },
+      {
+        "status": "ACCEPTED",
+        "execution_time": 0.133286714553833,
+        "wall_time": 0.133286714553833,
+        "stdout": "5\n9\n2\n9\n10\n2\n3\n7\n3\n8\n",
+        "stderr": "",
+        "returncode": 0
+      }
+    ]
+  },
+  "python": {
+    "times": [
+      0.16089200973510742,
+      0.15341758728027344,
+      0.14657998085021973
+    ],
+    "results": [
+      {
+        "status": "ACCEPTED",
+        "execution_time": 0.16089200973510742,
+        "wall_time": 0.16089200973510742,
+        "stdout": "5\n9\n2\n9\n10\n2\n3\n7\n3\n8\n",
+        "stderr": "",
+        "returncode": 0
+      },
+      {
+        "status": "ACCEPTED",
+        "execution_time": 0.15341758728027344,
+        "wall_time": 0.15341758728027344,
+        "stdout": "5\n9\n2\n9\n10\n2\n3\n7\n3\n8\n",
+        "stderr": "",
+        "returncode": 0
+      },
+      {
+        "status": "ACCEPTED",
+        "execution_time": 0.14657998085021973,
+        "wall_time": 0.14657998085021973,
+        "stdout": "5\n9\n2\n9\n10\n2\n3\n7\n3\n8\n",
+        "stderr": "",
+        "returncode": 0
+      }
+    ]
+  },
+  "statistics": {
+    "cpp_median": 0.1314694881439209,
+    "python_median": 0.15341758728027344,
+    "adjustment_factor": 1.1669444328582594,
+    "cpp_success_rate": 1.0,
+    "python_success_rate": 1.0
+  }
+}
