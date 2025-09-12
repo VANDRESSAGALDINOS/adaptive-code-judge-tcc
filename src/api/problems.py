@@ -7,7 +7,6 @@ problems_bp = Blueprint('problems', __name__, url_prefix='/api/problems')
 
 @problems_bp.route('', methods=['GET'])
 def get_problems():
-    """Get list of problems with optional filtering."""
     
     try:
         service = ProblemService()

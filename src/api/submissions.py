@@ -6,7 +6,6 @@ submissions_bp = Blueprint('submissions', __name__, url_prefix='/api/submissions
 
 @submissions_bp.route('', methods=['POST'])
 def create_submission():
-    """Create a new submission."""
     
     try:
         data = request.get_json()

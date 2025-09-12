@@ -6,15 +6,12 @@ benchmarks_bp = Blueprint('benchmarks', __name__, url_prefix='/api/benchmarks')
 
 @benchmarks_bp.route('', methods=['POST'])
 def create_benchmark():
-    """Create a new benchmark for a problem."""
     
     try:
         data = request.get_json()
         
         if not data:
             return jsonify({'error': 'No data provided'}), 400
-        
-        # Validate required fields
         if not data.get('problem_id'):
             return jsonify({'error': 'Missing required field: problem_id'}), 400
         
@@ -36,7 +33,6 @@ def create_benchmark():
 
 @benchmarks_bp.route('/<int:benchmark_id>', methods=['GET'])
 def get_benchmark(benchmark_id):
-    """Get a specific benchmark by ID."""
     
     try:
         from ..models import Benchmark
@@ -48,7 +44,6 @@ def get_benchmark(benchmark_id):
         
         result = benchmark.to_dict()
         
-        # Include timing data if requested
         include_times = request.args.get('include_times', 'false').lower() == 'true'
         if include_times:
             import json
@@ -59,7 +54,6 @@ def get_benchmark(benchmark_id):
                 result['cpp_times_data'] = []
                 result['python_times_data'] = []
         
-        # Include largest test case info
         if benchmark.largest_test_case:
             result['largest_test_case'] = benchmark.largest_test_case.to_dict()
         
@@ -72,7 +66,6 @@ def get_benchmark(benchmark_id):
 
 @benchmarks_bp.route('/problem/<int:problem_id>', methods=['GET'])
 def get_benchmarks_for_problem(problem_id):
-    """Get all benchmarks for a problem."""
     
     try:
         from ..models import Benchmark
@@ -93,7 +86,6 @@ def get_benchmarks_for_problem(problem_id):
 
 @benchmarks_bp.route('/problem/<int:problem_id>/active', methods=['GET'])
 def get_active_benchmark(problem_id):
-    """Get the active benchmark for a problem."""
     
     try:
         service = BenchmarkService()
@@ -104,7 +96,6 @@ def get_active_benchmark(problem_id):
         
         result = benchmark.to_dict()
         
-        # Include active benchmark metadata
         from ..models import ProblemBenchmarkActive
         active_info = ProblemBenchmarkActive.get_active_benchmark(problem_id)
         if active_info:
@@ -119,7 +110,6 @@ def get_active_benchmark(problem_id):
 
 @benchmarks_bp.route('/problem/<int:problem_id>/active', methods=['PUT'])
 def set_active_benchmark(problem_id):
-    """Set the active benchmark for a problem."""
     
     try:
         data = request.get_json()
@@ -149,7 +139,6 @@ def set_active_benchmark(problem_id):
 
 @benchmarks_bp.route('/problem/<int:problem_id>/time-limit', methods=['GET'])
 def get_time_limit(problem_id):
-    """Get time limit for a specific language based on active benchmark."""
     
     try:
         language = request.args.get('language', 'cpp')
@@ -157,7 +146,6 @@ def get_time_limit(problem_id):
         service = BenchmarkService()
         time_limit = service.get_time_limit_for_submission(problem_id, language)
         
-        # Get benchmark info
         active_benchmark = service.get_active_benchmark(problem_id)
         
         result = {
@@ -181,7 +169,6 @@ def get_time_limit(problem_id):
 
 @benchmarks_bp.route('/<int:benchmark_id>/activate', methods=['POST'])
 def activate_benchmark(benchmark_id):
-    """Activate a specific benchmark."""
     
     try:
         data = request.get_json() or {}
@@ -201,7 +188,6 @@ def activate_benchmark(benchmark_id):
         )
         
         return jsonify({
-            'message': 'Benchmark activated successfully',
             'active_benchmark': active_benchmark.to_dict()
         })
         

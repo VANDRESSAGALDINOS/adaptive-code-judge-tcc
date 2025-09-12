@@ -2,22 +2,19 @@ from .base import db, TimestampMixin
 
 
 class TestCase(db.Model, TimestampMixin):
-    """Test case model representing input/output pairs for problems."""
     
     __tablename__ = 'test_cases'
     
     id = db.Column(db.Integer, primary_key=True)
     problem_id = db.Column(db.Integer, db.ForeignKey('problems.id'), nullable=False)
-    name = db.Column(db.String(100), nullable=False)  # e.g., "case_01", "large_input"
+    name = db.Column(db.String(100), nullable=False)
     input_data = db.Column(db.Text, nullable=False)
     expected_output = db.Column(db.Text, nullable=False)
-    complexity_hint = db.Column(db.String(50))  # e.g., "O(n)", "O(n^2)", for ranking cases
-    input_size = db.Column(db.Integer)  # Estimated input size for benchmarking
-    is_sample = db.Column(db.Boolean, nullable=False, default=False)  # Sample cases shown to users
-    is_hidden = db.Column(db.Boolean, nullable=False, default=True)  # Hidden test cases
-    weight = db.Column(db.Float, nullable=False, default=1.0)  # Weight for scoring
-    
-    # Relationships
+    complexity_hint = db.Column(db.String(50))
+    input_size = db.Column(db.Integer)
+    is_sample = db.Column(db.Boolean, nullable=False, default=False)
+    is_hidden = db.Column(db.Boolean, nullable=False, default=True)
+    weight = db.Column(db.Float, nullable=False, default=1.0)
     submission_results = db.relationship('SubmissionTestResult', backref='test_case', lazy=True, cascade='all, delete-orphan')
     
     def __repr__(self):

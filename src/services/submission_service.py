@@ -13,10 +13,8 @@ logger = logging.getLogger(__name__)
 
 
 class SubmissionService:
-    """Service for managing code submissions and evaluation."""
     
     def __init__(self, config: AppConfig = None):
-        """Initialize submission service."""
         self.config = config or AppConfig()
         self.executor = DockerExecutor(config)
         self.benchmark_service = BenchmarkService(config)
@@ -28,9 +26,6 @@ class SubmissionService:
         source_code: str, 
         user_id: str = None
     ) -> Submission:
-        """Create a new submission."""
-        
-        # Validate problem exists
         problem = Problem.query.get(problem_id)
         if not problem:
             raise ValueError(f"Problem {problem_id} not found")
@@ -38,20 +33,16 @@ class SubmissionService:
         if not problem.is_active:
             raise ValueError(f"Problem {problem_id} is not active")
         
-        # Validate language
         try:
             lang_enum = Language(language.lower())
         except ValueError:
             raise ValueError(f"Unsupported language: {language}")
         
-        # Validate source code size
         if len(source_code.encode('utf-8')) > self.config.MAX_SOURCE_CODE_SIZE:
             raise ValueError(f"Source code too large (max {self.config.MAX_SOURCE_CODE_SIZE} bytes)")
         
-        # Get active benchmark for time limits
         active_benchmark = self.benchmark_service.get_active_benchmark(problem_id)
         
-        # Create submission record
         submission = Submission(
             problem_id=problem_id,
             user_id=user_id,
@@ -66,7 +57,6 @@ class SubmissionService:
         
         logger.info(f"Created submission {submission.id} for problem {problem_id} in {language}")
         
-        # Execute submission
         try:
             self._execute_submission(submission)
         except Exception as e:
@@ -79,16 +69,13 @@ class SubmissionService:
         return submission
     
     def _execute_submission(self, submission: Submission):
-        """Execute submission against all test cases."""
         submission.status = SubmissionStatus.RUNNING
         db.session.commit()
         
-        # Get test cases
         test_cases = TestCase.query.filter_by(problem_id=submission.problem_id).all()
         if not test_cases:
             raise ValueError(f"No test cases found for problem {submission.problem_id}")
         
-        # Get time limit for this language
         time_limit = self.benchmark_service.get_time_limit_for_submission(
             submission.problem_id, submission.language.value
         )
@@ -96,14 +83,12 @@ class SubmissionService:
         
         logger.info(f"Executing submission {submission.id} with time limit {time_limit}s")
         
-        # Execute against each test case
         all_results = []
         total_execution_time = 0.0
         early_termination = False
         
         for test_case in test_cases:
             if early_termination:
-                # Create failed result for remaining test cases
                 result = SubmissionTestResult(
                     submission_id=submission.id,
                     test_case_id=test_case.id,
@@ -120,22 +105,18 @@ class SubmissionService:
             if result.execution_time:
                 total_execution_time += result.execution_time
             
-            # Early termination on compilation error
             if result.error_type == ErrorType.INTERNAL_ERROR and "compilation" in (result.error_message or "").lower():
                 early_termination = True
                 submission.compilation_error = result.error_message
         
-        # Save all results
         for result in all_results:
             db.session.add(result)
         
-        # Update submission with overall results
         submission.execution_time_total = total_execution_time
         submission.total_test_cases = len(all_results)
         submission.passed_test_cases = sum(1 for r in all_results if r.passed)
         submission.update_score()
         
-        # Determine overall result
         submission.result = self._determine_overall_result(all_results)
         submission.status = SubmissionStatus.COMPLETED
         
@@ -148,7 +129,6 @@ class SubmissionService:
     def _execute_test_case(
         self, submission: Submission, test_case: TestCase, time_limit: float
     ) -> SubmissionTestResult:
-        """Execute submission against a single test case."""
         
         result = SubmissionTestResult(
             submission_id=submission.id,
@@ -156,7 +136,6 @@ class SubmissionService:
         )
         
         try:
-            # Execute code
             if submission.language == Language.CPP:
                 execution_result = self.executor.execute_cpp(
                     submission.source_code,
@@ -174,7 +153,6 @@ class SubmissionService:
             else:
                 raise ValueError(f"Unsupported language: {submission.language}")
             
-            # Update result with execution data
             result.execution_time = execution_result.execution_time
             result.memory_used = execution_result.memory_used
             result.container_id = execution_result.container_id
@@ -182,7 +160,6 @@ class SubmissionService:
             result.stderr = execution_result.stderr
             result.exit_code = execution_result.exit_code
             
-            # Check for execution errors
             if execution_result.status == ExecutionStatus.COMPILATION_ERROR:
                 result.error_type = ErrorType.INTERNAL_ERROR
                 result.error_message = "Compilation failed"
@@ -202,7 +179,6 @@ class SubmissionService:
                 return result
             
             if execution_result.status == ExecutionStatus.RUNTIME_ERROR:
-                # Determine specific error type
                 if any(keyword in execution_result.stderr.lower() for keyword in ['stack overflow', 'segmentation fault']):
                     result.error_type = ErrorType.STACK_OVERFLOW
                     result.error_message = "Stack overflow detected"
@@ -218,7 +194,6 @@ class SubmissionService:
                 result.passed = False
                 return result
             
-            # Compare output
             expected_output = test_case.expected_output.strip()
             actual_output = execution_result.stdout.strip()
             result.actual_output = actual_output
@@ -241,7 +216,6 @@ class SubmissionService:
         return result
     
     def _generate_diff(self, expected: str, actual: str) -> str:
-        """Generate a simple diff between expected and actual output."""
         import difflib
         
         expected_lines = expected.splitlines(keepends=True)
@@ -253,24 +227,20 @@ class SubmissionService:
             lineterm=''
         ))
         
-        return ''.join(diff[:50])  # Limit diff size
+        return ''.join(diff[:50])
     
     def _determine_overall_result(self, results: List[SubmissionTestResult]) -> SubmissionResultEnum:
-        """Determine overall submission result based on test case results."""
         
         if not results:
             return SubmissionResultEnum.INTERNAL_ERROR
         
-        # Check for compilation errors
         if any(r.error_type == ErrorType.INTERNAL_ERROR and "compilation" in (r.error_message or "").lower() 
                for r in results):
             return SubmissionResultEnum.COMPILATION_ERROR
         
-        # Check if all passed
         if all(r.passed for r in results):
             return SubmissionResultEnum.ACCEPTED
         
-        # Check for specific error types (prioritized)
         error_priority = [
             (ErrorType.TIME_LIMIT_EXCEEDED, SubmissionResultEnum.TIME_LIMIT_EXCEEDED),
             (ErrorType.MEMORY_LIMIT_EXCEEDED, SubmissionResultEnum.MEMORY_LIMIT_EXCEEDED),
@@ -288,13 +258,11 @@ class SubmissionService:
         return SubmissionResultEnum.WRONG_ANSWER
     
     def get_submission(self, submission_id: int, include_code: bool = False) -> Optional[Submission]:
-        """Get submission by ID."""
         return Submission.query.get(submission_id)
     
     def get_submissions_for_problem(
         self, problem_id: int, user_id: str = None, limit: int = 100
     ) -> List[Submission]:
-        """Get submissions for a problem."""
         query = Submission.query.filter_by(problem_id=problem_id)
         
         if user_id:
@@ -303,5 +271,4 @@ class SubmissionService:
         return query.order_by(Submission.created_at.desc()).limit(limit).all()
     
     def get_submission_results(self, submission_id: int) -> List[SubmissionTestResult]:
-        """Get test results for a submission."""
         return SubmissionTestResult.query.filter_by(submission_id=submission_id).all()

@@ -13,36 +13,29 @@ logger = logging.getLogger(__name__)
 
 
 class DockerExecutor:
-    """Docker-based code executor for isolated execution."""
     
     def __init__(self, config: AppConfig = None):
-        """Initialize Docker executor."""
         self.config = config or AppConfig()
         self.client = None
         self._init_docker_client()
     
     def _init_docker_client(self):
-        """Initialize Docker client."""
         try:
-            # Test Docker via command line first
             import subprocess
             result = subprocess.run(['docker', 'ps'], capture_output=True, text=True, timeout=10)
             if result.returncode != 0:
                 raise RuntimeError(f"Docker command failed: {result.stderr}")
             
-            # Initialize client without specifying socket (let Docker handle it)
-            os.environ.pop('DOCKER_HOST', None)  # Remove problematic env var
+            os.environ.pop('DOCKER_HOST', None)
             self.client = docker.from_env()
             
-            # Test connection
             self.client.ping()
-            logger.info("Docker client initialized successfully")
+            logger.info("Docker client initialized")
         except Exception as e:
             logger.error(f"Failed to initialize Docker client: {e}")
             raise RuntimeError(f"Docker not available: {e}")
     
     def execute_cpp(self, source_code: str, input_data: str, time_limit: float = None, memory_limit: int = None) -> ExecutionResult:
-        """Execute C++ code."""
         if time_limit is None:
             time_limit = self.config.DEFAULT_TIME_LIMIT
         if memory_limit is None:
@@ -60,7 +53,6 @@ class DockerExecutor:
         )
     
     def execute_python(self, source_code: str, input_data: str, time_limit: float = None, memory_limit: int = None) -> ExecutionResult:
-        """Execute Python code."""
         if time_limit is None:
             time_limit = self.config.DEFAULT_TIME_LIMIT
         if memory_limit is None:
@@ -73,7 +65,7 @@ class DockerExecutor:
             memory_limit=memory_limit,
             language="python",
             image=self.config.DOCKER_PYTHON_IMAGE,
-            compile_cmd=None,  # No compilation for Python
+            compile_cmd=None,
             run_cmd="python3 solution.py"
         )
     
@@ -88,16 +80,12 @@ class DockerExecutor:
         run_cmd: str,
         compile_cmd: Optional[str] = None
     ) -> ExecutionResult:
-        """Execute code in Docker container."""
         
         container = None
         temp_dir = None
         
         try:
-            # Create temporary directory for code files
             temp_dir = tempfile.mkdtemp(prefix=f'adaptive-judge-{language}-')
-            
-            # Write source code to file
             if language == "cpp":
                 source_file = os.path.join(temp_dir, "solution.cpp")
             elif language == "python":
@@ -108,12 +96,9 @@ class DockerExecutor:
             with open(source_file, 'w', encoding='utf-8') as f:
                 f.write(source_code)
             
-            # Write input data to file
             input_file = os.path.join(temp_dir, "input.txt")
             with open(input_file, 'w', encoding='utf-8') as f:
                 f.write(input_data)
-            
-            # Container configuration
             container_config = {
                 'image': image,
                 'working_dir': '/workspace',

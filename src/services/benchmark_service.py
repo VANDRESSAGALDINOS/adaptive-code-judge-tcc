@@ -13,29 +13,23 @@ logger = logging.getLogger(__name__)
 
 
 class BenchmarkService:
-    """Service for managing benchmarks and time factor calculations."""
     
     def __init__(self, config: AppConfig = None):
-        """Initialize benchmark service."""
         self.config = config or AppConfig()
         self.executor = DockerExecutor(config)
     
     def create_benchmark(self, problem_id: int, repetitions: int = None, activated_by: str = None) -> Benchmark:
-        """Create a new benchmark for a problem."""
         if repetitions is None:
             repetitions = self.config.BENCHMARK_REPETITIONS
         
-        # Get problem and validate
         problem = Problem.query.get(problem_id)
         if not problem:
             raise ValueError(f"Problem {problem_id} not found")
         
-        # Find largest test case
         largest_test_case = self._find_largest_test_case(problem_id)
         if not largest_test_case:
             raise ValueError(f"No test cases found for problem {problem_id}")
         
-        # Create benchmark record
         benchmark = Benchmark(
             problem_id=problem_id,
             largest_test_case_id=largest_test_case.id,
@@ -50,11 +44,9 @@ class BenchmarkService:
         
         logger.info(f"Created benchmark {benchmark.id} for problem {problem_id}")
         
-        # Run benchmark execution
         try:
             self._execute_benchmark(benchmark, largest_test_case)
             
-            # Set as active benchmark if successful and reliable
             if benchmark.is_reliable:
                 ProblemBenchmarkActive.set_active_benchmark(
                     problem_id=problem_id,
@@ -73,13 +65,11 @@ class BenchmarkService:
         return benchmark
     
     def _find_largest_test_case(self, problem_id: int) -> Optional[TestCase]:
-        """Find the largest test case for a problem."""
         test_cases = TestCase.query.filter_by(problem_id=problem_id).all()
         
         if not test_cases:
             return None
         
-        # Prioritize by input_size first, then by input_data length
         largest = max(test_cases, key=lambda tc: (
             tc.input_size or len(tc.input_data),
             len(tc.input_data)
@@ -89,11 +79,9 @@ class BenchmarkService:
         return largest
     
     def _execute_benchmark(self, benchmark: Benchmark, test_case: TestCase):
-        """Execute benchmark measurements for C++ and Python."""
         benchmark.status = BenchmarkStatus.RUNNING
         db.session.commit()
         
-        # Load reference solutions
         cpp_solution = self._load_reference_solution(benchmark.problem_id, 'cpp')
         python_solution = self._load_reference_solution(benchmark.problem_id, 'python')
         
@@ -102,13 +90,11 @@ class BenchmarkService:
         if not python_solution:
             raise ValueError(f"No Python reference solution found for problem {benchmark.problem_id}")
         
-        # Validate solutions first
         if not self._validate_solution(cpp_solution, test_case, 'cpp'):
             raise ValueError("C++ reference solution produces incorrect output")
         if not self._validate_solution(python_solution, test_case, 'python'):
             raise ValueError("Python reference solution produces incorrect output")
         
-        # Measure execution times
         cpp_times = self._measure_execution_times(
             cpp_solution, test_case, benchmark.repetitions, 'cpp'
         )
@@ -116,13 +102,11 @@ class BenchmarkService:
             python_solution, test_case, benchmark.repetitions, 'python'
         )
         
-        # Calculate statistics and update benchmark
         self._calculate_benchmark_statistics(benchmark, cpp_times, python_times)
         
         logger.info(f"Benchmark {benchmark.id} completed successfully")
     
     def _load_reference_solution(self, problem_id: int, language: str) -> Optional[str]:
-        """Load reference solution from file."""
         import os
         
         filename = f"problem_{problem_id}.{language}" if language == 'cpp' else f"problem_{problem_id}.py"
@@ -139,12 +123,11 @@ class BenchmarkService:
             return None
     
     def _validate_solution(self, solution_code: str, test_case: TestCase, language: str) -> bool:
-        """Validate that solution produces correct output."""
         try:
             if language == 'cpp':
                 result = self.executor.execute_cpp(
                     solution_code, test_case.input_data, 
-                    time_limit=30.0  # Generous time limit for validation
+                    time_limit=30.0
                 )
             elif language == 'python':
                 result = self.executor.execute_python(
@@ -158,7 +141,6 @@ class BenchmarkService:
                 logger.error(f"Reference solution execution failed: {result.error_message}")
                 return False
             
-            # Compare output (normalize whitespace)
             expected = test_case.expected_output.strip()
             actual = result.stdout.strip()
             
@@ -175,7 +157,6 @@ class BenchmarkService:
     def _measure_execution_times(
         self, solution_code: str, test_case: TestCase, repetitions: int, language: str
     ) -> List[float]:
-        """Measure execution times for multiple runs."""
         times = []
         
         for i in range(repetitions):
@@ -183,7 +164,7 @@ class BenchmarkService:
                 if language == 'cpp':
                     result = self.executor.execute_cpp(
                         solution_code, test_case.input_data,
-                        time_limit=60.0  # Generous time limit for benchmarking
+                        time_limit=60.0
                     )
                 elif language == 'python':
                     result = self.executor.execute_python(
@@ -202,7 +183,7 @@ class BenchmarkService:
             except Exception as e:
                 logger.error(f"Error in {language} run {i+1}: {e}")
         
-        if len(times) < repetitions // 2:  # Need at least half successful runs
+        if len(times) < repetitions // 2:
             raise RuntimeError(f"Too many failed runs for {language} (got {len(times)}/{repetitions})")
         
         return times
@@ -210,9 +191,7 @@ class BenchmarkService:
     def _calculate_benchmark_statistics(
         self, benchmark: Benchmark, cpp_times: List[float], python_times: List[float]
     ):
-        """Calculate benchmark statistics and update the benchmark record."""
         
-        # C++ statistics
         if cpp_times:
             benchmark.base_time_cpp = statistics.median(cpp_times)
             benchmark.cpp_times = json.dumps(cpp_times)
@@ -221,7 +200,6 @@ class BenchmarkService:
         else:
             benchmark.cpp_status = BenchmarkStatus.FAILED
         
-        # Python statistics
         if python_times:
             benchmark.python_median_time = statistics.median(python_times)
             benchmark.python_times = json.dumps(python_times)
@@ -232,11 +210,9 @@ class BenchmarkService:
         else:
             benchmark.python_status = BenchmarkStatus.FAILED
         
-        # Calculate adjustment factor
         if benchmark.base_time_cpp and benchmark.python_median_time:
             raw_factor = benchmark.python_median_time / benchmark.base_time_cpp
             
-            # Apply caps
             benchmark.adjustment_factor_python = max(
                 benchmark.min_factor,
                 min(benchmark.factor_cap, raw_factor)
@@ -244,7 +220,6 @@ class BenchmarkService:
             
             logger.info(f"Calculated adjustment factor: {raw_factor:.2f} -> {benchmark.adjustment_factor_python:.2f}")
         
-        # Overall benchmark status
         if (benchmark.cpp_status == BenchmarkStatus.STABLE and 
             benchmark.python_status == BenchmarkStatus.STABLE and
             benchmark.adjustment_factor_python):
@@ -262,7 +237,6 @@ class BenchmarkService:
         db.session.commit()
     
     def _calculate_iqr(self, times: List[float]) -> float:
-        """Calculate interquartile range."""
         if len(times) < 2:
             return 0.0
         
@@ -270,7 +244,6 @@ class BenchmarkService:
         return q75 - q25
     
     def _determine_stability_status(self, iqr: float, median: float) -> BenchmarkStatus:
-        """Determine stability status based on IQR relative to median."""
         if median == 0:
             return BenchmarkStatus.FAILED
         
@@ -282,15 +255,12 @@ class BenchmarkService:
             return BenchmarkStatus.UNSTABLE
     
     def get_active_benchmark(self, problem_id: int) -> Optional[Benchmark]:
-        """Get the active benchmark for a problem."""
         active = ProblemBenchmarkActive.get_active_benchmark(problem_id)
         return active.benchmark if active else None
     
     def set_active_benchmark(
         self, problem_id: int, benchmark_id: int, activated_by: str = None, notes: str = None
     ) -> ProblemBenchmarkActive:
-        """Set the active benchmark for a problem."""
-        # Validate benchmark exists and belongs to problem
         benchmark = Benchmark.query.filter_by(id=benchmark_id, problem_id=problem_id).first()
         if not benchmark:
             raise ValueError(f"Benchmark {benchmark_id} not found for problem {problem_id}")
@@ -303,12 +273,10 @@ class BenchmarkService:
         )
     
     def get_time_limit_for_submission(self, problem_id: int, language: str) -> float:
-        """Get time limit for a submission based on active benchmark."""
         active_benchmark = self.get_active_benchmark(problem_id)
         
         if active_benchmark and active_benchmark.is_reliable:
             return active_benchmark.get_time_limit_for_language(language)
         else:
-            # Fallback to problem's base time limit
             problem = Problem.query.get(problem_id)
             return problem.time_limit_base if problem else self.config.DEFAULT_TIME_LIMIT

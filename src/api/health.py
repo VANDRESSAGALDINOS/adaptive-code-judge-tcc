@@ -7,14 +7,10 @@ health_bp = Blueprint('health', __name__)
 
 @health_bp.route('/health', methods=['GET'])
 def health_check():
-    """Health check endpoint."""
-    
     health_status = {
         'status': 'healthy',
         'services': {}
     }
-    
-    # Check database
     try:
         db.session.execute('SELECT 1')
         health_status['services']['database'] = 'healthy'
@@ -22,7 +18,6 @@ def health_check():
         health_status['services']['database'] = f'unhealthy: {str(e)}'
         health_status['status'] = 'unhealthy'
     
-    # Check Docker
     try:
         client = docker.from_env()
         client.ping()
@@ -37,7 +32,6 @@ def health_check():
 
 @health_bp.route('/health/detailed', methods=['GET'])
 def detailed_health_check():
-    """Detailed health check with more information."""
     
     from config.app import AppConfig
     
@@ -52,14 +46,10 @@ def detailed_health_check():
         },
         'docker_images': {}
     }
-    
-    # Check database
     try:
         from models import Problem, TestCase, Submission, Benchmark
         
         db.session.execute('SELECT 1')
-        
-        # Get counts
         problem_count = Problem.query.count()
         test_case_count = TestCase.query.count()
         submission_count = Submission.query.count()
@@ -80,13 +70,9 @@ def detailed_health_check():
             'error': str(e)
         }
         health_info['status'] = 'unhealthy'
-    
-    # Check Docker and images
     try:
         client = docker.from_env()
         client.ping()
-        
-        # Check if required images exist
         required_images = [AppConfig.DOCKER_CPP_IMAGE, AppConfig.DOCKER_PYTHON_IMAGE]
         
         for image_name in required_images:

@@ -3,7 +3,6 @@ from enum import Enum
 
 
 class SubmissionStatus(Enum):
-    """Status of submission execution."""
     PENDING = "pending"
     RUNNING = "running"
     COMPLETED = "completed"
@@ -11,7 +10,6 @@ class SubmissionStatus(Enum):
 
 
 class SubmissionResult(Enum):
-    """Overall result of submission evaluation."""
     ACCEPTED = "accepted"
     WRONG_ANSWER = "wrong_answer"
     TIME_LIMIT_EXCEEDED = "time_limit_exceeded"
@@ -24,48 +22,38 @@ class SubmissionResult(Enum):
 
 
 class Language(Enum):
-    """Supported programming languages."""
     CPP = "cpp"
     PYTHON = "python"
 
 
 class Submission(db.Model, TimestampMixin):
-    """Submission model representing user code submissions."""
     
     __tablename__ = 'submissions'
     
     id = db.Column(db.Integer, primary_key=True)
     problem_id = db.Column(db.Integer, db.ForeignKey('problems.id'), nullable=False)
     
-    # Submission metadata
-    user_id = db.Column(db.String(100), nullable=True)  # External user identifier
+    user_id = db.Column(db.String(100), nullable=True)
     language = db.Column(db.Enum(Language), nullable=False)
     source_code = db.Column(db.Text, nullable=False)
     
-    # Execution results
     status = db.Column(db.Enum(SubmissionStatus), nullable=False, default=SubmissionStatus.PENDING)
     result = db.Column(db.Enum(SubmissionResult), nullable=True)
-    execution_time_total = db.Column(db.Float, nullable=True)  # Total execution time in seconds
-    memory_used = db.Column(db.Integer, nullable=True)  # Memory used in KB
+    execution_time_total = db.Column(db.Float, nullable=True)
+    memory_used = db.Column(db.Integer, nullable=True)
     
-    # Scoring
-    score = db.Column(db.Float, nullable=True)  # Score between 0.0 and 1.0
+    score = db.Column(db.Float, nullable=True)
     passed_test_cases = db.Column(db.Integer, nullable=False, default=0)
     total_test_cases = db.Column(db.Integer, nullable=False, default=0)
     
-    # Benchmark reference
     benchmark_id = db.Column(db.Integer, db.ForeignKey('benchmarks.id'), nullable=True)
-    time_limit_used = db.Column(db.Float, nullable=True)  # Time limit that was applied
+    time_limit_used = db.Column(db.Float, nullable=True)
     
-    # Error information
     compilation_error = db.Column(db.Text, nullable=True)
     runtime_error = db.Column(db.Text, nullable=True)
     
-    # Docker execution info
     docker_image = db.Column(db.String(100), nullable=True)
     container_id = db.Column(db.String(100), nullable=True)
-    
-    # Relationships
     test_results = db.relationship('SubmissionTestResult', backref='submission', lazy=True, cascade='all, delete-orphan')
     benchmark = db.relationship('Benchmark', backref='submissions')
     
@@ -100,7 +88,6 @@ class Submission(db.Model, TimestampMixin):
         return result
     
     def calculate_score(self):
-        """Calculate score based on passed test cases and their weights."""
         if self.total_test_cases == 0:
             return 0.0
         
@@ -116,7 +103,6 @@ class Submission(db.Model, TimestampMixin):
         return passed_weight / total_weight
     
     def update_score(self):
-        """Update the score field based on current test results."""
         self.score = self.calculate_score()
         self.passed_test_cases = sum(1 for tr in self.test_results if tr.passed)
         self.total_test_cases = len(self.test_results)
