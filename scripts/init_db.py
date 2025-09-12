@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 """
 Database initialization script for Adaptive Code Judge.
-
-This script creates the database tables and optionally loads sample data.
 """
 
 import os
 import sys
 import logging
 
-# Add src to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 from src.main import create_app
@@ -23,22 +20,16 @@ def init_database(create_samples=False):
     app = create_app()
     
     with app.app_context():
-        print("Creating database tables...")
         db.create_all()
-        print("Database tables created successfully!")
         
         if create_samples:
-            print("Creating sample data...")
             create_sample_data()
-            print("Sample data created successfully!")
 
 
 def create_sample_data():
     """Create sample problems and test cases."""
     
     service = ProblemService()
-    
-    # Sample Problem 1: Two Sum
     problem1 = service.create_problem(
         title="Two Sum",
         description="""Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -93,15 +84,14 @@ Output:
         problem_id=problem1.id,
         name="large_case",
         input_data="1000\n" + " ".join([str(i) for i in range(1000)]) + "\n1999",
-        expected_output="999 1000",  # This would be wrong, but it's just for testing
+        expected_output="999 1000",
         is_sample=False,
         is_hidden=True,
         weight=2.0,
         complexity_hint="O(n)",
-        input_size=8000  # Approximate size
+        input_size=8000
     )
     
-    # Sample Problem 2: Fibonacci
     problem2 = service.create_problem(
         title="Fibonacci Number",
         description="""Calculate the nth Fibonacci number.
@@ -169,18 +159,14 @@ Output:
         complexity_hint="O(n)",
         input_size=2
     )
-    
-    print(f"Created {Problem.query.count()} problems with {TestCase.query.count()} test cases")
 
 
 def create_reference_solutions():
     """Create reference solution files for sample problems."""
     
-    # Create reference solutions directory
     ref_dir = "data/reference_solutions"
     os.makedirs(ref_dir, exist_ok=True)
     
-    # Two Sum C++ solution
     cpp_two_sum = """#include <iostream>
 #include <vector>
 #include <unordered_map>
@@ -212,7 +198,6 @@ int main() {
     return 0;
 }"""
     
-    # Two Sum Python solution
     python_two_sum = """n = int(input())
 nums = list(map(int, input().split()))
 target = int(input())
@@ -225,8 +210,6 @@ for i, num in enumerate(nums):
         print(num_map[complement], i)
         break
     num_map[num] = i"""
-    
-    # Fibonacci C++ solution
     cpp_fibonacci = """#include <iostream>
 using namespace std;
 
@@ -253,8 +236,6 @@ int main() {
     cout << b << endl;
     return 0;
 }"""
-    
-    # Fibonacci Python solution
     python_fibonacci = """n = int(input())
 
 if n == 0:
@@ -266,8 +247,6 @@ else:
     for _ in range(2, n + 1):
         a, b = b, a + b
     print(b)"""
-    
-    # Write solutions to files
     solutions = [
         ("problem_1.cpp", cpp_two_sum),
         ("problem_1.py", python_two_sum),
@@ -279,7 +258,6 @@ else:
         filepath = os.path.join(ref_dir, filename)
         with open(filepath, 'w') as f:
             f.write(content)
-        print(f"Created reference solution: {filepath}")
 
 
 def main():
@@ -298,18 +276,9 @@ def main():
         init_database(create_samples=args.samples)
         
         if args.references:
-            print("Creating reference solutions...")
             create_reference_solutions()
-            print("Reference solutions created successfully!")
-        
-        print("\nDatabase initialization completed!")
-        print("\nNext steps:")
-        print("1. Build Docker images: cd docker && docker build -t adaptivejudge-cpp:latest -f Dockerfile.cpp .")
-        print("2. Build Python image: docker build -t adaptivejudge-python:latest -f Dockerfile.python .")
-        print("3. Start the API: python src/main.py")
         
     except Exception as e:
-        print(f"Error initializing database: {e}")
         logging.exception("Database initialization failed")
         sys.exit(1)
 
