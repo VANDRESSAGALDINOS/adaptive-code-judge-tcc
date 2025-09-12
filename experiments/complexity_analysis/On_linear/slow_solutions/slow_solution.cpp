@@ -2,29 +2,23 @@
 #include <vector>
 using namespace std;
 
-long long quadraticSum(const vector<long long>& arr) {
-    // Intentionally slow: O(n²) quadratic time instead of O(n) linear
-    // Use side effects that compiler CANNOT optimize away
-    long long sum = 0;
-    long long debug_counter = 0;
+long long inefficientSum(const vector<long long>& arr) {
+    // Algorithmically equivalent but inefficient: O(n²) using nested summation
+    // Each element is added arr.size() times, then divided by n
+    long long total = 0;
+    int n = arr.size();
     
-    for (int i = 0; i < arr.size(); i++) {
-        // O(n²) nested loop that GCC cannot remove due to printf
-        for (int j = 0; j < arr.size(); j++) {
-            debug_counter++;
-            // AGGRESSIVE anti-optimization: printf every 10K operations
-            if (debug_counter % 10000 == 0) {
-                printf("DEBUG: processed %lld operations\n", debug_counter);
-                fflush(stdout);  // Ensure immediate output
-            }
+    for (int i = 0; i < n; i++) {
+        long long element_contribution = 0;
+        // Add current element n times (inefficient)
+        for (int j = 0; j < n; j++) {
+            element_contribution += arr[i];
         }
-        // Add current element to sum (the actual work we need)
-        sum += arr[i];
+        // Divide by n to get back original value
+        total += element_contribution / n;
     }
     
-    // Final debug info - ensures all loops were executed
-    printf("TOTAL_OPS: %lld\n", debug_counter);
-    return sum;
+    return total;
 }
 
 int main() {
@@ -36,8 +30,7 @@ int main() {
         cin >> arr[i];
     }
     
-    // Use inefficient quadratic sum
-    long long result = quadraticSum(arr);
+    long long result = inefficientSum(arr);
     cout << result << endl;
     
     return 0;

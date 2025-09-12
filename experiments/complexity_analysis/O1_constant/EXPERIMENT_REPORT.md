@@ -1,18 +1,18 @@
-# Experimento O(1) - Operações Aritméticas Constantes
+# O(1) Constant Time Complexity Analysis
 
-## Resumo Executivo
+## Executive Summary
 
-**Descoberta Principal**: Python supera C++ em **37.4%** para operações de complexidade constante em ambientes containerizados.
+This experiment investigates performance characteristics of constant-time arithmetic operations in containerized environments. The study reveals that Python achieves 37.4% superior performance compared to C++ in Docker-based execution contexts.
 
-**Resultado Inesperado**: Contraria a expectativa comum de que C++ seria mais rápido, revelando que o contexto de execução (containerização + overhead de compilação) pode inverter rankings de performance.
+The results challenge conventional assumptions about compiled versus interpreted language performance in isolated execution environments.
 
-## Metodologia Experimental
+## Experimental Methodology
 
-### Problema Testado
-- **Operações**: Soma, subtração, multiplicação, divisão inteira
-- **Entrada**: Dois inteiros (`a`, `b`)
-- **Saída**: Quatro resultados das operações básicas
-- **Complexidade Teórica**: O(1) - tempo constante independente do input
+### Problem Specification
+- **Operations**: Addition, subtraction, multiplication, integer division
+- **Input**: Two integers (a, b)
+- **Output**: Four arithmetic operation results
+- **Theoretical Complexity**: O(1) - constant time independent of input size
 
 ### Casos de Teste
 ```

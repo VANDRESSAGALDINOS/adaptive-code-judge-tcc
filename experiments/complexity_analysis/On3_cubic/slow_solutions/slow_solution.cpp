@@ -2,33 +2,25 @@
 #include <vector>
 using namespace std;
 
-vector<vector<long long>> quarticMultiply(const vector<vector<long long>>& A, const vector<vector<long long>>& B) {
-    // Intentionally slow: O(n⁴) quartic time instead of O(n³) cubic
-    // Use side effects that compiler CANNOT optimize away
+vector<vector<long long>> inefficientMatrixMultiply(const vector<vector<long long>>& A, const vector<vector<long long>>& B) {
+    // Algorithmically equivalent but inefficient: O(n⁴) using redundant computations
+    // Each dot product is computed n times and averaged, maintaining mathematical equivalence
     int n = A.size();
     vector<vector<long long>> C(n, vector<long long>(n, 0));
-    long long debug_counter = 0;
     
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            for (int k = 0; k < n; k++) {
-                // O(n⁴) extra nested loop that GCC cannot remove due to printf
-                for (int l = 0; l < n; l++) {
-                    debug_counter++;
-                    // Side effect: printf forces execution - compiler cannot optimize away
-                    if (debug_counter % 50000 == 0) {
-                        printf("DEBUG: processed %lld operations\n", debug_counter);
-                        fflush(stdout);  // Ensure immediate output
-                    }
+            long long dot_product_sum = 0;
+            // Compute dot product n times (inefficient)
+            for (int repetition = 0; repetition < n; repetition++) {
+                for (int k = 0; k < n; k++) {
+                    dot_product_sum += A[i][k] * B[k][j];
                 }
-                // Do the actual matrix multiplication work
-                C[i][j] += A[i][k] * B[k][j];
             }
+            // Divide by n to get back original dot product
+            C[i][j] = dot_product_sum / n;
         }
     }
-    
-    // Final debug info - ensures all loops were executed
-    printf("TOTAL_OPS: %lld\n", debug_counter);
     return C;
 }
 
@@ -52,8 +44,8 @@ int main() {
         }
     }
     
-    // Use inefficient quartic multiplication
-    vector<vector<long long>> C = quarticMultiply(A, B);
+    // Calculate C = A × B using inefficient approach
+    vector<vector<long long>> C = inefficientMatrixMultiply(A, B);
     
     // Calculate sum of all elements in result matrix
     long long sum = 0;
@@ -63,7 +55,6 @@ int main() {
         }
     }
     
-    // Output sum
     cout << sum << endl;
     
     return 0;

@@ -1,24 +1,42 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main() {
     long long a, b;
     cin >> a >> b;
     
-    // Intentionally slow: unnecessary nested loops O(n²) where n=50000
-    // This should definitely exceed time limits calibrated for O(1)
-    for(int i = 0; i < 50000; i++) {
-        for(int j = 0; j < 50000; j++) {
-            // Waste CPU time with meaningless computation
-            volatile long long x = (i * j + a * b) % 1000000;
-        }
+    // Algorithmically equivalent but inefficient implementation
+    // Using inefficient methods for basic arithmetic operations
+    
+    // Inefficient sum: using repeated addition
+    long long sum = a;
+    if (b > 0) {
+        for (long long i = 0; i < b; i++) sum++;
+    } else if (b < 0) {
+        for (long long i = 0; i < -b; i++) sum--;
     }
+    cout << sum << endl;
     
-    // Still produce correct output
-    cout << a + b << endl;
-    cout << a - b << endl;
-    cout << a * b << endl;
+    // Inefficient difference: using repeated subtraction  
+    long long diff = a;
+    if (b > 0) {
+        for (long long i = 0; i < b; i++) diff--;
+    } else if (b < 0) {
+        for (long long i = 0; i < -b; i++) diff++;
+    }
+    cout << diff << endl;
     
+    // Inefficient product: using repeated addition
+    long long product = 0;
+    long long abs_b = (b >= 0) ? b : -b;
+    for (long long i = 0; i < abs_b; i++) {
+        product += a;
+    }
+    if (b < 0) product = -product;
+    cout << product << endl;
+    
+    // Integer division (handle division by zero)
     if (b != 0) {
         cout << a / b << endl;
     } else {

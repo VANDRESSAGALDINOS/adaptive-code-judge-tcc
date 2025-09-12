@@ -1,23 +1,16 @@
-def quadratic_sum(arr):
-    """Intentionally slow: O(n²) quadratic time instead of O(n) linear"""
+def inefficient_sum(arr):
+    """Algorithmically equivalent but inefficient: O(n²) using nested summation"""
+    # Each element is added len(arr) times, then divided by n
     total = 0
-    checksum = 0
+    n = len(arr)
     
-    for i in range(len(arr)):
-        # O(n²) nested loop with meaningful computation
-        for j in range(len(arr)):
-            # Actual computation that affects checksum
-            checksum += (arr[i] + arr[j]) % 1000007
-            if checksum > 1000000000:
-                checksum %= 1000000007
-        
-        # Add current element to sum (the actual work we need)
-        total += arr[i]
-        
-        # Include checksum to prevent optimization but don't affect result
-        if checksum % 2 == 0:
-            # This branch will always be taken
-            continue
+    for i in range(n):
+        element_contribution = 0
+        # Add current element n times (inefficient)
+        for j in range(n):
+            element_contribution += arr[i]
+        # Divide by n to get back original value
+        total += element_contribution // n
     
     return total
 
@@ -25,6 +18,6 @@ def quadratic_sum(arr):
 n = int(input())
 arr = list(map(int, input().split()))
 
-# Use inefficient quadratic sum
-result = quadratic_sum(arr)
+# Calculate sum using inefficient approach
+result = inefficient_sum(arr)
 print(result)

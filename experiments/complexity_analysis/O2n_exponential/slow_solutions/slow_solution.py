@@ -3,42 +3,31 @@ import sys
 # Increase recursion limit for deep exponential recursion
 sys.setrecursionlimit(50000)
 
-debug_counter = 0
-
-def triple_exponential_sum(arr, target, index=0):
-    """Intentionally slow: O(3ⁿ) triple exponential instead of O(2ⁿ)"""
-    global debug_counter
-    
-    debug_counter += 1
-    # Side effect that prevents optimization
-    if debug_counter % 100000 == 0:
-        print(f"DEBUG: processed {debug_counter} recursive calls")
+def inefficient_subset_sum(arr, target, index=0):
+    """Algorithmically equivalent but inefficient: O(3ⁿ) using redundant recursive calls"""
+    # Each decision point explores three paths: include, exclude, and duplicate exclude
     
     # Base cases
     if target == 0:
-        print(f"FOUND_SOLUTION: {debug_counter} calls")
         return True  # Found exact sum
     if index >= len(arr):
         return False  # No more elements
     
-    # Three choices instead of two (third is redundant but forces O(3ⁿ))
-    include = triple_exponential_sum(arr, target - arr[index], index + 1)
-    exclude = triple_exponential_sum(arr, target, index + 1)
-    redundant = triple_exponential_sum(arr, target, index + 1)  # Same as exclude but forces extra computation
+    # Three recursive calls: include, exclude, and redundant exclude
+    # The redundant call computes the same result as exclude but forces O(3ⁿ) complexity
+    include = inefficient_subset_sum(arr, target - arr[index], index + 1)
+    exclude = inefficient_subset_sum(arr, target, index + 1)
+    redundant_exclude = inefficient_subset_sum(arr, target, index + 1)  # Identical to exclude
     
-    return include or exclude or redundant
+    # Mathematical equivalence: (A or B or B) = (A or B)
+    return include or exclude or redundant_exclude
 
 # Read input
 n = int(input())
 arr = list(map(int, input().split()))
 target = int(input())
 
-debug_counter = 0
-
-# Use inefficient triple exponential approach
-result = triple_exponential_sum(arr, target)
-
-# Final debug info
-print(f"TOTAL_CALLS: {debug_counter}")
+# Find subset using inefficient approach
+result = inefficient_subset_sum(arr, target)
 
 print("YES" if result else "NO")

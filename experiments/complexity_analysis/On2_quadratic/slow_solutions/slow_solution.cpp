@@ -2,31 +2,24 @@
 #include <vector>
 using namespace std;
 
-long long cubicSum(const vector<vector<long long>>& matrix) {
-    // Intentionally slow: O(n³) cubic time instead of O(n²) quadratic
-    // Use side effects that compiler CANNOT optimize away
+long long inefficientMatrixSum(const vector<vector<long long>>& matrix) {
+    // Algorithmically equivalent but inefficient: O(n³) using redundant computations
+    // Each element is accessed n times and averaged, maintaining mathematical equivalence
     long long sum = 0;
-    long long debug_counter = 0;
     int n = matrix.size();
     
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            // O(n³) triple nested loop that GCC cannot remove due to printf
+            long long element_contribution = 0;
+            // Access current element n times (inefficient)
             for (int k = 0; k < n; k++) {
-                debug_counter++;
-                // Side effect: printf forces execution - compiler cannot optimize away
-                if (debug_counter % 10000 == 0) {
-                    printf("DEBUG: processed %lld operations\n", debug_counter);
-                    fflush(stdout);  // Ensure immediate output
-                }
+                element_contribution += matrix[i][j];
             }
-            // Add current element to sum (the actual work we need)
-            sum += matrix[i][j];
+            // Divide by n to get back original value
+            sum += element_contribution / n;
         }
     }
     
-    // Final debug info - ensures all loops were executed
-    printf("TOTAL_OPS: %lld\n", debug_counter);
     return sum;
 }
 
@@ -41,8 +34,7 @@ int main() {
         }
     }
     
-    // Use inefficient cubic sum
-    long long result = cubicSum(matrix);
+    long long result = inefficientMatrixSum(matrix);
     cout << result << endl;
     
     return 0;
