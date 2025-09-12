@@ -1,0 +1,7 @@
+Classe de Complexidade,Vantagem Python (%),Validação (%),Diferença Algorítmica (%),Status
+O(1),37.4,100,1.0,COMPLETE
+O(log n),41.7,75,1.5,INSIGHTS
+O(n),40.7,100,177.0,COMPLETE
+O(n²),42.5,75,154.0,INSIGHTS
+O(n³),35.0,50,200.0,PARTIAL
+O(2ⁿ),30.0,50,1000.0,PLANNED

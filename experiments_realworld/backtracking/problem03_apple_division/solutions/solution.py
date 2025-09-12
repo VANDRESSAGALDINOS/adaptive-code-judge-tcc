@@ -1,4 +1,4 @@
-import sys
+"import sys
 sys.setrecursionlimit(10000)
 
 def solve():
@@ -25,3 +25,4 @@ def solve():
 
 if __name__ == "__main__":
     solve()
+"

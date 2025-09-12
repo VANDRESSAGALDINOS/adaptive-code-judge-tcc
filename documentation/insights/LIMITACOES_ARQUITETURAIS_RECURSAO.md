@@ -96,3 +96,11 @@ O sistema adaptativo proposto deve considerar não apenas fatores de tempo, mas 
 
 
 
+
+
+
+
+
+
+
+

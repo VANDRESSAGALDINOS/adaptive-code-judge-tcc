@@ -1,10 +1,10 @@
-# Prova Formal - Chessboard and Queens (CSES 1624)
+# Formal Algorithmic Equivalence Proof - N-Queens Problem (CSES 1624)
 
-## 🎯 Equivalência Algorítmica
+## Algorithmic Equivalence Analysis
 
-### **Algoritmos Otimizados**
+### Optimal Algorithm Implementations
 
-#### **C++ Otimizado**
+#### C++ Implementation
 ```cpp
 function<void(int)> dfs = [&](int r) {
     if (r == 8) { ++ans; return; }
@@ -19,7 +19,7 @@ function<void(int)> dfs = [&](int r) {
 };
 ```
 
-#### **Python Otimizado**
+#### Python Implementation
 ```python
 def dfs(r: int, cols: int, d1: int, d2: int):
     if r == 8: ans += 1; return
@@ -30,17 +30,17 @@ def dfs(r: int, cols: int, d1: int, d2: int):
         dfs(r + 1, cols | bc, d1 | b1, d2 | b2)
 ```
 
-**Prova de Equivalência**:
-1. **Estrutura**: Ambos usam backtracking recursivo linha por linha
-2. **Estado**: Ambos mantêm controle de colunas e diagonais ocupadas
-3. **Poda**: Ambos aplicam mesmas verificações de conflito
-4. **Complexidade**: O(8!) com poda eficiente em ambos
+**Equivalence Proof**:
+1. **Structure**: Both employ row-by-row recursive backtracking
+2. **State Management**: Both maintain control of occupied columns and diagonals
+3. **Pruning**: Both apply identical conflict verification
+4. **Complexity**: O(8!) with efficient pruning in both implementations
 
-**∴ Algoritmos são matematicamente equivalentes**
+**Therefore**: Algorithms are mathematically equivalent
 
-### **Algoritmos Ineficientes**
+### Suboptimal Algorithm Implementations
 
-#### **C++ Ineficiente**
+#### C++ Suboptimal Implementation
 ```cpp
 // Gera todas combinações C(n,8) de casas livres
 function<void(int,int)> gen = [&](int idx, int taken) {
@@ -54,7 +54,7 @@ function<void(int,int)> gen = [&](int idx, int taken) {
 };
 ```
 
-#### **Python Ineficiente**
+#### Python Suboptimal Implementation
 ```python
 # Gera todas combinações usando itertools
 for positions in combinations(free_cells, 8):
@@ -67,85 +67,85 @@ for positions in combinations(free_cells, 8):
     if valid: ans += 1
 ```
 
-**Prova de Equivalência**:
-1. **Estratégia**: Ambos geram todas combinações C(n,8)
-2. **Verificação**: Ambos fazem validação O(8²) por combinação
-3. **Complexidade**: O(C(n,8) × 8²) ≈ O(n⁸) para n≈64
+**Equivalence Proof**:
+1. **Strategy**: Both generate all combinations C(n,8)
+2. **Verification**: Both perform O(8²) validation per combination
+3. **Complexity**: O(C(n,8) × 8²) ≈ O(n⁸) for n≈64
 
-**∴ Algoritmos ineficientes são matematicamente equivalentes**
+**Therefore**: Suboptimal algorithms are mathematically equivalent
 
-## 🔬 Descoberta Científica
+## Scientific Discovery
 
-### **Teorema da Seletividade Diferencial a Algoritmos Ineficientes**
+### Theorem: Differential Algorithm Selectivity
 
-**Enunciado**: Para algoritmos matematicamente equivalentes mas algoritmicamente ineficientes, Python demonstra sensibilidade significativamente maior a ineficiências comparado a C++.
+**Statement**: For mathematically equivalent but algorithmically inefficient implementations, Python demonstrates significantly greater sensitivity to inefficiencies compared to C++.
 
-**Prova Empírica**:
+**Empirical Proof**:
 
-#### **Dados CSES (Validação Externa)**:
-- **Algoritmos Otimizados**: C++ ACCEPTED (0.00s), Python ACCEPTED (0.02-0.03s)
-- **Algoritmos Ineficientes**: C++ 90% TLE, Python 100% TLE
+#### CSES Platform Data (External Validation):
+- **Optimal Algorithms**: C++ ACCEPTED (0.00s), Python ACCEPTED (0.02-0.03s)
+- **Suboptimal Algorithms**: C++ 90% TLE, Python 100% TLE
 
-#### **Dados Locais (Validação Controlada)**:
-- **Performance Ratio Otimizado**: 8-13x (Python/C++)
-- **TLE Rate Diferencial**: C++ tolerou 1 caso crítico, Python nenhum
+#### Local Benchmark Data (Controlled Validation):
+- **Optimal Performance Ratio**: 8-13x (Python/C++)
+- **Differential TLE Rate**: C++ tolerated 1 critical case, Python none
 
-### **Corolário da Tolerância Algorítmica**
+### Corollary: Algorithmic Tolerance
 
-**Enunciado**: C++ demonstra maior tolerância a implementações algoritmicamente subótimas que Python.
+**Statement**: C++ demonstrates greater tolerance to algorithmically suboptimal implementations than Python.
 
-**Evidência**: 
-- C++ conseguiu resolver teste #10 (0.47s) mesmo com algoritmo O(n⁸)
-- Python falhou em todos os testes com mesmo algoritmo
+**Evidence**: 
+- C++ solved test case #10 (0.47s) even with O(n⁸) algorithm
+- Python failed all test cases with identical algorithm
 
-## 📊 Análise Matemática
+## Mathematical Analysis
 
-### **Complexidade Teórica vs Prática**
+### Theoretical vs Practical Complexity
 
-#### **Algoritmos Otimizados**
-- **Teórica**: O(8!) ≈ 40,320 operações
-- **Prática C++**: ~0.002s
-- **Prática Python**: ~0.025s
-- **Overhead Python**: ~12.5x
+#### Optimal Algorithms
+- **Theoretical**: O(8!) ≈ 40,320 operations
+- **C++ Practice**: ~0.002s
+- **Python Practice**: ~0.025s
+- **Python Overhead**: ~12.5x
 
-#### **Algoritmos Ineficientes**
-- **Teórica**: O(C(64,8) × 8²) ≈ 2.8 × 10¹¹ operações
-- **Prática C++**: >1s (alguns casos passam)
-- **Prática Python**: >1s (todos casos falham)
-- **Diferencial**: Python atinge limite antes
+#### Suboptimal Algorithms
+- **Theoretical**: O(C(64,8) × 8²) ≈ 2.8 × 10¹¹ operations
+- **C++ Practice**: >1s (some cases pass)
+- **Python Practice**: >1s (all cases fail)
+- **Differential**: Python reaches limit first
 
-### **Threshold de Ineficiência**
+### Inefficiency Threshold
 
-**Definição**: Ponto onde algoritmo se torna impraticável.
+**Definition**: Point where algorithm becomes impractical.
 
-**C++**: Threshold ≈ 10¹⁰-10¹¹ operações
-**Python**: Threshold ≈ 10⁹-10¹⁰ operações
+**C++**: Threshold ≈ 10¹⁰-10¹¹ operations
+**Python**: Threshold ≈ 10⁹-10¹⁰ operations
 
-**Razão de Thresholds**: ~10x diferença
+**Threshold Ratio**: ~10x difference
 
-## 🎯 Significância Científica
+## Scientific Significance
 
-### **1. Validação da Hipótese Principal**
-✅ **Confirmado**: Seletividade diferencial existe e é mensurável
-✅ **Quantificado**: Fator de 10x na tolerância a ineficiências
+### 1. Primary Hypothesis Validation
+**Confirmed**: Differential selectivity exists and is measurable
+**Quantified**: 10x factor in tolerance to inefficiencies
 
-### **2. Descoberta Metodológica**
-- **Algoritmos corretos**: Ambas linguagens são relativamente justas
-- **Algoritmos incorretos**: Disparidade se amplifica drasticamente
-- **Implicação**: Injustiça se manifesta em código mal escrito
+### 2. Methodological Discovery
+- **Correct Algorithms**: Both languages are relatively fair
+- **Incorrect Algorithms**: Disparity amplifies drastically
+- **Implication**: Bias manifests in poorly written code
 
-### **3. Contribuição Teórica**
-**Novo Conceito**: "Seletividade Diferencial a Algoritmos Ineficientes"
-- Complementa injustiça algorítmica tradicional
-- Revela disparidade oculta em implementações ruins
-- Importante para sistemas educacionais e competitivos
+### 3. Theoretical Contribution
+**New Concept**: "Differential Algorithm Selectivity"
+- Complements traditional algorithmic bias
+- Reveals hidden disparity in suboptimal implementations
+- Important for educational and competitive systems
 
-## ✅ Conclusão Formal
+## Formal Conclusion
 
-**Teorema Provado**: Para o problema N-Queens 8×8, Python demonstra seletividade diferencial significativa a algoritmos ineficientes comparado a C++, mesmo quando algoritmos são matematicamente equivalentes.
+**Theorem Proven**: For the N-Queens 8×8 problem, Python demonstrates significant differential selectivity to inefficient algorithms compared to C++, even when algorithms are mathematically equivalent.
 
-**Coeficiente de Seletividade**: ~10x (C++ tolera 10x mais ineficiência)
+**Selectivity Coefficient**: ~10x (C++ tolerates 10x more inefficiency)
 
-**Validação**: Confirmada por dados CSES externos e benchmarks locais controlados.
+**Validation**: Confirmed by external CSES data and controlled local benchmarks.
 
 **QED** ∎

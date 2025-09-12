@@ -206,3 +206,11 @@ Injustiça = f(Overhead_Interpretativo × Intensidade_Computacional)
 
 
 
+
+
+
+
+
+
+
+
