@@ -1,4 +1,4 @@
-FROM gcc:latest
+qFROM gcc:latest
 
 RUN apt-get update && apt-get install -y \
     time \
