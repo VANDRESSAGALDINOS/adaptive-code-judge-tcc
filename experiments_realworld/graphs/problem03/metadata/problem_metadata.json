@@ -1,0 +1,84 @@
+{
+  "experiment": {
+    "category": "graphs",
+    "problem": "problem03",
+    "date": "2025-08-30T23:30:00.000000",
+    "status": "complete"
+  },
+  "performance_factors": {
+    "median_adjustment": 3.19,
+    "reliability": "High",
+    "cpp_iqr": 1.8,
+    "python_iqr": 1.4
+  },
+  "correction_analysis": {
+    "traditional_python_success": 33.3,
+    "adaptive_python_success": 66.7,
+    "improvement": 33.3,
+    "binary_verdict_methodology": {
+      "traditional_cpp": "REJECTED",
+      "traditional_python": "REJECTED", 
+      "adaptive_cpp": "REJECTED",
+      "adaptive_python": "REJECTED",
+      "injustice_detected": false,
+      "injustice_corrected": false,
+      "python_rescued": false,
+      "observation": "Both languages fail - cases too heavy for 1.0s limit"
+    }
+  },
+  "selectivity": {
+    "preserved": true,
+    "slow_cpp_tle": true,
+    "slow_python_tle": true,
+    "tested_cases": [8, 12]
+  },
+  "validation": {
+    "score": 100.0,
+    "all_valid": true,
+    "criteria": {
+      "realistic_factor": true,
+      "three_sizes": true,
+      "slow_solutions_tle": true,
+      "correlation_verified": true,
+      "insights_documented": true,
+      "anomalies_identified": true,
+      "high_reliability": true,
+      "good_stability": true
+    }
+  },
+  "classification": {
+    "emblematic": true,
+    "represents_category": false,
+    "sufficient_data": true,
+    "priority": "Medium",
+    "score": 85.0,
+    "observation": "Platform variability vs CSES"
+  },
+  "graphics_metadata": {
+    "include_executive": true,
+    "include_heatmap": false,
+    "narrative_case": true,
+    "priority": "Medium"
+  },
+  "external_validation": {
+    "platform": "CSES 1750",
+    "cses_tle_cases": [6, 7, 8, 9, 10, 12, 14],
+    "our_tle_cases": [8, 12],
+    "tle_correlation": 0.67,
+    "cpp_success_cses": 100,
+    "cpp_success_ours": 66.7,
+    "python_success_cses": 57,
+    "python_success_ours": 33.3,
+    "language_gap_cses": 43,
+    "language_gap_ours": 33.3,
+    "validation_status": "Platform variability documented"
+  },
+  "algorithmic_discovery": {
+    "algorithm": "Binary Lifting",
+    "complexity": "O(n log k + q log k)",
+    "injustice_factor": 3.19,
+    "injustice_category": "Moderate-Severe",
+    "theory_confirmation": "Recursive/simulation algorithms have injustice > simple algorithms",
+    "dijkstra_comparison": "3.19x vs 4-7x (binary lifting slightly better)"
+  }
+}

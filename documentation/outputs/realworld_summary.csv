@@ -1,6 +1,0 @@
-Problema,CSES ID,Python (%),C++ (%),Injustiça,Severidade,Gap Performance (x)
-Chessboard Queens,CSES 1624,100,100,False,None,1.0
-Grid Paths,CSES 1625,30,100,True,Severe,77.0
-Apple Division,CSES 1623,100,100,False,None,1.0
-Coin Combinations,CSES 1635,0,100,True,Architectural,0.0
-Shortest Paths,CSES 1672,85,100,False,Mild,4.3
