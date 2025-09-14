@@ -13,10 +13,10 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 os.environ['SQLITE_PATH'] = os.path.join(os.path.dirname(__file__), 'data', 'adaptive_judge.db')
 
 if __name__ == '__main__':
-    print("🚀 Iniciando Adaptive Code Judge...")
-    print(f"🐍 Python: {sys.version}")
-    print(f"📁 Diretório: {os.path.dirname(__file__)}")
-    print(f"💾 Database: {os.environ['SQLITE_PATH']}")
+    print("Starting Adaptive Code Judge...")
+    print(f"Python: {sys.version}")
+    print(f"Directory: {os.path.dirname(__file__)}")
+    print(f"Database: {os.environ['SQLITE_PATH']}")
     print()
     
     try:
@@ -25,8 +25,8 @@ if __name__ == '__main__':
         
         app = create_app()
         
-        print("✅ Aplicação criada com sucesso!")
-        print("🌐 Iniciando servidor em http://localhost:8000")
+        print("Application created successfully!")
+        print("Starting server at http://localhost:8000")
         print("Press Ctrl+C to stop")
         print("-" * 50)
         
@@ -38,7 +38,7 @@ if __name__ == '__main__':
         )
         
     except Exception as e:
-        print(f"❌ Erro: {e}")
+        print(f"Error: {e}")
         import traceback
         traceback.print_exc()
         sys.exit(1)

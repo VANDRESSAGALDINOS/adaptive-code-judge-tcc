@@ -3,25 +3,25 @@
 
 export PYTHON_CMD="/usr/bin/python3"
 
-echo "🚀 Adaptive Code Judge Launcher"
-echo "🐍 Usando Python: $($PYTHON_CMD --version)"
+echo "Adaptive Code Judge Launcher"
+echo "Using Python: $($PYTHON_CMD --version)"
 echo ""
 
 case "$1" in
     "server"|"start")
-        echo "📡 Iniciando servidor..."
+        echo "Starting server..."
         $PYTHON_CMD start_server.py
         ;;
     "test")
-        echo "🧪 Executando testes completos..."
+        echo "Running complete tests..."
         $PYTHON_CMD test.py
         ;;
     "demo")
-        echo "🎬 Executando demonstração..."
+        echo "Running demonstration..."
         $PYTHON_CMD demo_final.py
         ;;
     "docker-test")
-        echo "🐳 Testando Docker..."
+        echo "Testing Docker..."
         echo "Testando execução direta via Docker..."
         echo 'print("Hello Docker Python!")' > /tmp/test.py
         docker run --rm -v /tmp:/workspace -w /workspace adaptivejudge-python:latest python3 test.py
