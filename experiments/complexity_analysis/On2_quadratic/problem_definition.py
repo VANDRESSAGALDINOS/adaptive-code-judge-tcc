@@ -70,11 +70,11 @@ def create_problem(problem_service: ProblemService):
         },
         {
             'name': 'massive_matrix',
-            'input': '1000\n' + '\n'.join([' '.join(map(str, [(i + j) % 10 + 1 for j in range(1000)])) for i in range(1000)]),
-            'output': '5500000',  # Sum of 1000x1000 matrix with pattern (i+j)%10+1
+            'input': '4000\n' + '\n'.join([' '.join(map(str, [(i + j) % 10 + 1 for j in range(4000)])) for i in range(4000)]),
+            'output': '88000000',  # Sum of 4000x4000 matrix with pattern (i+j)%10+1
             'complexity_hint': 'O(n²)',
-            'input_size': 4000000,  # ~4MB input, 1M elements
-            'description': 'Massive 1000×1000 matrix, algorithmic difference should dominate Docker overhead'
+            'input_size': 33600005,  # ~33.6MB input, 16M elements
+            'description': 'Massive 4000x4000 matrix; sized per Sec 3.2 (10:1 rule) so the O(n^2) cost dominates parsing/startup and both languages run >=1s, above the 0.01s timer resolution'
         }
     ]
     

@@ -1,0 +1,69 @@
+{
+  "experiment": "On2_quadratic",
+  "timestamp": "2026-05-26T23:15:51.963841",
+  "problem": {
+    "id": 1,
+    "title": "Matrix Sum (O(n\u00b2))",
+    "complexity": "On2_quadratic"
+  },
+  "benchmark": {
+    "cpp_median": 1.06,
+    "python_median": 1.62,
+    "cpp_iqr": 0.07499999999999973,
+    "python_iqr": 0.05999999999999983,
+    "adjustment_factor": 1.528301886792453,
+    "adjustment_factor_ci95": [
+      1.3982300884955754,
+      1.5566037735849054
+    ],
+    "bootstrap": {
+      "method": "percentile bootstrap on ratio of medians (resample times with replacement)",
+      "n_resamples": 10000,
+      "seed": 42
+    },
+    "is_reliable": true,
+    "cpp_times": [
+      1.13,
+      1.06,
+      1.13,
+      1.05,
+      1.06
+    ],
+    "python_times": [
+      1.62,
+      1.63,
+      1.58,
+      1.58,
+      1.65
+    ],
+    "repetitions": 5,
+    "test_case_used": "massive_matrix",
+    "adaptive": {
+      "cpp": {
+        "n_reps": 5,
+        "iqr_ratio": 0.07075471698113182,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.15
+      },
+      "python": {
+        "n_reps": 5,
+        "iqr_ratio": 0.03703703703703693,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.2
+      }
+    },
+    "method": {
+      "block_size": 5,
+      "min_repetitions": 5,
+      "max_repetitions": 35,
+      "timer": "/usr/bin/time -f %e (in-container, execution only)",
+      "cpp_compile_flags": "-O2",
+      "memory_limit": "512m",
+      "cpus": "1.0",
+      "cpp_image": "adaptive-judge-cpp:latest",
+      "python_image": "adaptive-judge-python:latest"
+    }
+  }
+}

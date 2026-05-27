@@ -105,6 +105,7 @@ class DockerExecutor:
                 'volumes': {temp_dir: {'bind': '/workspace', 'mode': 'rw'}},
                 'mem_limit': f'{memory_limit}m',
                 'memswap_limit': f'{memory_limit}m',
+                'nano_cpus': int(float(self.config.DOCKER_CPUS) * 1_000_000_000),
                 'oom_kill_disable': False,
                 'network_disabled': True,
                 'detach': True,

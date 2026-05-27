@@ -34,8 +34,6 @@ class BenchmarkService:
             problem_id=problem_id,
             largest_test_case_id=largest_test_case.id,
             repetitions=repetitions,
-            factor_cap=self.config.BENCHMARK_FACTOR_CAP,
-            min_factor=self.config.BENCHMARK_MIN_FACTOR,
             status=BenchmarkStatus.PENDING
         )
         
@@ -211,14 +209,12 @@ class BenchmarkService:
             benchmark.python_status = BenchmarkStatus.FAILED
         
         if benchmark.base_time_cpp and benchmark.python_median_time:
-            raw_factor = benchmark.python_median_time / benchmark.base_time_cpp
-            
-            benchmark.adjustment_factor_python = max(
-                benchmark.min_factor,
-                min(benchmark.factor_cap, raw_factor)
+            # beta = raw median ratio, NO clamp (see AppConfig).
+            benchmark.adjustment_factor_python = (
+                benchmark.python_median_time / benchmark.base_time_cpp
             )
-            
-            logger.info(f"Calculated adjustment factor: {raw_factor:.2f} -> {benchmark.adjustment_factor_python:.2f}")
+
+            logger.info(f"Calculated adjustment factor (beta): {benchmark.adjustment_factor_python:.4f}")
         
         if (benchmark.cpp_status == BenchmarkStatus.STABLE and 
             benchmark.python_status == BenchmarkStatus.STABLE and

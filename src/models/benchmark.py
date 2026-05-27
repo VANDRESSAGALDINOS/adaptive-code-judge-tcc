@@ -30,16 +30,15 @@ class Benchmark(db.Model, TimestampMixin):
     python_status = db.Column(db.Enum(BenchmarkStatus), nullable=False, default=BenchmarkStatus.PENDING)
     python_iqr = db.Column(db.Float, nullable=True)
     
+    # Raw median ratio (Python/C++); NO clamp applied (see AppConfig).
     adjustment_factor_python = db.Column(db.Float, nullable=True)
-    factor_cap = db.Column(db.Float, nullable=False, default=12.0)
-    min_factor = db.Column(db.Float, nullable=False, default=1.0)
-    
+
     status = db.Column(db.Enum(BenchmarkStatus), nullable=False, default=BenchmarkStatus.PENDING)
     is_reliable = db.Column(db.Boolean, nullable=False, default=False)
     error_message = db.Column(db.Text, nullable=True)
     
-    docker_cpp_image = db.Column(db.String(100), nullable=True, default="adaptivejudge-cpp:latest")
-    docker_python_image = db.Column(db.String(100), nullable=True, default="adaptivejudge-python:latest")
+    docker_cpp_image = db.Column(db.String(100), nullable=True, default="adaptive-judge-cpp:latest")
+    docker_python_image = db.Column(db.String(100), nullable=True, default="adaptive-judge-python:latest")
     largest_test_case = db.relationship('TestCase', foreign_keys=[largest_test_case_id])
     active_for_problems = db.relationship('ProblemBenchmarkActive', backref='benchmark', lazy=True)
     
@@ -59,8 +58,6 @@ class Benchmark(db.Model, TimestampMixin):
             'python_status': self.python_status.value if self.python_status else None,
             'python_iqr': self.python_iqr,
             'adjustment_factor_python': self.adjustment_factor_python,
-            'factor_cap': self.factor_cap,
-            'min_factor': self.min_factor,
             'status': self.status.value if self.status else None,
             'is_reliable': self.is_reliable,
             'error_message': self.error_message,
