@@ -2,17 +2,17 @@
 
 ## Resumo Executivo
 
-**Descoberta Principal**: Python supera C++ em **-52.8%** para algoritmo não especificado em ambientes containerizados.
+**Descoberta Principal**: Python supera C++ em **-51.4%** para algoritmo não especificado em ambientes containerizados.
 
 **Resultado**: Esperado - confirma teoria
 
 ## Dados Experimentais Brutos
 
 ### Performance Medida
-- **C++ Mediano**: 1.0600s
-- **Python Mediano**: 1.6200s  
-- **Razão Python/C++**: 1.528x
-- **Vantagem Python**: -52.8%
+- **C++ Mediano**: 1.0599s
+- **Python Mediano**: 1.6044s
+- **Razão Python/C++**: 1.514x
+- **Vantagem Python**: -51.4%
 
 ### Confiabilidade
 - **Repetições Bem-sucedidas**: 5/10
@@ -20,8 +20,8 @@
 - **Confiável**: Sim
 
 ### Variabilidade (IQR)
-- **C++ IQR**: 0.0750s (7.1%)
-- **Python IQR**: 0.0600s (3.7%)
+- **C++ IQR**: 0.0216s (2.0%)
+- **Python IQR**: 0.0407s (2.5%)
 
 ## Análise dos Resultados
 
@@ -56,9 +56,9 @@
 {
   "adaptive_limits": {
     "problem_type": "On2_quadratic",
-    "cpp_limit_ms": 1060,
-    "python_limit_ms": 1620,
-    "adjustment_factor": 1.528
+    "cpp_limit_ms": 1059,
+    "python_limit_ms": 1604,
+    "adjustment_factor": 1.514
   }
 }
 ```
@@ -67,22 +67,22 @@
 
 ### Execuções C++
 ```
-[1.13, 1.06, 1.13, 1.05, 1.06]
+[1.0889060497283936, 1.0555834770202637, 1.0679731369018555, 1.059885025024414, 1.0580341815948486]
 ```
 
-### Execuções Python  
+### Execuções Python
 ```
-[1.62, 1.63, 1.58, 1.58, 1.65]
+[1.6006889343261719, 1.6484425067901611, 1.5973975658416748, 1.604419231414795, 1.631051778793335]
 ```
 
 ## Conclusão
 
-Este experimento demonstra que **performance é contextual** e depende criticamente do ambiente de execução. 
+Este experimento demonstra que **performance é contextual** e depende criticamente do ambiente de execução.
 
 Os resultados confirmam expectativas teóricas e demonstram a importância de medições empíricas.
 
 **Para sistemas de juízes online, estes dados justificam limites de tempo adaptativos** que considerem a performance real de cada linguagem no ambiente de produção.
 
 ---
-*Relatório gerado automaticamente em 26/05/2026 23:15:51*
+*Relatório gerado automaticamente em 27/05/2026 22:27:52*
 *Experimento conduzido como parte do projeto Adaptive Code Judge*

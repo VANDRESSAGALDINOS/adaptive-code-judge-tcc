@@ -1,20 +1,23 @@
 {
-  "experiment": "On2_quadratic",
-  "timestamp": "2026-05-27T22:27:52.797240",
-  "problem": {
-    "id": 3,
-    "title": "Matrix Sum (O(n\u00b2))",
-    "complexity": "On2_quadratic"
+  "problem": "graphs/problem02 (CSES 1671 - Cycle Finding)",
+  "phase": "calibration",
+  "timestamp": "2026-05-27T22:28:09.073366",
+  "selected_case": {
+    "id": 8,
+    "name": "8.in",
+    "input_bytes": 96596,
+    "selection_criterion": "largest input in bytes, ties by smaller id (item 7, option 1)"
   },
+  "solutions": "optimal",
   "benchmark": {
-    "cpp_median": 1.059885025024414,
-    "python_median": 1.604419231414795,
-    "cpp_iqr": 0.02163076400756836,
-    "python_iqr": 0.04070389270782471,
-    "adjustment_factor": 1.5137672422325599,
+    "cpp_median": 0.02400660514831543,
+    "python_median": 0.8541724681854248,
+    "cpp_iqr": 0.003448486328125,
+    "python_iqr": 0.03260242938995361,
+    "adjustment_factor": 35.58072717521924,
     "adjustment_factor_ci95": [
-      1.4734230118521117,
-      1.555303139368527
+      29.365816673633823,
+      36.93771042099095
     ],
     "bootstrap": {
       "method": "percentile bootstrap on ratio of medians (resample times with replacement)",
@@ -23,32 +26,32 @@
     },
     "is_reliable": true,
     "cpp_times": [
-      1.0889060497283936,
-      1.0555834770202637,
-      1.0679731369018555,
-      1.059885025024414,
-      1.0580341815948486
+      0.02323603630065918,
+      0.02400660514831543,
+      0.023525476455688477,
+      0.02457118034362793,
+      0.029087305068969727
     ],
     "python_times": [
-      1.6006889343261719,
-      1.6484425067901611,
-      1.5973975658416748,
-      1.604419231414795,
-      1.631051778793335
+      0.8560652732849121,
+      0.8278260231018066,
+      0.8497834205627441,
+      0.8541724681854248,
+      0.8867490291595459
     ],
     "repetitions": 5,
-    "test_case_used": "massive_matrix",
+    "test_case_used": "8.in",
     "adaptive": {
       "cpp": {
         "n_reps": 5,
-        "iqr_ratio": 0.020408594797412204,
+        "iqr_ratio": 0.14364739649025235,
         "converged": true,
         "hit_cap": false,
         "threshold": 0.15
       },
       "python": {
         "n_reps": 5,
-        "iqr_ratio": 0.0253698608884983,
+        "iqr_ratio": 0.038168438581511664,
         "converged": true,
         "hit_cap": false,
         "threshold": 0.2
