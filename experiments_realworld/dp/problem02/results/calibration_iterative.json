@@ -1,0 +1,72 @@
+{
+  "problem": "dp/problem02 (CSES 1638 - Grid Paths, iterative)",
+  "phase": "calibration",
+  "timestamp": "2026-05-30T21:05:35.622043",
+  "selected_case": {
+    "id": 6,
+    "name": "6.in",
+    "input_bytes": 1001005,
+    "selection_criterion": "largest input in bytes, ties by smaller id (item 7, option 1)"
+  },
+  "solutions": "optimal",
+  "benchmark": {
+    "cpp_median": 0.011432647705078125,
+    "python_median": 0.1374976634979248,
+    "cpp_iqr": 0.00037789344787597656,
+    "python_iqr": 0.0016679763793945312,
+    "adjustment_factor": 12.026755922589256,
+    "adjustment_factor_ci95": [
+      11.654441644993499,
+      12.150462231768694
+    ],
+    "bootstrap": {
+      "method": "percentile bootstrap on ratio of medians (resample times with replacement)",
+      "n_resamples": 10000,
+      "seed": 42
+    },
+    "is_reliable": true,
+    "cpp_times": [
+      0.011344671249389648,
+      0.0117340087890625,
+      0.011432647705078125,
+      0.011688232421875,
+      0.011321783065795898
+    ],
+    "python_times": [
+      0.13675332069396973,
+      0.1374976634979248,
+      0.13756489753723145,
+      0.13570547103881836,
+      0.1382298469543457
+    ],
+    "repetitions": 5,
+    "test_case_used": "6.in",
+    "adaptive": {
+      "cpp": {
+        "n_reps": 5,
+        "iqr_ratio": 0.033053887220553885,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.15
+      },
+      "python": {
+        "n_reps": 5,
+        "iqr_ratio": 0.012130943442684066,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.2
+      }
+    },
+    "method": {
+      "block_size": 5,
+      "min_repetitions": 5,
+      "max_repetitions": 35,
+      "timer": "date +%s.%N wall delta (in-container, execution only, microsecond resolution)",
+      "cpp_compile_flags": "-O2",
+      "memory_limit": "512m",
+      "cpus": "1.0",
+      "cpp_image": "adaptive-judge-cpp:latest",
+      "python_image": "adaptive-judge-python:latest"
+    }
+  }
+}
