@@ -293,3 +293,50 @@
   - AJUSTE: SLOW_FACTOR elevado 100 → 300. CSES iterativa ×300: C++ TLE {6,7,8,9,10}, Python TLE {6,7,8,9,10} → REJEITADA nas DUAS (seletividade limpa). ✓ confirmado.
 - RESUMO CSES suboptimal: as 2 suboptimals (recursiva sem memo + iterativa ×300) ficam REJEITADAS nas duas linguagens no CSES.
 - SELETIVIDADE LOCAL (bench, sob β_op 23,47s, reps=1, hard-kill): decisivo #6 (CSES-TLE) + controles {1-5}. As DUAS suboptimals: controles {1-5} AC (corretas, só lentas); decisivo #6 trad[cpp=TLE, py=TLE] adapt[py=TLE] → 0 resgatadas pelo adaptativo, selectivity_preserved=True, 0 WA. Mesmo com o bônus de 23,47s o juiz adaptativo NÃO deixa passar as suboptimals (continuam rejeitadas). ✓ dp/problem02 FECHADO (optimal + suboptimal, 2 estilos).
+
+---
+
+## dp/problem03 — Two Sets II (CSES 1093)
+- Time limit oficial: 1,00s
+- Memory limit oficial: 512 MB
+- Link do problema: https://cses.fi/problemset/task/1093
+- Design DP: contar subconjuntos de {1..n} com soma S/2 (S=n(n+1)/2; se S ímpar → 0; ÷2 via inverso modular de 2 / Fermat). Dois optimals — ITERATIVO (rolling 2-row, O(n²) espaço) vs RECURSIVO (top-down + memo 2D cheio, O(n³) espaço); ambos O(n³) tempo. n≤500. 24 casos.
+- FIX (análise estática, pré-CSES): o C++ iterativo usava matriz 2D cheia (~250MB) e o Python rolling 2-row — não batiam (distorceria β). C++ iterativo reescrito p/ rolling 2-row (= Python); re-validado no CSES (AC).
+
+### Submissões CSES (auditoria externa)
+
+**C++ optimal ITERATIVO** (C++11, rolling pós-fix, 2026-05-31, dressa)
+- Resultado: ACCEPTED 24/24. Tempo máximo: 0,07s (#21, #24). Confirma o fix.
+
+**C++ optimal RECURSIVO** (C++11, memo 2D, 2026-05-31, dressa)
+- Resultado: ACCEPTED 24/24. Tempo máximo: 0,57s (#21, #24). ~8× mais lento que o iterativo (memo 250MB + memset + recursão), mas AC.
+
+**Python optimal ITERATIVO** (CPython3, 2026-05-31, dressa)
+- Resultado: TIME LIMIT EXCEEDED. Casos TLE: {17,19,20,21,23,24} (n=328,431,451,500,480,499 — even-sum grandes). Máx AC 0,16s (#15, n=147).
+
+**Python optimal RECURSIVO** (CPython3, 2026-05-31, dressa)
+- Resultado: TIME LIMIT EXCEEDED. Casos TLE: {17,19,20,21,23,24} (os MESMOS do iterativo). Máx AC 0,44s (#15). Sem MLE (memo coube em 512 MB, só estourou tempo).
+- INJUSTIÇA confirmada: os 2 Python TLE, os 2 C++ AC. Recursão NÃO foi decisiva (os 2 estilos Python falham nos mesmos casos — como dp01, ≠ dp02).
+
+### Calibração local (pipeline rigoroso) — dois β
+- Caso = #21 (n=500, --case 21 override; o seletor por bytes não distingue — inputs ~3 bytes, driver de custo é n³).
+- **β_iterativo = 68,27** [64,91–74,22] IC95. C++ 0,0312s (IQR 8,7%, 5 reps), Python 2,13s (IQR 0,3%, 5 reps). is_reliable=True.
+- **β_recursivo = 43,27** [40,24–47,86] IC95. C++ 0,191s (IQR 0,8%, 5 reps), Python 8,26s (IQR 16,1%, 10 reps). is_reliable=True.
+  - NOTA de confiabilidade (is_reliable validada na prática): uma rodada ANTERIOR do recursivo saiu is_reliable=**False** (β=39,01; C++ IQR=37%, bateu no teto de 35 reps) e ENVIESADA — outliers de contenção esporádica do host (macOS/Docker, sem cpuset/governador, S3.6) inflaram a mediana C++ (0,2035s vs ~0,191s limpos) e DEFLACIONARAM o β. As re-rodadas reliable concordam (42,73 e 43,27; IC95 sobrepostos). Experimento isolado de 35 runs do C++ deu IQR de só 3,4% → o ruído é do HOST, não do algoritmo/memset; a repetição adaptativa + a flag is_reliable filtram (descartar/re-rodar quando false, em vez de aceitar β contaminado). Em rodadas diferentes o pico de contenção cai num lado diferente (ora C++, ora Python).
+- ACHADO (QP3): **β_rec < β_iter** (43 < 68) — INVERTE dp01 (β_rec≫β_iter) e dp02 (β_rec~2×). Os IC95 não se sobrepõem → robusto. Causa ESTRUTURAL (validada por medição isolada dos 4 lados, caso #21): a recursão deixa o C++ ~6,3× mais lento (0,031s→0,191s, memo 2D cheio de 250MB + memset) mas o Python só ~3,6× (2,15s→7,78s) → como β=T_py/T_cpp e o denominador (C++) cresce mais, o β encolhe.
+- **β OPERACIONAL = max(β_iter, β_rec) = β_iterativo = 68,27** (reliable). PRIMEIRO DP em que o operacional vem do ITERATIVO (dp01/dp02 vinha do recursivo). Limite adaptativo Python = 68,27s; resgata os 2 estilos (Python iter 2,13s, rec 8,26s, ambos < 68,27s). NOTA: aqui a intuição "estilo mais lento = maior β" quebra (o mais lento é o rec, mas tem o menor β); mesmo assim max(β) resgata tudo, pois todo C++ < 1,0s → β_estilo×1,0 ≥ tempo_Python_estilo.
+
+### Cross-check pipeline vs CSES
+- SEM cross-check de β confiável (igual dp02 e problem03 grafos): nos casos grandes o Python deu TLE no CSES (sem tempo registrado) e o C++ iterativo está no piso de resolução (~0,03–0,07s) — razão Python/C++ instável. O β é a medição controlada local. (NÃO fabricar razão a partir do piso de resolução.)
+
+### Injustiça e correção adaptativa
+- Veredito local sob β operacional **68,27s** (24 casos, 3 reps), os dois estilos, 0 WRONG_ANSWER (equivalência comportamental confirmada):
+  - **ITERATIVO**: 5 TLE injusto (trad. 1,0s) {19,20,21,23,24}; resgatados pelo adaptativo 5/5 (100%). Reproduz 5 dos 6 TLE do CSES — perde o borderline #17 (o Python iterativo local é rápido o bastante, #17 fica < 1,0s).
+  - **RECURSIVO**: 6 TLE injusto {17,19,20,21,23,24}; resgatados 6/6 (100%). Reproduz EXATO os 6 do CSES (o Python recursivo é mais lento — 8,3s vs 2,1s em n=500 — então mesmo o #17 estoura 1,0s local).
+  - Limite adaptativo 68,27s resgata 100% nos dois estilos; nenhum WA.
+  - Nuance (valida S2.2 do artigo): mesmo problema, mesma complexidade O(n³), mesma resposta — só o ESTILO muda, e o RECURSIVO é mais propenso a TLE (reproduz +1 caso de injustiça que o iterativo). A penalidade da recursão em Python é real e mensurável.
+
+### Notas
+- test_data: BAIXADO do CSES (não gerado — gerar o output seria circular com a nossa solução). Download inicial veio com 23 casos (faltava o n=1) e numeração +1 deslocada; reconstruído dos detalhes oficiais (Test #1..#24) → 24/24, numeração IDÊNTICA ao CSES (#N = caso N). Stress n=500 = #21.
+- Casos com S ímpar (n=222,357,69,114,126…) curto-circuitam em 0 instantâneo; só even-sum grandes (n=107,112,147,431,451,480,499,500) são pesados.
+- O legado problem_specification.md tinha erro (dizia n=4 → soma ímpar → 0; na verdade soma 10 é par, resposta 1, confirmado pelo CSES #4). Já em _legacy/; usamos o output do CSES.

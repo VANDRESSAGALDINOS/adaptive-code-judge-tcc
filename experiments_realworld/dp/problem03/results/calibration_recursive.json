@@ -1,0 +1,77 @@
+{
+  "problem": "dp/problem03 (CSES 1093 - Two Sets II, recursive)",
+  "phase": "calibration",
+  "timestamp": "2026-05-31T00:09:24.329543",
+  "selected_case": {
+    "id": 21,
+    "name": "21.in",
+    "input_bytes": 4,
+    "selection_criterion": "largest input in bytes, ties by smaller id (item 7, option 1)"
+  },
+  "solutions": "optimal",
+  "benchmark": {
+    "cpp_median": 0.19095969200134277,
+    "python_median": 8.263683199882507,
+    "cpp_iqr": 0.001585245132446289,
+    "python_iqr": 1.3289620280265808,
+    "adjustment_factor": 43.27448957041887,
+    "adjustment_factor_ci95": [
+      40.23539710182133,
+      47.857772650488236
+    ],
+    "bootstrap": {
+      "method": "percentile bootstrap on ratio of medians (resample times with replacement)",
+      "n_resamples": 10000,
+      "seed": 42
+    },
+    "is_reliable": true,
+    "cpp_times": [
+      0.1931746006011963,
+      0.19112873077392578,
+      0.19095969200134277,
+      0.1904451847076416,
+      0.1906876564025879
+    ],
+    "python_times": [
+      7.574619770050049,
+      7.483344078063965,
+      10.251836061477661,
+      8.861385345458984,
+      7.768387794494629,
+      7.7765257358551025,
+      7.861030578613281,
+      8.666335821151733,
+      9.611475229263306,
+      8.670369625091553
+    ],
+    "repetitions": 5,
+    "test_case_used": "21.in",
+    "adaptive": {
+      "cpp": {
+        "n_reps": 5,
+        "iqr_ratio": 0.008301464648545528,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.15
+      },
+      "python": {
+        "n_reps": 10,
+        "iqr_ratio": 0.1608195759543972,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.2
+      }
+    },
+    "method": {
+      "block_size": 5,
+      "min_repetitions": 5,
+      "max_repetitions": 35,
+      "timer": "date +%s.%N wall delta (in-container, execution only, microsecond resolution)",
+      "cpp_compile_flags": "-O2",
+      "memory_limit": "512m",
+      "cpus": "1.0",
+      "cpp_image": "adaptive-judge-cpp:latest",
+      "python_image": "adaptive-judge-python:latest"
+    }
+  }
+}
