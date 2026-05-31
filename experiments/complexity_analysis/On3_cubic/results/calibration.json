@@ -1,0 +1,69 @@
+{
+  "experiment": "On3_cubic",
+  "timestamp": "2026-05-31T19:35:21.693193",
+  "problem": {
+    "id": 24,
+    "title": "Matrix Multiplication (O(n\u00b3))",
+    "complexity": "On3_cubic"
+  },
+  "benchmark": {
+    "cpp_median": 0.021943092346191406,
+    "python_median": 1.694509506225586,
+    "cpp_iqr": 0.0007148981094360352,
+    "python_iqr": 0.01622915267944336,
+    "adjustment_factor": 77.22291277326264,
+    "adjustment_factor_ci95": [
+      76.15750315394486,
+      79.30835005574136
+    ],
+    "bootstrap": {
+      "method": "percentile bootstrap on ratio of medians (resample times with replacement)",
+      "n_resamples": 10000,
+      "seed": 42
+    },
+    "is_reliable": true,
+    "cpp_times": [
+      0.021943092346191406,
+      0.022130727767944336,
+      0.021425962448120117,
+      0.021386146545410156,
+      0.022111177444458008
+    ],
+    "python_times": [
+      1.694509506225586,
+      1.68404221534729,
+      1.6839320659637451,
+      1.6960999965667725,
+      1.7043325901031494
+    ],
+    "repetitions": 5,
+    "test_case_used": "massive_matrices",
+    "adaptive": {
+      "cpp": {
+        "n_reps": 5,
+        "iqr_ratio": 0.03257964274848972,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.15
+      },
+      "python": {
+        "n_reps": 5,
+        "iqr_ratio": 0.009577492849593262,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.2
+      }
+    },
+    "method": {
+      "block_size": 5,
+      "min_repetitions": 5,
+      "max_repetitions": 35,
+      "timer": "date +%s.%N wall delta (in-container, execution only, microsecond resolution)",
+      "cpp_compile_flags": "-O2",
+      "memory_limit": "512m",
+      "cpus": "1.0",
+      "cpp_image": "adaptive-judge-cpp:latest",
+      "python_image": "adaptive-judge-python:latest"
+    }
+  }
+}

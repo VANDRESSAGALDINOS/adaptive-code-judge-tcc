@@ -1,0 +1,19 @@
+{
+  "experiment": "On2_quadratic",
+  "timestamp": "2026-05-31T19:31:55.230577",
+  "test_case_used": "massive_matrix",
+  "base_limit_s": 1.0,
+  "beta": 4.475637625043615,
+  "cpp_limit_s": 1.0,
+  "python_limit_s": 4.475637625043615,
+  "n_trials": 1,
+  "reference_verdict": {
+    "cpp": "ACCEPTED",
+    "python": "ACCEPTED"
+  },
+  "slow_verdict": {
+    "cpp": "TLE",
+    "python": "TLE"
+  },
+  "selectivity_preserved": true
+}

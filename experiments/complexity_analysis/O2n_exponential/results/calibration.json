@@ -1,0 +1,69 @@
+{
+  "experiment": "O2n_exponential",
+  "timestamp": "2026-05-31T19:43:01.639846",
+  "problem": {
+    "id": 26,
+    "title": "Subset Sum (O(2\u207f))",
+    "complexity": "O2n_exponential"
+  },
+  "benchmark": {
+    "cpp_median": 0.012424707412719727,
+    "python_median": 0.42043423652648926,
+    "cpp_iqr": 0.00012934207916259766,
+    "python_iqr": 0.005940794944763184,
+    "adjustment_factor": 33.83856235488266,
+    "adjustment_factor_ci95": [
+      33.54567417440268,
+      34.30999634256675
+    ],
+    "bootstrap": {
+      "method": "percentile bootstrap on ratio of medians (resample times with replacement)",
+      "n_resamples": 10000,
+      "seed": 42
+    },
+    "is_reliable": true,
+    "cpp_times": [
+      0.012444734573364258,
+      0.012533187866210938,
+      0.012424707412719727,
+      0.01233363151550293,
+      0.01238560676574707
+    ],
+    "python_times": [
+      0.4248178005218506,
+      0.42495012283325195,
+      0.41913294792175293,
+      0.41875338554382324,
+      0.42043423652648926
+    ],
+    "repetitions": 5,
+    "test_case_used": "large_set",
+    "adaptive": {
+      "cpp": {
+        "n_reps": 5,
+        "iqr_ratio": 0.010410070423886555,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.15
+      },
+      "python": {
+        "n_reps": 5,
+        "iqr_ratio": 0.014130140765519906,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.2
+      }
+    },
+    "method": {
+      "block_size": 5,
+      "min_repetitions": 5,
+      "max_repetitions": 35,
+      "timer": "date +%s.%N wall delta (in-container, execution only, microsecond resolution)",
+      "cpp_compile_flags": "-O2",
+      "memory_limit": "512m",
+      "cpus": "1.0",
+      "cpp_image": "adaptive-judge-cpp:latest",
+      "python_image": "adaptive-judge-python:latest"
+    }
+  }
+}

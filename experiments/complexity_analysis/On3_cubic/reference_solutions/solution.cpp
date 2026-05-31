@@ -18,9 +18,12 @@ vector<vector<long long>> matrixMultiply(const vector<vector<long long>>& A, con
 }
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
     int n;
     cin >> n;
-    
+
     // Read matrix A
     vector<vector<long long>> A(n, vector<long long>(n));
     for (int i = 0; i < n; i++) {

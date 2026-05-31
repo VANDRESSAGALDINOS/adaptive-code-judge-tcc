@@ -20,7 +20,7 @@ from config.app import AppConfig
 from flask import Flask
 
 # Single source of the validated measurement methodology (items 3-6).
-from lib.benchmark_engine import measure_language, compute_beta, select_largest_test_case
+from lib.benchmark_engine import measure_language, compute_beta, select_largest_test_case, run_timed_trials
 
 def create_app():
     """Create Flask app for experiments"""
@@ -73,131 +73,81 @@ def run_benchmark_direct(problem_id: int, cpp_solution: str, python_solution: st
 
     return compute_beta(cpp, py, largest_tc.name)
 
-def generate_experiment_report(complexity_class: str, problem, benchmark_results):
-    """Generate detailed experiment report for individual experiment"""
 
-    # Map complexity to description
-    complexity_map = {
-        'O1_constant': {
-            'name': 'O(1) - Operações Aritméticas Constantes',
-            'algorithm': 'Operações aritméticas básicas',
-            'description': 'Soma, subtração, multiplicação, divisão inteira'
-        },
-        'O_log_n': {
-            'name': 'O(log n) - Busca Binária',
-            'algorithm': 'Busca binária em array ordenado',
-            'description': 'Busca eficiente com redução logarítmica do espaço'
-        }
+def run_selectivity(complexity_class: str, problem_id: int, beta: float, base_limit: float = 1.0):
+    """
+    Selectivity check (theoretical axis): run the deliberately-inefficient
+    slow_solution under the adaptive limit and confirm it stays rejected.
+    Mirrors a real judge: C++ under the traditional base limit, Python under the
+    adaptive limit (beta x base). The reference is run too, as a control (must
+    pass). Returns None when selectivity does not apply (overhead-floor classes,
+    or no slow_solutions/).
+    """
+    from models import TestCase
+
+    # O(1) and O(log n) sit below the 10:1 scale-dominance floor (S3.2): runtime is
+    # dominated by fixed overhead, so beta is not calibratable and selectivity is
+    # vacuous (the slow is too trivial to be rejected). Reported as overhead floor only.
+    if complexity_class in ('O1_constant', 'O_log_n'):
+        print("Overhead-floor class -> skipping selectivity (beta not calibratable).")
+        return None
+
+    slow_cpp_path = f'complexity_analysis/{complexity_class}/slow_solutions/slow_solution.cpp'
+    slow_py_path = f'complexity_analysis/{complexity_class}/slow_solutions/slow_solution.py'
+    if not (os.path.exists(slow_cpp_path) and os.path.exists(slow_py_path)):
+        print("No slow_solutions/ -> skipping selectivity (floor class).")
+        return None
+
+    test_cases = TestCase.query.filter_by(problem_id=problem_id).all()
+    tc = select_largest_test_case(
+        test_cases,
+        size_fn=lambda c: c.input_size or len(c.input_data),
+        id_fn=lambda c: c.id,
+    )
+
+    with open(f'complexity_analysis/{complexity_class}/reference_solutions/solution.cpp') as f:
+        ref_cpp = f.read()
+    with open(f'complexity_analysis/{complexity_class}/reference_solutions/solution.py') as f:
+        ref_py = f.read()
+    with open(slow_cpp_path) as f:
+        slow_cpp = f.read()
+    with open(slow_py_path) as f:
+        slow_py = f.read()
+
+    cpp_limit = base_limit            # C++ stays on the traditional limit (it is the ruler)
+    py_limit = beta * base_limit      # Python gets the adaptive (beta-scaled) limit
+
+    print(f"\nSELECTIVITY on '{tc.name}': C++ limit {cpp_limit:.3f}s, "
+          f"Python limit {py_limit:.3f}s (= beta {beta:.3f} x {base_limit}s)")
+
+    def status(src, lang, limit):
+        return run_timed_trials(src, tc.input_data, tc.expected_output, lang, 1, limit)[0]['status']
+
+    ref = {'cpp': status(ref_cpp, 'cpp', cpp_limit), 'python': status(ref_py, 'python', py_limit)}
+    slow = {'cpp': status(slow_cpp, 'cpp', cpp_limit), 'python': status(slow_py, 'python', py_limit)}
+
+    # Selectivity preserved = the slow submission is rejected (TLE) in BOTH
+    # languages even under the generous adaptive limit; reference passes (control).
+    preserved = (slow['cpp'] == 'TLE') and (slow['python'] == 'TLE')
+
+    print(f"   reference (control): C++ {ref['cpp']} / Python {ref['python']}")
+    print(f"   slow (target)      : C++ {slow['cpp']} / Python {slow['python']}")
+    print(f"   selectivity_preserved: {preserved}")
+
+    return {
+        'experiment': complexity_class,
+        'timestamp': datetime.now().isoformat(),
+        'test_case_used': tc.name,
+        'base_limit_s': base_limit,
+        'beta': beta,
+        'cpp_limit_s': cpp_limit,
+        'python_limit_s': py_limit,
+        'n_trials': 1,
+        'reference_verdict': ref,
+        'slow_verdict': slow,
+        'selectivity_preserved': preserved,
     }
 
-    info = complexity_map.get(complexity_class, {
-        'name': f'{complexity_class} - Experimento',
-        'algorithm': 'Algoritmo não especificado',
-        'description': 'Descrição não disponível'
-    })
-
-    # Calculate performance advantage
-    advantage_pct = ((1 - benchmark_results['adjustment_factor']) * 100)
-
-    # Generate timestamp
-    timestamp = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
-
-    report_content = f"""# Experimento {info['name']}
-
-## Resumo Executivo
-
-**Descoberta Principal**: Python supera C++ em **{advantage_pct:.1f}%** para {info['algorithm'].lower()} em ambientes containerizados.
-
-**Resultado**: {'Inesperado - contradiz expectativas' if benchmark_results['adjustment_factor'] < 1.0 else 'Esperado - confirma teoria'}
-
-## Dados Experimentais Brutos
-
-### Performance Medida
-- **C++ Mediano**: {benchmark_results['cpp_median']:.4f}s
-- **Python Mediano**: {benchmark_results['python_median']:.4f}s
-- **Razão Python/C++**: {benchmark_results['adjustment_factor']:.3f}x
-- **Vantagem Python**: {advantage_pct:.1f}%
-
-### Confiabilidade
-- **Repetições Bem-sucedidas**: {benchmark_results['repetitions']}/10
-- **Teste Utilizado**: {benchmark_results['test_case_used']}
-- **Confiável**: {'Sim' if benchmark_results['is_reliable'] else 'Não'}
-
-### Variabilidade (IQR)
-- **C++ IQR**: {benchmark_results['cpp_iqr']:.4f}s ({(benchmark_results['cpp_iqr']/benchmark_results['cpp_median']*100):.1f}%)
-- **Python IQR**: {benchmark_results['python_iqr']:.4f}s ({(benchmark_results['python_iqr']/benchmark_results['python_median']*100):.1f}%)
-
-## Análise dos Resultados
-
-### {info['algorithm']}
-- **Descrição**: {info['description']}
-- **Complexidade Teórica**: {complexity_class.replace('_', ' ').replace('O', 'O(')}n)
-- **Implementação**: Algoritmicamente equivalente em ambas linguagens
-
-### Fatores de Performance Identificados
-
-1. **Overhead de Compilação**
-   - C++ requer compilação a cada execução (~0.29s)
-   - Python executa imediatamente (~0.18s)
-
-2. **Otimizações de Runtime**
-   - CPython tem operações nativas altamente otimizadas
-   - Estruturas de dados Python implementadas em C
-
-3. **Container Overhead**
-   - Docker startup mais rápido para Python
-   - Toolchain C++ adiciona latência
-
-## Insights para o TCC
-
-### Contribuição Científica
-- **Paradigma Contestado**: {"C++ nem sempre é mais rápido" if benchmark_results['adjustment_factor'] < 1.0 else "Confirma expectativas teóricas"}
-- **Evidência Empírica**: Dados quantitativos de ambiente real
-- **Metodologia**: Separação de fatores algorítmicos vs overhead
-
-### Aplicação Prática
-```json
-{{
-  "adaptive_limits": {{
-    "problem_type": "{complexity_class}",
-    "cpp_limit_ms": {int(benchmark_results['cpp_median'] * 1000)},
-    "python_limit_ms": {int(benchmark_results['python_median'] * 1000)},
-    "adjustment_factor": {benchmark_results['adjustment_factor']:.3f}
-  }}
-}}
-```
-
-## Dados Técnicos Completos
-
-### Execuções C++
-```
-{benchmark_results['cpp_times']}
-```
-
-### Execuções Python
-```
-{benchmark_results['python_times']}
-```
-
-## Conclusão
-
-Este experimento demonstra que **performance é contextual** e depende criticamente do ambiente de execução.
-
-{"A descoberta de que Python supera C++ contraria expectativas comuns e valida a necessidade de sistemas adaptativos baseados em medições reais." if benchmark_results['adjustment_factor'] < 1.0 else "Os resultados confirmam expectativas teóricas e demonstram a importância de medições empíricas."}
-
-**Para sistemas de juízes online, estes dados justificam limites de tempo adaptativos** que considerem a performance real de cada linguagem no ambiente de produção.
-
----
-*Relatório gerado automaticamente em {timestamp}*
-*Experimento conduzido como parte do projeto Adaptive Code Judge*
-"""
-
-    # Save report
-    report_file = f"complexity_analysis/{complexity_class}/EXPERIMENT_REPORT.md"
-    with open(report_file, 'w') as f:
-        f.write(report_content)
-
-    print(f"Individual report generated: {report_file}")
 
 def run_complexity_experiment_direct(complexity_class: str):
     """Run experiment directly with subprocess Docker calls"""
@@ -257,14 +207,22 @@ def run_complexity_experiment_direct(complexity_class: str):
             'benchmark': benchmark_results
         }
 
-        results_file = f"complexity_analysis/{complexity_class}/results_direct.json"
+        results_dir = f"complexity_analysis/{complexity_class}/results"
+        os.makedirs(results_dir, exist_ok=True)
+        results_file = f"{results_dir}/calibration.json"
         with open(results_file, 'w') as f:
             json.dump(results, f, indent=2)
-
         print(f"\nResults saved to: {results_file}")
 
-        # Generate individual experiment report
-        generate_experiment_report(complexity_class, problem, benchmark_results)
+        # Selectivity (theoretical axis): the slow_solution must stay rejected
+        # under the adaptive limit. Skipped for floor classes (no slow_solutions/).
+        sel = run_selectivity(complexity_class, problem.id,
+                              benchmark_results['adjustment_factor'])
+        if sel is not None:
+            sel_file = f"{results_dir}/selectivity.json"
+            with open(sel_file, 'w') as f:
+                json.dump(sel, f, indent=2)
+            print(f"Selectivity saved to: {sel_file}")
 
         return results
 

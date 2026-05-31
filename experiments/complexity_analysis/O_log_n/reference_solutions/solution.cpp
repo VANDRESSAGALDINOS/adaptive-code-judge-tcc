@@ -24,6 +24,9 @@ int binarySearch(const vector<int>& arr, int target) {
 }
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
     int n, target;
     cin >> n >> target;
     

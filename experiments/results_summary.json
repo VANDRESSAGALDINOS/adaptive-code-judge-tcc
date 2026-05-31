@@ -1,0 +1,163 @@
+{
+  "_about": "Central aggregated results (theoretical axis) for the article and figures. Source of truth = complexity_analysis/<class>/results/*.json. Regenerate with: python3 aggregate_results.py",
+  "methodology": {
+    "engine": "lib/benchmark_engine.py: startup+compilation excluded, microsecond timer, adaptive reps (blocks of 5, cap 35) + IQR, bootstrap CI95 (10000 resamples, seed 42)",
+    "beta_definition": "median(Python)/median(C++) on the largest test case",
+    "adaptive_limit": "Python limit = beta x 1.0s; C++ limit = 1.0s (traditional)",
+    "fast_io": "all reference C++ use sync_with_stdio(false)+cin.tie(NULL) (symmetric I/O, S3.1)",
+    "selectivity": "slow_solution must stay TLE under the adaptive limit; reference is the AC control",
+    "floor_note": "classes with has_slow_solution=false (O(1), O(log n)) are below the 10:1 scale-dominance threshold (S3.2): beta reflects fixed overhead, not algorithmic cost; reported as overhead floor / control, not as a calibrated beta"
+  },
+  "classes": {
+    "O1_constant": {
+      "complexity_class": "O1_constant",
+      "problem_title": "Arithmetic Operations (O(1))",
+      "beta": 4.342803788181939,
+      "beta_ci95": [
+        3.9748504456110365,
+        4.460566975681849
+      ],
+      "is_reliable": true,
+      "cpp_median_s": 0.001787424087524414,
+      "python_median_s": 0.007762432098388672,
+      "test_case_used": "large_numbers",
+      "calibration_timestamp": "2026-05-31T19:00:44.334908",
+      "has_slow_solution": true,
+      "is_overhead_floor": true,
+      "selectivity": null
+    },
+    "O2n_exponential": {
+      "complexity_class": "O2n_exponential",
+      "problem_title": "Subset Sum (O(2\u207f))",
+      "beta": 33.83856235488266,
+      "beta_ci95": [
+        33.54567417440268,
+        34.30999634256675
+      ],
+      "is_reliable": true,
+      "cpp_median_s": 0.012424707412719727,
+      "python_median_s": 0.42043423652648926,
+      "test_case_used": "large_set",
+      "calibration_timestamp": "2026-05-31T19:43:01.639846",
+      "has_slow_solution": true,
+      "is_overhead_floor": false,
+      "selectivity": {
+        "preserved": true,
+        "python_limit_s": 33.83856235488266,
+        "cpp_limit_s": 1.0,
+        "reference_verdict": {
+          "cpp": "ACCEPTED",
+          "python": "ACCEPTED"
+        },
+        "slow_verdict": {
+          "cpp": "TLE",
+          "python": "TLE"
+        }
+      }
+    },
+    "O_log_n": {
+      "complexity_class": "O_log_n",
+      "problem_title": "Binary Search (O(log n))",
+      "beta": 4.1283982582087795,
+      "beta_ci95": [
+        3.8417478917971746,
+        4.444274449805814
+      ],
+      "is_reliable": true,
+      "cpp_median_s": 0.0020258426666259766,
+      "python_median_s": 0.008363485336303711,
+      "test_case_used": "very_large_array",
+      "calibration_timestamp": "2026-05-31T19:00:46.332573",
+      "has_slow_solution": true,
+      "is_overhead_floor": true,
+      "selectivity": null
+    },
+    "On2_quadratic": {
+      "complexity_class": "On2_quadratic",
+      "problem_title": "Matrix Sum (O(n\u00b2))",
+      "beta": 4.475637625043615,
+      "beta_ci95": [
+        4.226954974370066,
+        4.558633198358357
+      ],
+      "is_reliable": true,
+      "cpp_median_s": 0.3519022464752197,
+      "python_median_s": 1.5749869346618652,
+      "test_case_used": "massive_matrix",
+      "calibration_timestamp": "2026-05-31T19:31:45.478865",
+      "has_slow_solution": true,
+      "is_overhead_floor": false,
+      "selectivity": {
+        "preserved": true,
+        "python_limit_s": 4.475637625043615,
+        "cpp_limit_s": 1.0,
+        "reference_verdict": {
+          "cpp": "ACCEPTED",
+          "python": "ACCEPTED"
+        },
+        "slow_verdict": {
+          "cpp": "TLE",
+          "python": "TLE"
+        }
+      }
+    },
+    "On3_cubic": {
+      "complexity_class": "On3_cubic",
+      "problem_title": "Matrix Multiplication (O(n\u00b3))",
+      "beta": 77.22291277326264,
+      "beta_ci95": [
+        76.15750315394486,
+        79.30835005574136
+      ],
+      "is_reliable": true,
+      "cpp_median_s": 0.021943092346191406,
+      "python_median_s": 1.694509506225586,
+      "test_case_used": "massive_matrices",
+      "calibration_timestamp": "2026-05-31T19:35:21.693193",
+      "has_slow_solution": true,
+      "is_overhead_floor": false,
+      "selectivity": {
+        "preserved": true,
+        "python_limit_s": 77.22291277326264,
+        "cpp_limit_s": 1.0,
+        "reference_verdict": {
+          "cpp": "ACCEPTED",
+          "python": "ACCEPTED"
+        },
+        "slow_verdict": {
+          "cpp": "TLE",
+          "python": "TLE"
+        }
+      }
+    },
+    "On_linear": {
+      "complexity_class": "On_linear",
+      "problem_title": "Array Sum (O(n))",
+      "beta": 3.8656860670194004,
+      "beta_ci95": [
+        3.8279868106688277,
+        4.054306878306878
+      ],
+      "is_reliable": true,
+      "cpp_median_s": 0.033795833587646484,
+      "python_median_s": 0.1306440830230713,
+      "test_case_used": "massive_array",
+      "calibration_timestamp": "2026-05-31T19:27:47.864423",
+      "has_slow_solution": true,
+      "is_overhead_floor": false,
+      "selectivity": {
+        "preserved": true,
+        "python_limit_s": 3.8656860670194004,
+        "cpp_limit_s": 1.0,
+        "reference_verdict": {
+          "cpp": "ACCEPTED",
+          "python": "ACCEPTED"
+        },
+        "slow_verdict": {
+          "cpp": "TLE",
+          "python": "TLE"
+        }
+      }
+    }
+  }
+}

@@ -16,9 +16,12 @@ long long matrixSum(const vector<vector<long long>>& matrix) {
 }
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
     int n;
     cin >> n;
-    
+
     vector<vector<long long>> matrix(n, vector<long long>(n));
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {

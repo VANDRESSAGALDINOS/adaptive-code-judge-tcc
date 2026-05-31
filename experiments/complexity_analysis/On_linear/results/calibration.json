@@ -1,0 +1,69 @@
+{
+  "experiment": "On_linear",
+  "timestamp": "2026-05-31T19:27:47.864423",
+  "problem": {
+    "id": 22,
+    "title": "Array Sum (O(n))",
+    "complexity": "On_linear"
+  },
+  "benchmark": {
+    "cpp_median": 0.033795833587646484,
+    "python_median": 0.1306440830230713,
+    "cpp_iqr": 0.000512242317199707,
+    "python_iqr": 0.005424857139587402,
+    "adjustment_factor": 3.8656860670194004,
+    "adjustment_factor_ci95": [
+      3.8279868106688277,
+      4.054306878306878
+    ],
+    "bootstrap": {
+      "method": "percentile bootstrap on ratio of medians (resample times with replacement)",
+      "n_resamples": 10000,
+      "seed": 42
+    },
+    "is_reliable": true,
+    "cpp_times": [
+      0.033795833587646484,
+      0.033844947814941406,
+      0.033294677734375,
+      0.03365445137023926,
+      0.034128665924072266
+    ],
+    "python_times": [
+      0.12978601455688477,
+      0.1306440830230713,
+      0.13701868057250977,
+      0.13393163681030273,
+      0.13031458854675293
+    ],
+    "repetitions": 5,
+    "test_case_used": "massive_array",
+    "adaptive": {
+      "cpp": {
+        "n_reps": 5,
+        "iqr_ratio": 0.015156966490299824,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.15
+      },
+      "python": {
+        "n_reps": 5,
+        "iqr_ratio": 0.041523940572413,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.2
+      }
+    },
+    "method": {
+      "block_size": 5,
+      "min_repetitions": 5,
+      "max_repetitions": 35,
+      "timer": "date +%s.%N wall delta (in-container, execution only, microsecond resolution)",
+      "cpp_compile_flags": "-O2",
+      "memory_limit": "512m",
+      "cpus": "1.0",
+      "cpp_image": "adaptive-judge-cpp:latest",
+      "python_image": "adaptive-judge-python:latest"
+    }
+  }
+}

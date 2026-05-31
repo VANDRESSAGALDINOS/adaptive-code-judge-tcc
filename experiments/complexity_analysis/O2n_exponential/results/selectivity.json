@@ -1,0 +1,19 @@
+{
+  "experiment": "O2n_exponential",
+  "timestamp": "2026-05-31T19:43:38.804693",
+  "test_case_used": "large_set",
+  "base_limit_s": 1.0,
+  "beta": 33.83856235488266,
+  "cpp_limit_s": 1.0,
+  "python_limit_s": 33.83856235488266,
+  "n_trials": 1,
+  "reference_verdict": {
+    "cpp": "ACCEPTED",
+    "python": "ACCEPTED"
+  },
+  "slow_verdict": {
+    "cpp": "TLE",
+    "python": "TLE"
+  },
+  "selectivity_preserved": true
+}

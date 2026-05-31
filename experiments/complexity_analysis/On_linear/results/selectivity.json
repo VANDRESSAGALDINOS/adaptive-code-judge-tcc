@@ -1,0 +1,19 @@
+{
+  "experiment": "On_linear",
+  "timestamp": "2026-05-31T19:27:54.898067",
+  "test_case_used": "massive_array",
+  "base_limit_s": 1.0,
+  "beta": 3.8656860670194004,
+  "cpp_limit_s": 1.0,
+  "python_limit_s": 3.8656860670194004,
+  "n_trials": 1,
+  "reference_verdict": {
+    "cpp": "ACCEPTED",
+    "python": "ACCEPTED"
+  },
+  "slow_verdict": {
+    "cpp": "TLE",
+    "python": "TLE"
+  },
+  "selectivity_preserved": true
+}

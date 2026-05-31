@@ -1,0 +1,74 @@
+{
+  "experiment": "O1_constant",
+  "timestamp": "2026-05-31T19:00:44.334908",
+  "problem": {
+    "id": 19,
+    "title": "Arithmetic Operations (O(1))",
+    "complexity": "O1_constant"
+  },
+  "benchmark": {
+    "cpp_median": 0.001787424087524414,
+    "python_median": 0.007762432098388672,
+    "cpp_iqr": 0.00020074844360351562,
+    "python_iqr": 0.0002733469009399414,
+    "adjustment_factor": 4.342803788181939,
+    "adjustment_factor_ci95": [
+      3.9748504456110365,
+      4.460566975681849
+    ],
+    "bootstrap": {
+      "method": "percentile bootstrap on ratio of medians (resample times with replacement)",
+      "n_resamples": 10000,
+      "seed": 42
+    },
+    "is_reliable": true,
+    "cpp_times": [
+      0.0019528865814208984,
+      0.002161264419555664,
+      0.0018360614776611328,
+      0.0017764568328857422,
+      0.001766204833984375,
+      0.0017600059509277344,
+      0.0020291805267333984,
+      0.0017728805541992188,
+      0.001798391342163086,
+      0.0017762184143066406
+    ],
+    "python_times": [
+      0.007604837417602539,
+      0.007921457290649414,
+      0.007762432098388672,
+      0.007915496826171875,
+      0.007685422897338867
+    ],
+    "repetitions": 10,
+    "test_case_used": "large_numbers",
+    "adaptive": {
+      "cpp": {
+        "n_reps": 10,
+        "iqr_ratio": 0.11231159130318794,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.15
+      },
+      "python": {
+        "n_reps": 5,
+        "iqr_ratio": 0.035214079488912094,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.2
+      }
+    },
+    "method": {
+      "block_size": 5,
+      "min_repetitions": 5,
+      "max_repetitions": 35,
+      "timer": "date +%s.%N wall delta (in-container, execution only, microsecond resolution)",
+      "cpp_compile_flags": "-O2",
+      "memory_limit": "512m",
+      "cpus": "1.0",
+      "cpp_image": "adaptive-judge-cpp:latest",
+      "python_image": "adaptive-judge-python:latest"
+    }
+  }
+}

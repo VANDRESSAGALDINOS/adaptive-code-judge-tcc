@@ -1,0 +1,19 @@
+{
+  "experiment": "On3_cubic",
+  "timestamp": "2026-05-31T19:36:43.726016",
+  "test_case_used": "massive_matrices",
+  "base_limit_s": 1.0,
+  "beta": 77.22291277326264,
+  "cpp_limit_s": 1.0,
+  "python_limit_s": 77.22291277326264,
+  "n_trials": 1,
+  "reference_verdict": {
+    "cpp": "ACCEPTED",
+    "python": "ACCEPTED"
+  },
+  "slow_verdict": {
+    "cpp": "TLE",
+    "python": "TLE"
+  },
+  "selectivity_preserved": true
+}
