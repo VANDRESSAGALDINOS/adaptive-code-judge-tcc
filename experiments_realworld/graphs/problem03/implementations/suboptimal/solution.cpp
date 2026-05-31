@@ -13,34 +13,18 @@ int main() {
         cin >> next[i];
     }
     
-    // SLOW VERSION: Naive simulation instead of binary lifting
-    // This will be O(q * k) instead of O(q * log k)
-    // For large k (up to 10^9), this becomes extremely slow
-    
-    const int EXTRA_WORK = 50; // Additional wasteful computation
-    volatile long long waste = 0;
-    
+    // SUBOPTIMAL: naive O(q*k) simulation instead of O(q*log k) binary lifting.
+    // Walks the k teleporters one by one; for large k (up to 10^9) this is far
+    // slower than the optimal, while computing the same answer.
     for (int i = 0; i < q; i++) {
         int x, k;
         cin >> x >> k;
-        
-        // Naive approach: simulate k steps one by one
         for (int step = 0; step < k; step++) {
             x = next[x];
-            
-            // Add extra wasteful work to ensure TLE
-            for (int extra = 0; extra < EXTRA_WORK; extra++) {
-                waste += (long long)x * 1315423911LL ^ (long long)step * 2654435761LL;
-                waste ^= (waste >> 16) + (waste << 8);
-            }
         }
-        
         cout << x << "\n";
     }
-    
-    // Prevent compiler from optimizing away waste
-    asm volatile("" : : "r"(waste) : "memory");
-    
+
     return 0;
 }
 

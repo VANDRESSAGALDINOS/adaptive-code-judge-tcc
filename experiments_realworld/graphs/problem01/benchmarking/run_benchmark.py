@@ -28,6 +28,7 @@ def build_benchmark():
         input_dir=_BASE / 'test_data' / 'input',
         output_dir=_BASE / 'test_data' / 'output',
         optimal_dir=_BASE / 'implementations' / 'optimal',
+        suboptimal_dir=_BASE / 'implementations' / 'suboptimal',
         results_dir=_BASE / 'results',
         # Deterministic numeric output -> engine default exact-match validator.
         validate_fn=None,
@@ -57,6 +58,9 @@ def main():
     parser.add_argument('--repetitions', type=int, default=None)
     parser.add_argument('--beta', type=float, default=None,
                         help='Adjustment factor for the verdict phase (default: from calibration.json)')
+    parser.add_argument('--solutions', choices=['optimal', 'suboptimal'], default='optimal',
+                        help='Which implementation to run in the verdict phase '
+                             '(suboptimal = selectivity check, writes verdict_suboptimal.json)')
     args = parser.parse_args()
 
     bench = build_benchmark()
@@ -67,7 +71,8 @@ def main():
         beta = args.beta if args.beta is not None else _beta_from_calibration(bench)
         cases = ([int(x.strip()) for x in args.cases.split(',')] if args.cases else None)
         repetitions = args.repetitions or 10
-        bench.run_validation(beta=beta, cases_override=cases, repetitions=repetitions)
+        bench.run_validation(beta=beta, cases_override=cases, repetitions=repetitions,
+                             solutions=args.solutions)
 
 
 if __name__ == '__main__':

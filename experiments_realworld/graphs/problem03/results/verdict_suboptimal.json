@@ -1,0 +1,184 @@
+{
+  "problem": "graphs/problem03 (CSES 1750 - Planets Queries I)",
+  "phase": "verdict",
+  "timestamp": "2026-05-30T18:05:15.912706",
+  "metadata": {
+    "beta": 3.0695520030997225,
+    "traditional_limit": 1.0,
+    "adaptive_python_limit": 3.0695520030997225,
+    "repetitions": 1,
+    "critical_cases": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      12
+    ],
+    "control_cases": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      11,
+      13,
+      14
+    ],
+    "solutions": "suboptimal"
+  },
+  "cases": {
+    "1": {
+      "input_bytes": 68,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0029497146606445312
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.018787145614624023
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002930879592895508
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.01654672622680664
+            }
+          ]
+        }
+      }
+    },
+    "12": {
+      "input_bytes": 4577707,
+      "traditional": {
+        "cpp": {
+          "verdict": "TLE",
+          "success_rate": 0.0,
+          "trials": [
+            {
+              "status": "TLE",
+              "execution_time": 1.0
+            }
+          ]
+        },
+        "python": {
+          "verdict": "TLE",
+          "success_rate": 0.0,
+          "trials": [
+            {
+              "status": "TLE",
+              "execution_time": 1.0
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "TLE",
+          "success_rate": 0.0,
+          "trials": [
+            {
+              "status": "TLE",
+              "execution_time": 1.0
+            }
+          ]
+        },
+        "python": {
+          "verdict": "TLE",
+          "success_rate": 0.0,
+          "trials": [
+            {
+              "status": "TLE",
+              "execution_time": 3.0695520030997225
+            }
+          ]
+        }
+      }
+    },
+    "13": {
+      "input_bytes": 36,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.003264188766479492
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.016092777252197266
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0025396347045898438
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.017765045166015625
+            }
+          ]
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "total_cases": 3,
+    "tle_traditional_python": 1,
+    "tle_traditional_python_cases": [
+      12
+    ],
+    "rescued_by_adaptive": 0,
+    "rescued_by_adaptive_cases": [],
+    "selectivity_preserved": true,
+    "cases_with_wrong_answer": []
+  }
+}

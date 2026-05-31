@@ -1,5 +1,5 @@
 # Python 3 - Deliberately Slow Solution for TLE Validation
-# This should cause TLE on both CSES and adaptive system
+# designed to test selectivity: significantly slower than optimal to verify that adaptive limits do not rescue inefficient implementations
 
 import sys
 
@@ -31,10 +31,10 @@ def main():
             dist[a][b] = c
             dist[b][a] = c  # Undirected graph
     
-    # DELIBERATELY SLOW Floyd-Warshall - O(n^4) instead of O(n^3)
-    # This should cause TLE on both CSES and adaptive system
+    # DELIBERATELY SLOW Floyd-Warshall - O(n^3) repeated SLOW_FACTOR times (constant factor inflation, same asymptotic class as optimal)
+    # designed to test selectivity: significantly slower than optimal to verify that adaptive limits do not rescue inefficient implementations
     for blocker in range(SLOW_FACTOR):
-        # Anti-optimization: side effect to prevent interpreter optimization
+        # preventive side effect to ensure the loop is not eliminated by compiler optimizations
         if blocker % 50 == 0:
             print("", end="", flush=True)  # Observable side effect
         

@@ -1,23 +1,23 @@
 {
-  "problem": "graphs/problem02 (CSES 1197 - Cycle Finding)",
+  "problem": "graphs/problem03 (CSES 1750 - Planets Queries I)",
   "phase": "calibration",
-  "timestamp": "2026-05-27T22:28:09.073366",
+  "timestamp": "2026-05-30T17:03:39.145995",
   "selected_case": {
-    "id": 8,
-    "name": "8.in",
-    "input_bytes": 96596,
+    "id": 12,
+    "name": "12.in",
+    "input_bytes": 4577707,
     "selection_criterion": "largest input in bytes, ties by smaller id (item 7, option 1)"
   },
   "solutions": "optimal",
   "benchmark": {
-    "cpp_median": 0.02400660514831543,
-    "python_median": 0.8541724681854248,
-    "cpp_iqr": 0.003448486328125,
-    "python_iqr": 0.03260242938995361,
-    "adjustment_factor": 35.58072717521924,
+    "cpp_median": 0.844231128692627,
+    "python_median": 2.5914113521575928,
+    "cpp_iqr": 0.06187736988067627,
+    "python_iqr": 0.33258605003356934,
+    "adjustment_factor": 3.0695520030997225,
     "adjustment_factor_ci95": [
-      29.365816673633823,
-      36.93771042099095
+      2.8445738756868897,
+      3.5953192945871773
     ],
     "bootstrap": {
       "method": "percentile bootstrap on ratio of medians (resample times with replacement)",
@@ -26,32 +26,32 @@
     },
     "is_reliable": true,
     "cpp_times": [
-      0.02323603630065918,
-      0.02400660514831543,
-      0.023525476455688477,
-      0.02457118034362793,
-      0.029087305068969727
+      0.8596065044403076,
+      0.844231128692627,
+      0.8708703517913818,
+      0.8083457946777344,
+      0.7983763217926025
     ],
     "python_times": [
-      0.8560652732849121,
-      0.8278260231018066,
-      0.8497834205627441,
-      0.8541724681854248,
-      0.8867490291595459
+      2.6047942638397217,
+      3.035280466079712,
+      2.573424816131592,
+      2.401477813720703,
+      2.5914113521575928
     ],
     "repetitions": 5,
-    "test_case_used": "8.in",
+    "test_case_used": "12.in",
     "adaptive": {
       "cpp": {
         "n_reps": 5,
-        "iqr_ratio": 0.14364739649025235,
+        "iqr_ratio": 0.07329434769421417,
         "converged": true,
         "hit_cap": false,
         "threshold": 0.15
       },
       "python": {
         "n_reps": 5,
-        "iqr_ratio": 0.038168438581511664,
+        "iqr_ratio": 0.12834166592527285,
         "converged": true,
         "hit_cap": false,
         "threshold": 0.2

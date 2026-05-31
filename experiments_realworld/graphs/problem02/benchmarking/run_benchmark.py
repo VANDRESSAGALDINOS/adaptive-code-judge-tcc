@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Benchmark runner for graphs/problem02 (CSES 1671 - Cycle Finding, Bellman-Ford).
+Benchmark runner for graphs/problem02 (CSES 1197 - Cycle Finding, Bellman-Ford).
 
 Thin per-problem configuration: it only points the generic RealWorldBenchmark
 template at this problem's files and supplies its output validator. All the
@@ -23,7 +23,7 @@ from realworld_benchmark import RealWorldBenchmark
 
 def validate_cycle_finding(expected_output, actual_output):
     """
-    Intelligent validation for cycle finding (CSES 1671): a negative cycle may
+    Intelligent validation for cycle finding (CSES 1197): a negative cycle may
     be reported in several valid ways, so we match the YES/NO decision and, for
     YES, accept any returned cycle of at least two nodes.
     """
@@ -52,14 +52,15 @@ def validate_cycle_finding(expected_output, actual_output):
 
 def build_benchmark():
     return RealWorldBenchmark(
-        problem_name='graphs/problem02 (CSES 1671 - Cycle Finding)',
+        problem_name='graphs/problem02 (CSES 1197 - Cycle Finding)',
         input_dir=_BASE / 'test_data' / 'input',
         output_dir=_BASE / 'test_data' / 'output',
         optimal_dir=_BASE / 'implementations' / 'optimal',
+        suboptimal_dir=_BASE / 'implementations' / 'suboptimal',
         results_dir=_BASE / 'results',
         validate_fn=validate_cycle_finding,
         # CSES submission 14361394 categorization (recorded as metadata only).
-        critical_cases=[6, 7, 8, 9, 10, 19, 21, 27],
+        critical_cases=[6, 7, 8, 9, 10, 27],
         control_cases=[1, 2, 3, 4, 5, 11, 12, 13, 14, 15, 16, 17, 18, 20, 22, 23, 24, 25, 26],
     )
 
@@ -74,7 +75,7 @@ def _beta_from_calibration(bench):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='graphs/problem02 benchmark (CSES 1671)')
+    parser = argparse.ArgumentParser(description='graphs/problem02 benchmark (CSES 1197)')
     parser.add_argument('--phase', choices=['calibration', 'verdict'], required=True)
     parser.add_argument('--case', type=int, default=None,
                         help='Manual override of the calibration case (default: largest by bytes)')
@@ -83,6 +84,9 @@ def main():
     parser.add_argument('--repetitions', type=int, default=None)
     parser.add_argument('--beta', type=float, default=None,
                         help='Adjustment factor for the verdict phase (default: from calibration.json)')
+    parser.add_argument('--solutions', choices=['optimal', 'suboptimal'], default='optimal',
+                        help='Which implementation to run in the verdict phase '
+                             '(suboptimal = selectivity check, writes verdict_suboptimal.json)')
     args = parser.parse_args()
 
     bench = build_benchmark()
@@ -93,7 +97,8 @@ def main():
         beta = args.beta if args.beta is not None else _beta_from_calibration(bench)
         cases = ([int(x.strip()) for x in args.cases.split(',')] if args.cases else None)
         repetitions = args.repetitions or 10
-        bench.run_validation(beta=beta, cases_override=cases, repetitions=repetitions)
+        bench.run_validation(beta=beta, cases_override=cases, repetitions=repetitions,
+                             solutions=args.solutions)
 
 
 if __name__ == '__main__':

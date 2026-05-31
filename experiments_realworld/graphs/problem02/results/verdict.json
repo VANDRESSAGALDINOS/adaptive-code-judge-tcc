@@ -1,5 +1,5 @@
 {
-  "problem": "graphs/problem02 (CSES 1671 - Cycle Finding)",
+  "problem": "graphs/problem02 (CSES 1197 - Cycle Finding)",
   "phase": "verdict",
   "timestamp": "2026-05-27T22:36:43.977462",
   "metadata": {
@@ -13,8 +13,6 @@
       8,
       9,
       10,
-      19,
-      21,
       27
     ],
     "control_cases": [
