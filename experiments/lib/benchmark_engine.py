@@ -61,6 +61,14 @@ def _docker_stop(container_id: str):
     subprocess.run(['docker', 'kill', container_id], capture_output=True, text=True)
 
 
+# Stack limit (KB) for the in-container runs. The default container stack (~8MB)
+# overflows on deep recursion (e.g. recursion depth ~10^6 in DP/recursive
+# solutions). CSES runs with a large stack, so we match it to faithfully
+# reproduce its verdicts and to stay CONSISTENT with the Python solutions'
+# sys.setrecursionlimit. 256 MB, well within the 512m memory limit.
+_STACK_LIMIT_KB = 262144
+
+
 def _wrap_timed(inner_cmd: str) -> str:
     """
     Wrap a command with a high-resolution wall-clock timer (GNU `date +%s.%N`,
@@ -76,7 +84,8 @@ def _wrap_timed(inner_cmd: str) -> str:
     wrapper exits with the wrapped command's status (so a judge `timeout` still
     surfaces as exit 124).
     """
-    return (f"START=$(date +%s.%N); {inner_cmd} 2>/dev/null; EC=$?; "
+    return (f"ulimit -s {_STACK_LIMIT_KB} 2>/dev/null; "
+            f"START=$(date +%s.%N); {inner_cmd} 2>/dev/null; EC=$?; "
             f"END=$(date +%s.%N); echo \"T_START=$START\" >&2; "
             f"echo \"T_END=$END\" >&2; exit $EC")
 

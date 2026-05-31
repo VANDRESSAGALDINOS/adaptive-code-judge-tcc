@@ -54,12 +54,14 @@ class RealWorldBenchmark:
     """
 
     def __init__(self, *, problem_name, input_dir, output_dir, optimal_dir,
-                 results_dir, validate_fn=None, traditional_time_limit=None,
-                 critical_cases=None, control_cases=None):
+                 results_dir, suboptimal_dir=None, validate_fn=None,
+                 traditional_time_limit=None,
+                 critical_cases=None, control_cases=None, output_suffix=''):
         self.problem_name = problem_name
         self.input_dir = Path(input_dir)
         self.output_dir = Path(output_dir)
         self.optimal_dir = Path(optimal_dir)
+        self.suboptimal_dir = Path(suboptimal_dir) if suboptimal_dir else None
         self.results_dir = Path(results_dir)
         self.results_dir.mkdir(parents=True, exist_ok=True)
         self.validate_fn = validate_fn
@@ -70,6 +72,9 @@ class RealWorldBenchmark:
         )
         self.critical_cases = critical_cases or []
         self.control_cases = control_cases or []
+        # Output filename suffix (e.g. '_iterative') so variants of the same
+        # problem do not overwrite each other's calibration/verdict files.
+        self.output_suffix = output_suffix
 
     # ---- test-case discovery / selection -------------------------------------
 
@@ -97,10 +102,20 @@ class RealWorldBenchmark:
             id_fn=lambda c: c['id'] if isinstance(c['id'], int) else 0,
         )
 
-    def _load_optimal_sources(self):
-        cpp = (self.optimal_dir / 'solution.cpp').read_text()
-        py = (self.optimal_dir / 'solution.py').read_text()
+    def _load_sources(self, solutions='optimal'):
+        """Load (cpp, py) sources for 'optimal' or 'suboptimal' implementations."""
+        if solutions == 'suboptimal':
+            if self.suboptimal_dir is None:
+                raise ValueError("suboptimal_dir not configured for this problem")
+            src_dir = self.suboptimal_dir
+        else:
+            src_dir = self.optimal_dir
+        cpp = (src_dir / 'solution.cpp').read_text()
+        py = (src_dir / 'solution.py').read_text()
         return cpp, py
+
+    def _load_optimal_sources(self):
+        return self._load_sources('optimal')
 
     # ---- phase 1: calibration of beta ----------------------------------------
 
@@ -154,7 +169,7 @@ class RealWorldBenchmark:
             'solutions': 'optimal',
             'benchmark': beta_result,
         }
-        out_file = self.results_dir / 'calibration.json'
+        out_file = self.results_dir / f'calibration{self.output_suffix}.json'
         with open(out_file, 'w') as f:
             json.dump(out, f, indent=2)
         print(f"Calibration results saved to: {out_file}")
@@ -163,7 +178,7 @@ class RealWorldBenchmark:
     # ---- phase 2: verdict (traditional vs adaptive) --------------------------
 
     def run_validation(self, beta, cases_override=None, repetitions=10,
-                       traditional_limit=None):
+                       traditional_limit=None, solutions='optimal'):
         traditional_limit = (
             traditional_limit if traditional_limit is not None
             else self.traditional_time_limit
@@ -174,9 +189,10 @@ class RealWorldBenchmark:
         if cases_override:
             wanted = set(cases_override)
             cases = [c for c in cases if c['id'] in wanted]
-        cpp_src, py_src = self._load_optimal_sources()
+        cpp_src, py_src = self._load_sources(solutions)
 
         print(f"=== VERDICT PHASE: {self.problem_name} ===")
+        print(f"Solutions: {solutions}")
         print(f"Cases: {[c['id'] for c in cases]}")
         print(f"Repetitions/case: {repetitions}")
         print(f"Traditional limit: {traditional_limit:.2f}s (both languages)")
@@ -194,7 +210,7 @@ class RealWorldBenchmark:
                 'repetitions': repetitions,
                 'critical_cases': self.critical_cases,
                 'control_cases': self.control_cases,
-                'solutions': 'optimal',
+                'solutions': solutions,
             },
             'cases': {},
         }
@@ -240,9 +256,12 @@ class RealWorldBenchmark:
                   f"py={rec['traditional']['python']['verdict']}] "
                   f"adapt[py={rec['adaptive']['python']['verdict']}]")
 
-        self._summarize_verdict(results)
-
-        out_file = self.results_dir / 'verdict.json'
+        if solutions == 'suboptimal':
+            self._summarize_selectivity(results)
+            out_file = self.results_dir / f'verdict_suboptimal{self.output_suffix}.json'
+        else:
+            self._summarize_verdict(results)
+            out_file = self.results_dir / f'verdict{self.output_suffix}.json'
         with open(out_file, 'w') as f:
             json.dump(results, f, indent=2)
         print(f"Verdict results saved to: {out_file}")
@@ -296,5 +315,54 @@ class RealWorldBenchmark:
         print(f"  Resolved by adaptive (Python AC): {len(unjust_resolved)} {unjust_resolved}")
         print(f"  Unjust-TLE reduction rate: "
               f"{'n/a' if reduction is None else f'{reduction:.0%}'}")
+        if wa_cases:
+            print(f"  WARNING - WRONG_ANSWER on cases: {wa_cases}")
+
+    @staticmethod
+    def _summarize_selectivity(results):
+        """
+        Selectivity check for the suboptimal (deliberately inefficient) solution:
+        the adaptive limit must NOT rescue genuinely slow code. Per case, using
+        the suboptimal Python verdict:
+          - candidates       = cases where suboptimal Python is TLE under the
+            traditional limit (the only cases the adaptive limit could rescue);
+          - rescued_adaptive = candidates that become ACCEPTED under the adaptive
+            (beta-scaled) limit. These would be FALSE rescues; the goal is zero;
+          - selectivity_preserved = no candidate was rescued.
+        WRONG_ANSWER on any branch is surfaced for inspection.
+        """
+        cases = results['cases']
+        candidates = []
+        rescued = []
+        wa_cases = []
+        for cid, rec in cases.items():
+            trad_py = rec['traditional']['python']['verdict']
+            adapt_py = rec['adaptive']['python']['verdict']
+            verdicts = (
+                rec['traditional']['cpp']['verdict'], trad_py,
+                rec['adaptive']['cpp']['verdict'], adapt_py,
+            )
+            if 'WRONG_ANSWER' in verdicts:
+                wa_cases.append(cid)
+            if trad_py == 'TLE':
+                candidates.append(cid)
+                if adapt_py == 'ACCEPTED':
+                    rescued.append(cid)
+
+        results['aggregate'] = {
+            'total_cases': len(cases),
+            'tle_traditional_python': len(candidates),
+            'tle_traditional_python_cases': candidates,
+            'rescued_by_adaptive': len(rescued),
+            'rescued_by_adaptive_cases': rescued,
+            'selectivity_preserved': len(rescued) == 0,
+            'cases_with_wrong_answer': wa_cases,
+        }
+
+        print(f"\nAGGREGATE (selectivity):")
+        print(f"  Total cases: {len(cases)}")
+        print(f"  Suboptimal Python TLE (traditional): {len(candidates)} {candidates}")
+        print(f"  Rescued by adaptive (goal 0): {len(rescued)} {rescued}")
+        print(f"  Selectivity preserved: {len(rescued) == 0}")
         if wa_cases:
             print(f"  WARNING - WRONG_ANSWER on cases: {wa_cases}")
