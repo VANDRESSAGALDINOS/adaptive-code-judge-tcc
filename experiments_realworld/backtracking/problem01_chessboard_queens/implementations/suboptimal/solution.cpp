@@ -1,22 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-static inline pair<int,int> rc(int idx) {
-    return {idx / 8, idx % 8};
-}
-
-bool is_valid(const array<int,8>& pos) {
-    for (int i = 0; i < 8; ++i) {
-        auto [ri, ci] = rc(pos[i]);
-        for (int j = i + 1; j < 8; ++j) {
-            auto [rj, cj] = rc(pos[j]);
-            if (ri == rj) return false;
-            if (ci == cj) return false;
-            if (abs(ri - rj) == abs(ci - cj)) return false;
-        }
-    }
-    return true;
-}
+// SUBOPTIMAL: the SAME recursive search as the optimal, but WITHOUT the
+// incremental column/diagonal pruning. It still places one queen per row on a
+// free square, but it does NOT reject conflicting columns/diagonals during the
+// descent; instead it validates the full placement only at the leaf (r == 8).
+// This is a genuine algorithmic inefficiency (no early branch cutting): it
+// explores the entire tree of one-queen-per-row placements (~product of free
+// cells per row, up to 8^8) and checks all pairs at the end. Same answer as the
+// optimal; only the pruning is removed. Selectivity check for backtracking.
 
 int main() {
     ios::sync_with_stdio(false);
@@ -25,35 +17,28 @@ int main() {
     vector<string> g(8);
     for (int i = 0; i < 8; ++i) cin >> g[i];
 
-    vector<int> free_cells;
-    free_cells.reserve(64);
-    for (int r = 0; r < 8; ++r)
-        for (int c = 0; c < 8; ++c)
-            if (g[r][c] == '.') free_cells.push_back(r * 8 + c);
+    int cols[8];
+    long long ans = 0;
 
-    if ((int)free_cells.size() < 8) {
-        cout << 0 << "\n";
-        return 0;
-    }
-
-    unsigned long long ans = 0ULL;
-    array<int,8> pick{};
-    const int n = (int)free_cells.size();
-
-    function<void(int,int)> gen = [&](int idx, int taken) {
-        if (taken == 8) {
-            if (is_valid(pick)) ++ans;
+    function<void(int)> dfs = [&](int r) {
+        if (r == 8) {
+            // No pruning during descent: validate the complete placement here.
+            for (int i = 0; i < 8; ++i)
+                for (int j = i + 1; j < 8; ++j) {
+                    if (cols[i] == cols[j]) return;
+                    if (abs(cols[i] - cols[j]) == abs(i - j)) return;
+                }
+            ++ans;
             return;
         }
-        if (idx == n) return;
-
-        pick[taken] = free_cells[idx];
-        gen(idx + 1, taken + 1);
-
-        gen(idx + 1, taken);
+        for (int c = 0; c < 8; ++c) {
+            if (g[r][c] == '*') continue;
+            cols[r] = c;
+            dfs(r + 1);
+        }
     };
 
-    gen(0, 0);
+    dfs(0);
     cout << ans << "\n";
     return 0;
 }

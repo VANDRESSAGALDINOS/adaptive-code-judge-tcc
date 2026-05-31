@@ -1,0 +1,82 @@
+{
+  "problem": "backtracking/problem02 (CSES 1625 - Grid Paths)",
+  "phase": "calibration",
+  "timestamp": "2026-05-31T11:46:54.951928",
+  "selected_case": {
+    "id": 11,
+    "name": "11.in",
+    "input_bytes": 49,
+    "selection_criterion": "largest input in bytes, ties by smaller id (item 7, option 1)"
+  },
+  "solutions": "optimal",
+  "benchmark": {
+    "cpp_median": 0.08919072151184082,
+    "python_median": 5.303006410598755,
+    "cpp_iqr": 0.004437923431396484,
+    "python_iqr": 0.09848940372467041,
+    "adjustment_factor": 59.45692915932669,
+    "adjustment_factor_ci95": [
+      56.78697020697098,
+      60.66687427992505
+    ],
+    "bootstrap": {
+      "method": "percentile bootstrap on ratio of medians (resample times with replacement)",
+      "n_resamples": 10000,
+      "seed": 42
+    },
+    "is_reliable": true,
+    "cpp_times": [
+      0.0880746841430664,
+      0.08919072151184082,
+      0.08909440040588379,
+      0.11573386192321777,
+      0.0880584716796875,
+      0.11412262916564941,
+      0.08841085433959961,
+      0.0913553237915039,
+      0.08914351463317871,
+      0.13850736618041992,
+      0.0927889347076416,
+      0.09293842315673828,
+      0.08993768692016602,
+      0.0885004997253418,
+      0.08887767791748047
+    ],
+    "python_times": [
+      5.3243324756622314,
+      5.269202470779419,
+      5.303006410598755,
+      5.269073486328125,
+      5.410922288894653
+    ],
+    "repetitions": 15,
+    "test_case_used": "11.in",
+    "adaptive": {
+      "cpp": {
+        "n_reps": 15,
+        "iqr_ratio": 0.049757680576754976,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.15
+      },
+      "python": {
+        "n_reps": 5,
+        "iqr_ratio": 0.01857237123602687,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.2
+      }
+    },
+    "method": {
+      "block_size": 5,
+      "min_repetitions": 5,
+      "max_repetitions": 35,
+      "timer": "date +%s.%N wall delta (in-container, execution only, microsecond resolution)",
+      "cpp_compile_flags": "-O2",
+      "memory_limit": "512m",
+      "cpus": "1.0",
+      "cpp_image": "adaptive-judge-cpp:latest",
+      "python_image": "adaptive-judge-python:latest"
+    }
+  }
+}

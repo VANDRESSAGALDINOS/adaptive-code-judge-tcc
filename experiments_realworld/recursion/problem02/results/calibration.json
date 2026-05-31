@@ -1,0 +1,72 @@
+{
+  "problem": "recursion/problem02 (CSES 1139 - Distinct Colors)",
+  "phase": "calibration",
+  "timestamp": "2026-05-31T16:31:54.830266",
+  "selected_case": {
+    "id": 6,
+    "name": "6.in",
+    "input_bytes": 4555839,
+    "selection_criterion": "largest input in bytes, ties by smaller id (item 7, option 1)"
+  },
+  "solutions": "optimal",
+  "benchmark": {
+    "cpp_median": 0.1598682403564453,
+    "python_median": 0.5679013729095459,
+    "cpp_iqr": 0.01951158046722412,
+    "python_iqr": 0.05094349384307861,
+    "adjustment_factor": 3.5523088991493372,
+    "adjustment_factor_ci95": [
+      3.090653241554701,
+      4.017799193481036
+    ],
+    "bootstrap": {
+      "method": "percentile bootstrap on ratio of medians (resample times with replacement)",
+      "n_resamples": 10000,
+      "seed": 42
+    },
+    "is_reliable": true,
+    "cpp_times": [
+      0.1598682403564453,
+      0.15221190452575684,
+      0.16023659706115723,
+      0.1837480068206787,
+      0.15274953842163086
+    ],
+    "python_times": [
+      0.5750091075897217,
+      0.5581874847412109,
+      0.5572531223297119,
+      0.5679013729095459,
+      0.6423184871673584
+    ],
+    "repetitions": 5,
+    "test_case_used": "6.in",
+    "adaptive": {
+      "cpp": {
+        "n_reps": 5,
+        "iqr_ratio": 0.12204788408079506,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.15
+      },
+      "python": {
+        "n_reps": 5,
+        "iqr_ratio": 0.08970482600187829,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.2
+      }
+    },
+    "method": {
+      "block_size": 5,
+      "min_repetitions": 5,
+      "max_repetitions": 35,
+      "timer": "date +%s.%N wall delta (in-container, execution only, microsecond resolution)",
+      "cpp_compile_flags": "-O2",
+      "memory_limit": "512m",
+      "cpus": "1.0",
+      "cpp_image": "adaptive-judge-cpp:latest",
+      "python_image": "adaptive-judge-python:latest"
+    }
+  }
+}

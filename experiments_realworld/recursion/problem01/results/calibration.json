@@ -1,0 +1,72 @@
+{
+  "problem": "recursion/problem01 (CSES 1133 - Tree Distances II)",
+  "phase": "calibration",
+  "timestamp": "2026-05-31T16:04:20.431598",
+  "selected_case": {
+    "id": 6,
+    "name": "6.in",
+    "input_bytes": 2577784,
+    "selection_criterion": "largest input in bytes, ties by smaller id (item 7, option 1)"
+  },
+  "solutions": "optimal",
+  "benchmark": {
+    "cpp_median": 0.08898305892944336,
+    "python_median": 0.5311944484710693,
+    "cpp_iqr": 0.012266755104064941,
+    "python_iqr": 0.031087040901184082,
+    "adjustment_factor": 5.969613259668508,
+    "adjustment_factor_ci95": [
+      5.080578111923672,
+      6.352182180865639
+    ],
+    "bootstrap": {
+      "method": "percentile bootstrap on ratio of medians (resample times with replacement)",
+      "n_resamples": 10000,
+      "seed": 42
+    },
+    "is_reliable": true,
+    "cpp_times": [
+      0.1045539379119873,
+      0.0910794734954834,
+      0.08701229095458984,
+      0.08408761024475098,
+      0.08898305892944336
+    ],
+    "python_times": [
+      0.5230271816253662,
+      0.5311944484710693,
+      0.5442962646484375,
+      0.5118129253387451,
+      0.552717924118042
+    ],
+    "repetitions": 5,
+    "test_case_used": "6.in",
+    "adaptive": {
+      "cpp": {
+        "n_reps": 5,
+        "iqr_ratio": 0.13785494960104175,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.15
+      },
+      "python": {
+        "n_reps": 5,
+        "iqr_ratio": 0.05852290247132955,
+        "converged": true,
+        "hit_cap": false,
+        "threshold": 0.2
+      }
+    },
+    "method": {
+      "block_size": 5,
+      "min_repetitions": 5,
+      "max_repetitions": 35,
+      "timer": "date +%s.%N wall delta (in-container, execution only, microsecond resolution)",
+      "cpp_compile_flags": "-O2",
+      "memory_limit": "512m",
+      "cpus": "1.0",
+      "cpp_image": "adaptive-judge-cpp:latest",
+      "python_image": "adaptive-judge-python:latest"
+    }
+  }
+}

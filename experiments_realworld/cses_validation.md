@@ -340,3 +340,175 @@
 - test_data: BAIXADO do CSES (não gerado — gerar o output seria circular com a nossa solução). Download inicial veio com 23 casos (faltava o n=1) e numeração +1 deslocada; reconstruído dos detalhes oficiais (Test #1..#24) → 24/24, numeração IDÊNTICA ao CSES (#N = caso N). Stress n=500 = #21.
 - Casos com S ímpar (n=222,357,69,114,126…) curto-circuitam em 0 instantâneo; só even-sum grandes (n=107,112,147,431,451,480,499,500) são pesados.
 - O legado problem_specification.md tinha erro (dizia n=4 → soma ímpar → 0; na verdade soma 10 é par, resposta 1, confirmado pelo CSES #4). Já em _legacy/; usamos o output do CSES.
+
+### Seletividade (fase suboptimal — CSES decide a rejeição)
+- 2 suboptimals (paralelo aos optimals): `suboptimal_recursive` (recursão SEM memo → exponencial ~2ⁿ; ineficiência algorítmica genuína; profundidade O(n) rasa, sem array memo → TLE por TEMPO, não RTE) e `suboptimal_iterative` (optimal iterativo rolling 2-row × SLOW_FACTOR=100, slowdown deliberado honesto com volatile sink no C++).
+
+**Suboptimal RECURSIVA** (sem memo, exponencial) — 2026-05-31, dressa
+- Python CPython3: TLE → REJEITADA. Casos TLE {11,12,15,17,19,20,21,23,24} (9); AC nos demais 15 (corretos, só lentos).
+- C++ C++11: TLE → REJEITADA. Casos TLE {11,12,15,17,19,20,21,23,24} (9; MESMO conjunto da Python). → rejeitada nas duas linguagens. ✓
+
+**Suboptimal ITERATIVA** (optimal iterativo ×100) — 2026-05-31, dressa
+- Python CPython3: TLE → REJEITADA. Casos TLE {11,12,15,17,19,20,21,23,24} (9).
+- C++ C++11: TLE → REJEITADA. Casos TLE {17,19,20,21,23,24} (6); AC nos demais 18 (máx #11=0,07s, #12=0,08s, #15=0,17s).
+- CONTRASTE com dp02: aqui ×100 BASTOU para rejeitar o C++ também (n=500 maior, custo n³×100 estoura), enquanto no dp02 (n menor) o C++ ×100 passava e foi preciso subir a ×300. SLOW_FACTOR=100 mantido. O C++ iterativo ×100 dá TLE no MESMO conjunto que a optimal Python ({17,19,20,21,23,24}).
+
+- RESUMO CSES suboptimal: as 2 suboptimals (recursiva sem memo + iterativa ×100) ficam REJEITADAS nas duas linguagens no CSES.
+- SELETIVIDADE LOCAL (bench, sob β operacional 68,27s, reps=1, hard-kill): decisivo #21 (n=500, TLE no CSES nas duas) + controles {3,4,7,8} (even-sum pequenos, exercitam o algoritmo). As DUAS suboptimals: controles {3,4,7,8} AC nas duas linguagens (corretas, só lentas); decisivo #21 trad[cpp=TLE, py=TLE] adapt[py=TLE] → 0 resgatadas pelo adaptativo; selectivity_preserved=True, 0 WA. verdict_suboptimal_{iterative,recursive}.json gravados (β=68,27). Mesmo com o bônus de 68,27s o juiz adaptativo NÃO resgata as suboptimals (gap optimal↔suboptimal claro: optimal Python iter 2,13s / rec 8,26s em n=500 ≪ 68,27s; as suboptimals estouram). ✓ dp/problem03 FECHADO (optimal 2 estilos + suboptimal 2 estilos).
+
+---
+
+## backtracking/problem01 — Chessboard and Queens (CSES 1624)
+- Time limit oficial: 1,00s | Memory limit: 512 MB
+- Link: https://cses.fi/problemset/task/1624
+- Design backtracking: UM optimal recursivo (DFS row-by-row + poda de coluna e 2 diagonais), 1 beta (backtracking não tem contraparte iterativa idiomática). 10 casos. Profundidade fixa = 8 (sem stack issue).
+- PAPEL deste problema: CASO DE CONTROLE (caso justo), NÃO um caso de injustiça. O input é FIXO 8x8 (não-escalável) → o optimal é trivial nas 2 linguagens (ver CSES abaixo). Decisão (usuária, 31/05): manter como controle + seletividade; NÃO reportar beta.
+
+### Submissões CSES (auditoria externa) — 2026-05-31, dressa (código = repo)
+**C++ optimal RECURSIVO** (C++11)
+- Resultado: ACCEPTED 10/10. Tempo: 0,00s em todos (piso de resolução).
+**Python optimal RECURSIVO** (CPython3)
+- Resultado: ACCEPTED 10/10. Tempo: 0,02s em todos.
+- Caso de controle: as duas linguagens AC, sem TLE (Python 0,02s, abaixo do limite de 1,0s). Como o input é fixo (8x8, não escalável), não há disparidade observável no optimal. Dado relevante para QP3: a ocorrência de injustiça depende da natureza do problema, não é uma constante por linguagem.
+
+### Calibração / beta — NÃO APLICÁVEL (declarado, não fabricado)
+- beta INVIÁVEL aqui: input fixo 8x8, C++ no piso (0,00s) → impossível satisfazer a dominância de escala 10:1 da S3.2 (custo algorítmico ≫ overhead). Calibrar beta violaria a própria metodologia. NÃO se reporta beta para o queens. (Mesma família do "sem cross-check confiável no piso de resolução" dos outros, mas aqui atinge o próprio beta.)
+- Implicação: sem TLE injusto no optimal → este problema NÃO entra na métrica de redução de TLE injusto; entra na dimensão de SELETIVIDADE.
+
+### Suboptimal — injustiça diferencial pura (NÃO é teste de seletividade)
+- Suboptimal = MESMA recursão SEM as podas (coluna/diagonais). Mesmo algoritmo, mesma complexidade, mesma resposta — só a poda removida.
+- IMPORTANTE: aqui NÃO há teste de seletividade. O input é fixo 8x8 → "sem poda" muda só a CONSTANTE, não é assintoticamente pior → o C++ suboptimal PASSA. Seletividade pressupõe código a ser REJEITADO; não há alvo. O que a suboptimal mostra é INJUSTIÇA DIFERENCIAL: mesmo código, vereditos diferentes por linguagem.
+
+**CSES suboptimal** — 2026-05-31, dressa (código = repo)
+- C++ C++11: ACCEPTED 10/10 (tempos 0,21/0,19/0,13/0,04/0,04/0,03/0,01/0,02/0,01/0,01s; C++ NÃO no piso nos casos grandes).
+- Python CPython3: TIME LIMIT EXCEEDED. TLE em {1,2,3,4,5,6} (6/10); AC em {7=0,45s, 8=0,95s, 9=0,20s, 10=0,09s}. Mesmo código do C++, veredito diferente → injustiça diferencial.
+- Padrão monótono com o tamanho da árvore de busca (produto de casas livres por linha): Python só estoura nas árvores grandes (≥~1,4×10⁶); ponto de virada ~10⁶ nós (#8=9,4×10⁵ passou no fio).
+
+### Veredito local (tradicional, sem beta)
+- Rodado sob limite tradicional 1,0s nas 2 linguagens (beta=1.0; queens não tem beta), reps=1, casos {1,2,3,7,8,10}: C++ AC em todos; Python TLE em {1,2,3} (as 3 maiores árvores), AC em {7,8,10}. Reproduz 3 dos 6 TLE do CSES (máquina local mais rápida; mesmo padrão dos demais). 0 WRONG_ANSWER → equivalência comportamental local confirmada.
+- verdict_suboptimal.json: gravado com beta=1.0 só para registrar o veredito tradicional. O campo selectivity_preserved=True ali é VÁCUO (não há beta) — NÃO citar como seletividade.
+
+### Correção adaptativa (conceitual)
+- O juiz adaptativo afrouxa só o Python (limite_py = limite_base × beta); o C++ mantém o base. Sob o adaptativo, a mesma suboptimal passaria nas 2 linguagens (justo: mesmo código → mesmo veredito). Não é "deixar passar código ruim" — o C++ de mesma ineficiência também passa; o critério é igual para as duas. Como o queens não tem beta, isto é argumento conceitual, não medição.
+
+=> backtracking/problem01 FECHADO: optimal = controle justo; suboptimal = injustiça diferencial pura (local + CSES). Sem beta (input fixo) e sem eixo de seletividade — por design, justificado.
+
+---
+
+## backtracking/problem02 — Grid Paths (CSES 1625)
+- Time limit oficial: 1,00s | Memory limit: 512 MB
+- Link: https://cses.fi/problemset/task/1625
+- Design backtracking: UM optimal recursivo (DFS de caminho hamiltoniano 7x7, 48 movimentos; 3 podas: dead-end/check, split/trap, parada antecipada no destino), 1 beta. 20 casos. Profundidade fixa = 48 (sem stack issue).
+- Input = 1 linha de 48 chars {D,U,L,R,?}; driver de custo = nro de '?' (mais '?' = arvore maior). Caso mais pesado = #11 (48 '?', saida 88418) -> calibracao --case 11.
+- NOTA: este problema TEM injustica no OPTIMAL (≠ queens, que e controle). Backtracking com input que escala (via nro de '?') gera disparidade real.
+- RETROFIT (31/05): o test_data ANTERIOR estava ERRADO (era copia dos tabuleiros 8x8 do Queens/1624); substituido pelos 20 casos corretos do CSES 1625 (baixados pela usuaria). O errado foi p/ _legacy/test_data_queens_wrong. Suboptimal antiga (EXTRA_WORK=2000 + solution_clean.cpp) -> _legacy/ (estilo abandonado). README+formal_proof+runner reescritos.
+
+### Submissões CSES (auditoria externa) — 2026-05-31, dressa (código = repo)
+**C++ optimal RECURSIVO** (C++11)
+- Resultado: ACCEPTED 20/20. Tempos: max 0,19s (#11,12,13,14,20). Folgado.
+**Python optimal RECURSIVO** (CPython3)
+- Resultado: TIME LIMIT EXCEEDED. TLE em {4,6,7,10,11,12,13,14,15,16,20} = 11/20 (55%). AC em {1=0,85s, 2=0,03s, 3=0,56s, 5=0,48s, 8=0,83s, 9=0,11s, 17=0,37s, 18=0,22s, 19=0,03s}.
+- INJUSTICA confirmada (no optimal): mesma solucao equivalente, C++ AC 20/20, Python barrado em 11/20. Padrao monotono com o nro de '?' (arvore): os TLE concentram nos casos de muitos '?' (#11=48, #10/12/13/14/15/16/20=47); os AC do Python tem mais letras fixas (arvore menor: #2=39?, #19=40?, #9=42?).
+- Os AC do Python ja chegam perto do limite (1=0,85s, 8=0,83s, 3=0,56s) -> borderline; o C++ no pior caso e 0,19s. Gap claro.
+
+### Calibração local (pipeline rigoroso)
+- Caso = #11 (48 '?', a árvore mais pesada; --case 11; o seletor por bytes não distingue — todos 49 B).
+- **β = 59,46** [56,79 — 60,67] IC95% bootstrap. C++ mediana 0,089s (IQR 5,0%, 15 reps), Python mediana 5,30s (IQR 1,9%, 5 reps). is_reliable=True.
+- β alto (~59) coerente com QP3: backtracking recursivo profundo (48 níveis) amplifica a penalidade do Python (overhead de chamada de função no interpretador). Faixa dos β grandes (dp01 rec ~35, Floyd-Warshall ~120).
+
+### Cross-check pipeline vs CSES
+- SEM cross-check de β confiável: o C++ no CSES (0,19s no #11) e o local (0,089s) são máquinas diferentes; o Python no CSES deu TLE (sem tempo). Não fabricar razão. β é a medição local controlada.
+
+### Injustiça e correção adaptativa
+- Veredito local sob β operacional **59,46s** (20 casos, 3 reps), 0 WRONG_ANSWER:
+  - TLE injusto tradicional local (C++ AC + Python TLE @1,0s): **7/20** {7,10,11,12,13,14,20}.
+  - Resgatados pelo adaptativo (59,46s): **7/7 = 100%**.
+  - Relação com o CSES: o CSES tem 11 TLE {4,6,7,10,11,12,13,14,15,16,20}; o local reproduz 7 deles e perde os 4 borderline {4,6,15,16} (a máquina local é mais rápida — esses ficam < 1,0s aqui). Mesmo padrão dos demais problemas: o veredito local é hardware-dependente e reproduz PARTE do CSES (REGRA #0: o CSES decide a injustiça; o local é ilustrativo). NÃO é match exato.
+- Caso COMPLETO de injustiça + correção (≠ queens, que é controle): mesma solução equivalente, C++ AC 20/20; Python TLE em 11/20 no CSES e 7/20 local; o limite adaptativo resgata 100% dos casos locais sem WA.
+
+### Seletividade (fase suboptimal)
+- Suboptimal = MESMA recursão SEM as 3 podas de eficiência (check x4 + trap); mantém vis[][] e o goal (6,0) terminal (regra de correção, não poda). Ineficiência algorítmica genuína: sem poda a árvore não corta ramos inviáveis e explode (~O(4^48)).
+- CSES suboptimal (2026-05-31, dressa, código = repo): Python TLE → REJEITADA (AC só em {2,19}=0,81s); C++ TLE → REJEITADA (AC só em {2,3,9,19}). Rejeitada nas DUAS linguagens. Contraste com o optimal (C++ AC 20/20): remover as podas quebra o C++ também → é ineficiência algorítmica, não diferença de linguagem.
+- SELETIVIDADE LOCAL (sob β operacional 59,46s, reps=1, hard-kill): decisivo #11 (48 '?', já TLE no CSES) = TLE sob 59,46s → submissão NÃO resgatada. Controles {2,19} (os que dão AC no CSES) = AC nas duas linguagens (corretas, só lentas). selectivity_preserved=True, 0 WA. verdict_suboptimal.json gravado.
+- Veredito de submissão: TLE no caso decisivo basta → suboptimal rejeitada mesmo sob o limite adaptativo generoso (59,46s). Seletividade preservada.
+
+=> backtracking/problem02 FECHADO nas 4 frentes (CSES optimal + β + veredito optimal + seletividade suboptimal). Caso COMPLETO de injustiça+correção (≠ queens controle).
+
+---
+
+## recursion/problem01 — Tree Distances II (CSES 1133)
+- Time limit oficial: 1,00s | Memory limit: 512 MB
+- Link: https://cses.fi/problemset/task/1133
+- Design recursão profunda: UM optimal recursivo (DFS rerooting, 2 passadas: dfs1 pós-ordem tamanhos+soma de profundidades; dfs2 pré-ordem reroot res[v]=res[u]+(n-cnt[v])-cnt[v]). O(n) tempo, profundidade até n=2×10⁵ (cadeia). 1 beta. 15 casos.
+- ESCOLHA do problema (varredura empírica de problemas recursivos de árvore, 31/05): Subordinates (1674, 1 DFS) → Python AC 0,59s (recursão leve demais); Tree Diameter (1131, 2 DFS) → Python AC no fio 0,94s; Tree Distances II (1133, rerooting) → Python TLE. Nem todo recursivo dá TLE; a decisividade depende do trabalho-por-nó + tamanho (QP3). Ver anotacoes_para_artigo.md (seção "Recursão profunda").
+- INPUT ESCALA (n até 2×10⁵) → beta CALIBRÁVEL (≠ backtracking de tabuleiro fixo).
+- FENÔMENO DE PILHA (recursão profunda, S3.1): os casos #6/#14 (n=200000) fazem o C++ recursivo estourar a pilha default do container (~8MB, segfault) — o CSES usa pilha grande (por isso C++ AC lá). O engine aplica ulimit -s 256MB para reproduzir o CSES (mesmo do dp01). FIX de engine (31/05): o warm-up da calibração não aplicava o ulimit que os trials já usavam → corrigido (benchmark_engine.py:223; untimed, não afeta medição).
+
+### Submissões CSES (auditoria externa) — 2026-05-31, dressa (código = repo)
+**C++ optimal RECURSIVO** (C++11)
+- Resultado: ACCEPTED 15/15. Tempos: max 0,22s (#6,#7,#8,#14).
+**Python optimal RECURSIVO** (CPython3)
+- Resultado: TIME LIMIT EXCEEDED. TLE em {6,7,8,14} (4/15, n=200000); AC nos outros 11 (borderline #9,#10=0,72s, #15=0,69s). setrecursionlimit(300000).
+- INJUSTIÇA confirmada: mesma solução, C++ AC 15/15, Python TLE 4/15. Recursão profunda em árvore — overhead de chamada no interpretador.
+
+### Calibração local (pipeline rigoroso)
+- Caso = #6 (n=200000, Python-TLE no CSES; --case 6). O seletor por bytes não distingue (vários casos n=200000 com bytes quase iguais; o #9 de maior byte é AC, não TLE).
+- **β = 5,97** [5,08 — 6,35] IC95% bootstrap. C++ mediana 0,089s (IQR 13,8%, 5 reps), Python mediana 0,531s (IQR 5,9%, 5 reps). is_reliable=True.
+- β BAIXO (~6): o DFS é O(n) linear (pouco trabalho por nó) → gap Python/C++ modesto. Contrasta com os β grandes da DP recursiva (memo, mais trabalho por estado) e do backtracking profundo (grid_paths ~59). QP3: a magnitude depende da intensidade do trabalho, não só de "ser recursivo".
+
+### Cross-check pipeline vs CSES
+- SEM cross-check de β confiável: o C++ no CSES (0,22s) e o local (0,089s) são máquinas diferentes; o Python no CSES deu TLE (sem tempo). Não fabricar razão. β é a medição local controlada.
+
+### Injustiça e correção adaptativa
+- Veredito local sob β operacional **5,97s** (15 casos, 3 reps), 0 WRONG_ANSWER (equivalência comportamental confirmada — os 15 outputs corretos nas duas linguagens):
+  - TLE injusto local: **0/15** (todos AC sob 1,0s, Python E C++).
+  - A injustiça é CSES-ONLY: o Python local roda 0,53s < 1,0s no #6 (máquina local mais rápida que a do CSES), então o local não reproduz os 4 TLE do CSES. Mesmo padrão do problem02 grafos / dp02 / dp03 (REGRA #0: o CSES decide a injustiça; o veredito local é hardware-dependente e ilustrativo).
+  - O mecanismo adaptativo (β=5,97 → 5,97s) resgataria o Python ONDE a injustiça aparece (CSES / máquina mais lenta); localmente não há o que resgatar (tudo < 1,0s).
+
+### Seletividade (fase suboptimal)
+- Suboptimal = variante O(n²): para CADA nó, um DFS recursivo separado somando as distâncias daquele nó a todos os outros (sem o rerooting). Mesma forma recursiva e mesma resposta da optimal, mas O(n²) em vez de O(n) — ineficiência algorítmica GENUÍNA (complexidade pior, não slowdown artificial).
+- CSES suboptimal (2026-05-31, dressa, código = repo): Python TLE em {6,7,8,9,10,13,14,15} (8/15); C++ TLE no MESMO conjunto {6,7,8,9,10,13,14,15} (8/15). Rejeitada nas DUAS linguagens (O(n²) com n=2×10⁵ ≈ 4×10¹⁰ ops explode em ambas). AC só nos casos pequenos.
+- SELETIVIDADE LOCAL (sob β operacional 5,97s, reps=1, hard-kill): decisivo #6 (n=200000, já TLE no CSES) = TLE sob 5,97s → submissão NÃO resgatada. Controles {1,2,3} = AC nas duas linguagens (corretas, só lentas). selectivity_preserved=True, 0 WA. verdict_suboptimal.json gravado.
+- Veredito de submissão: TLE no caso decisivo basta → suboptimal rejeitada mesmo sob o limite adaptativo. Seletividade preservada (o gap O(n²) vs O(n) é grande; o β pequeno de 5,97 não chega perto de resgatar).
+
+=> recursion/problem01 FECHADO nas 4 frentes (CSES optimal + β + veredito optimal + seletividade suboptimal). Injustiça CSES-only (β baixo, DFS O(n) linear); seletividade limpa (suboptimal O(n²) rejeitada nas duas linguagens).
+
+---
+
+## recursion/problem02 — Distinct Colors (CSES 1139)
+- Time limit oficial: 1,00s | Memory limit: 512 MB
+- Link: https://cses.fi/problemset/task/1139
+- Design recursão profunda (perfil DIFERENTE do problem01): UM optimal recursivo = DFS + small-to-large merging de conjuntos de cores por subárvore. O(n log n). Recursão + ESTRUTURA DE DADOS (sets), não rerooting puro. 16 casos. n até 2×10⁵; cores até 1e9.
+- ESCOLHA: segundo problema de recursão, escolhido por ser mais complexo que os simples (que davam AC) e por agregar perfil distinto ao problem01. Caso BORDERLINE (ver abaixo) — aceito como ponto legítimo no espectro da injustiça.
+
+### Submissões CSES (auditoria externa) — 2026-05-31, dressa (código = repo)
+**C++ optimal RECURSIVO** (C++11)
+- Resultado: ACCEPTED 16/16. Tempos: max 0,41s (#10).
+**Python optimal RECURSIVO** (CPython3)
+- Resultado: TIME LIMIT EXCEEDED. TLE em {6,7,8} (3/16); AC nos outros mas BORDERLINE: #15=1,00s (no limite exato), #9=0,94s, #14=0,85s, #13=0,83s. setrecursionlimit(300000).
+- INJUSTIÇA confirmada (C++ AC, Python TLE) porém FRÁGIL/borderline — honesto registrar: menos limpa que o problem01, mas o "borderline" é ele mesmo um dado (faixa onde a injustiça começa a se manifestar). Perfil diferente (recursão + sets).
+
+### Calibração local (pipeline rigoroso)
+- Caso = #6 (n=200000; --case 6; também o maior por bytes, 4,5 MB).
+- **β = 3,55** [3,09 — 4,02] IC95% bootstrap. C++ mediana 0,160s (IQR 12,2%, 5 reps), Python mediana 0,568s (IQR 9,0%, 5 reps). is_reliable=True.
+- β BAIXO (~3,5, ainda menor que o problem01 ~6): o gargalo é parte recursão, parte operações de set; o std::set do C++ (árvore balanceada) também é lento → o C++ não é tão mais rápido → razão menor. Coerente com o borderline do CSES. QP3: β depende da natureza do trabalho, não só de "ser recursivo".
+
+### Cross-check pipeline vs CSES
+- SEM cross-check de β confiável (máquinas diferentes; Python TLE no CSES sem tempo). β é a medição local controlada.
+
+### Injustiça e correção adaptativa
+- Veredito local sob β operacional **3,55s** (16 casos, 3 reps), 0 WRONG_ANSWER (equivalência comportamental confirmada):
+  - TLE injusto local: **0/16** (todos AC sob 1,0s, Python E C++).
+  - Injustiça CSES-ONLY: Python local 0,57s < 1,0s no #6 (máquina local mais rápida); o local não reproduz os TLE do CSES. Mesmo padrão do problem01 / grafos / dp (REGRA #0: o CSES decide).
+
+### Seletividade (fase suboptimal)
+- Suboptimal = MESMO DFS, mas merge INGÊNUO (sem small-to-large; sempre filho→pai). Mesma resposta da optimal, mas o trabalho de merge não é mais limitado → O(n²) no pior caso (cadeia), vs O(n log n) da optimal. Ineficiência algorítmica genuína (complexidade pior, não slowdown).
+- CSES suboptimal (2026-05-31, dressa, código = repo): Python TLE em {6,7,8,9,11,13,14,15} (8/16); C++ TLE no MESMO conjunto {6,7,8,9,11,13,14,15} (8/16). Rejeitada nas DUAS linguagens (O(n²) explode em ambas). AC só nos casos pequenos (#10 borderline: C++ 0,89s / Python 0,98s).
+- SELETIVIDADE LOCAL (sob β operacional 3,55s, reps=1, hard-kill): decisivo #6 (n=200000, já TLE no CSES) = TLE sob 3,55s → submissão NÃO resgatada. Controles {1,2} = AC nas duas linguagens (corretas, só lentas). selectivity_preserved=True, 0 WA. verdict_suboptimal.json gravado.
+- Veredito de submissão: TLE no caso decisivo basta → suboptimal rejeitada mesmo sob o limite adaptativo. Seletividade preservada (gap O(n²) vs O(n log n); β=3,55 não chega perto de resgatar).
+
+=> recursion/problem02 FECHADO nas 4 frentes (CSES optimal + β + veredito optimal + seletividade suboptimal). Injustiça CSES-only borderline (β=3,55, recursão + sets); seletividade limpa (suboptimal O(n²) rejeitada nas duas linguagens).
+
+### Notas
+- Estrutura retrofitada ao canônico (31/05): legado → _legacy/ (README/algorithmic_analysis/experimental_results/CSES_VALIDATION_RESULTS/problem_description/problem_specification antigos; benchmarking antigo; 6 JSONs results; slow_validation; suboptimal antigo estilo `itertools.combinations`). README+formal_proof+runner reescritos no padrão. Optimal e test_data intactos.
+- Números do _legacy (Python/C++ ≈12,5x, p<0,001, 90%/100% TLE) = metodologia antiga, NÃO confiar.

@@ -219,8 +219,16 @@ def measure_language(source_code: str, input_data: str, expected_output: str,
                 if comp.returncode != 0:
                     raise RuntimeError(f"C++ compilation failed: {comp.stderr.strip()}")
 
-            # Warm-up + correctness (untimed).
-            warm = _docker_exec(container_id, f'{run_cmd} < input.txt', timeout=time_limit)
+            # Warm-up + correctness (untimed). Apply the SAME stack limit as the
+            # timed trials (_wrap_timed): without it, deep-recursion C++ segfaults
+            # here on the warm-up (default ~8MB stack) and aborts before any
+            # measurement, even though the timed runs would succeed. Untimed, so
+            # this does not affect any time measurement; it only matches the
+            # warm-up to the stack policy the rest of the engine already uses.
+            warm = _docker_exec(
+                container_id,
+                f'ulimit -s {_STACK_LIMIT_KB} 2>/dev/null; {run_cmd} < input.txt',
+                timeout=time_limit)
             if warm.returncode != 0:
                 raise RuntimeError(f"{language} warm-up run failed: {warm.stderr.strip()}")
             actual = warm.stdout.strip()

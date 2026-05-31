@@ -1,0 +1,1227 @@
+{
+  "problem": "recursion/problem01 (CSES 1133 - Tree Distances II)",
+  "phase": "verdict",
+  "timestamp": "2026-05-31T16:06:07.140728",
+  "metadata": {
+    "beta": 5.969613259668508,
+    "traditional_limit": 1.0,
+    "adaptive_python_limit": 5.969613259668508,
+    "repetitions": 3,
+    "critical_cases": [
+      6,
+      7,
+      8,
+      14
+    ],
+    "control_cases": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15
+    ],
+    "solutions": "optimal"
+  },
+  "cases": {
+    "1": {
+      "input_bytes": 40,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002989530563354492
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0023272037506103516
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0021817684173583984
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.019087791442871094
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.009101390838623047
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008799314498901367
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0028154850006103516
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002208709716796875
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0021049976348876953
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.01656031608581543
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008236408233642578
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.00852203369140625
+            }
+          ]
+        }
+      }
+    },
+    "10": {
+      "input_bytes": 2577484,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.06756162643432617
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.061055898666381836
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.06383371353149414
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.4101996421813965
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.3417682647705078
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.3622746467590332
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.06300973892211914
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.06581687927246094
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.07403802871704102
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.3735964298248291
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.3641471862792969
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.35298824310302734
+            }
+          ]
+        }
+      }
+    },
+    "11": {
+      "input_bytes": 6,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.006615877151489258
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0022821426391601562
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002473115921020508
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.021144390106201172
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008835315704345703
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008745431900024414
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002891063690185547
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0022668838500976562
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002210855484008789
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.01967787742614746
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008010149002075195
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.00850534439086914
+            }
+          ]
+        }
+      }
+    },
+    "12": {
+      "input_bytes": 2,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002727985382080078
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002187967300415039
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0021622180938720703
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.01771855354309082
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008498191833496094
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008499383926391602
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0024123191833496094
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002197265625
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0024955272674560547
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.016901731491088867
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0077512264251708984
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008385896682739258
+            }
+          ]
+        }
+      }
+    },
+    "13": {
+      "input_bytes": 788898,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.019600391387939453
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.018828630447387695
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.019299983978271484
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.09852910041809082
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.08248186111450195
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0825495719909668
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.019136667251586914
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0174710750579834
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.018657684326171875
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.09442806243896484
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0812370777130127
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.08197379112243652
+            }
+          ]
+        }
+      }
+    },
+    "14": {
+      "input_bytes": 2577788,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.11131858825683594
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.13401556015014648
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.13203191757202148
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.6206028461456299
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.5436673164367676
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.5444438457489014
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.11849451065063477
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.11517930030822754
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.1045844554901123
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.6291673183441162
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.559967041015625
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.5432898998260498
+            }
+          ]
+        }
+      }
+    },
+    "15": {
+      "input_bytes": 2577783,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.060414791107177734
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.05595827102661133
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.05999636650085449
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.2929065227508545
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.24825191497802734
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.2501792907714844
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.05708146095275879
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.05427241325378418
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.058327436447143555
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.27915072441101074
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.24341797828674316
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.2528822422027588
+            }
+          ]
+        }
+      }
+    },
+    "2": {
+      "input_bytes": 40,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0025110244750976562
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002240419387817383
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002161741256713867
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.017139911651611328
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008828163146972656
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008570194244384766
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.003160715103149414
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0023877620697021484
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0021948814392089844
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.018295764923095703
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008125782012939453
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.010820627212524414
+            }
+          ]
+        }
+      }
+    },
+    "3": {
+      "input_bytes": 41,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.003058910369873047
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002159595489501953
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002269744873046875
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.01739048957824707
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008540153503417969
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008630514144897461
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002794504165649414
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0022673606872558594
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0020859241485595703
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.01814103126525879
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.00882577896118164
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.009580612182617188
+            }
+          ]
+        }
+      }
+    },
+    "4": {
+      "input_bytes": 42,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.003401517868041992
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0023512840270996094
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002169370651245117
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.022734642028808594
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.00886678695678711
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.009164810180664062
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0026900768280029297
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0036470890045166016
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0037508010864257812
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.018445730209350586
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008626222610473633
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008479118347167969
+            }
+          ]
+        }
+      }
+    },
+    "5": {
+      "input_bytes": 43,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002958059310913086
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0021698474884033203
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002196788787841797
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.019246816635131836
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008451461791992188
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008779287338256836
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002292156219482422
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0021393299102783203
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0021848678588867188
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.01929926872253418
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008482933044433594
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.008973360061645508
+            }
+          ]
+        }
+      }
+    },
+    "6": {
+      "input_bytes": 2577784,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.09971451759338379
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.09134864807128906
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.10914230346679688
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.5847175121307373
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.589674711227417
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.5523152351379395
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.10665440559387207
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.13307642936706543
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.10852599143981934
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.6051614284515381
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.5485372543334961
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.5412120819091797
+            }
+          ]
+        }
+      }
+    },
+    "7": {
+      "input_bytes": 2577782,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.1202690601348877
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.09231233596801758
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.09805917739868164
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.5871593952178955
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.5365417003631592
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.5521018505096436
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.11232304573059082
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.08566474914550781
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.08566784858703613
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.5642068386077881
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.524651050567627
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.5466878414154053
+            }
+          ]
+        }
+      }
+    },
+    "8": {
+      "input_bytes": 2577787,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.07773780822753906
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.10198068618774414
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.08284401893615723
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.5614848136901855
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.4813501834869385
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.4928758144378662
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.09565114974975586
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.10419058799743652
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.08821535110473633
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.565406322479248
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.5149714946746826
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.48531270027160645
+            }
+          ]
+        }
+      }
+    },
+    "9": {
+      "input_bytes": 2577868,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.06541228294372559
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.06382393836975098
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.07764101028442383
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.4165184497833252
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.354874849319458
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.3701605796813965
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.06936812400817871
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.06997466087341309
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.08495330810546875
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.42647385597229004
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.36691951751708984
+            },
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.3514735698699951
+            }
+          ]
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "total_cases": 15,
+    "unjust_tle_traditional": 0,
+    "unjust_tle_traditional_cases": [],
+    "unjust_tle_resolved_adaptive": 0,
+    "unjust_tle_resolved_cases": [],
+    "unjust_tle_reduction_rate": null,
+    "cases_with_wrong_answer": []
+  }
+}
