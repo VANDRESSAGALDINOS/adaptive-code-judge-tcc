@@ -1,0 +1,186 @@
+{
+  "problem": "recursion/problem03 (CSES 1132 - Tree Distances I)",
+  "phase": "verdict",
+  "timestamp": "2026-05-31T17:39:31.343253",
+  "metadata": {
+    "beta": 7.242495673367541,
+    "traditional_limit": 1.0,
+    "adaptive_python_limit": 7.242495673367541,
+    "repetitions": 1,
+    "critical_cases": [
+      6,
+      7,
+      8,
+      14
+    ],
+    "control_cases": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      16
+    ],
+    "solutions": "suboptimal"
+  },
+  "cases": {
+    "1": {
+      "input_bytes": 41,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.002775907516479492
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.019009828567504883
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0024912357330322266
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.017733335494995117
+            }
+          ]
+        }
+      }
+    },
+    "2": {
+      "input_bytes": 41,
+      "traditional": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0031290054321289062
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.018696308135986328
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.0028679370880126953
+            }
+          ]
+        },
+        "python": {
+          "verdict": "ACCEPTED",
+          "success_rate": 1.0,
+          "trials": [
+            {
+              "status": "ACCEPTED",
+              "execution_time": 0.017074108123779297
+            }
+          ]
+        }
+      }
+    },
+    "6": {
+      "input_bytes": 2577785,
+      "traditional": {
+        "cpp": {
+          "verdict": "TLE",
+          "success_rate": 0.0,
+          "trials": [
+            {
+              "status": "TLE",
+              "execution_time": 1.0
+            }
+          ]
+        },
+        "python": {
+          "verdict": "TLE",
+          "success_rate": 0.0,
+          "trials": [
+            {
+              "status": "TLE",
+              "execution_time": 1.0
+            }
+          ]
+        }
+      },
+      "adaptive": {
+        "cpp": {
+          "verdict": "TLE",
+          "success_rate": 0.0,
+          "trials": [
+            {
+              "status": "TLE",
+              "execution_time": 1.0
+            }
+          ]
+        },
+        "python": {
+          "verdict": "TLE",
+          "success_rate": 0.0,
+          "trials": [
+            {
+              "status": "TLE",
+              "execution_time": 7.242495673367541
+            }
+          ]
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "total_cases": 3,
+    "tle_traditional_python": 1,
+    "tle_traditional_python_cases": [
+      6
+    ],
+    "rescued_by_adaptive": 0,
+    "rescued_by_adaptive_cases": [],
+    "selectivity_preserved": true,
+    "cases_with_wrong_answer": []
+  }
+}

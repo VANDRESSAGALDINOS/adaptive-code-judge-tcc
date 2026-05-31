@@ -509,6 +509,42 @@
 
 => recursion/problem02 FECHADO nas 4 frentes (CSES optimal + β + veredito optimal + seletividade suboptimal). Injustiça CSES-only borderline (β=3,55, recursão + sets); seletividade limpa (suboptimal O(n²) rejeitada nas duas linguagens).
 
+---
+
+## recursion/problem03 — Tree Distances I (CSES 1132)
+- Time limit oficial: 1,00s | Memory limit: 512 MB
+- Link: https://cses.fi/problemset/task/1132
+- Design recursão profunda: UM optimal recursivo = DFS rerooting 2 passadas (down1/down2 descendente + up via pai; ans=max(down1,up)). O(n). 16 casos. n até 2×10⁵.
+- RELAÇÃO com problem01 (Tree Distances II): MESMA técnica (rerooting), tarefa DIFERENTE (distância MÁXIMA aqui vs SOMA das distâncias lá); estado por nó mais rico (down1/down2/up). "Irmão" na técnica — incluído como 3º caso de recursão a pedido da usuária.
+- ESCOLHA (varredura, anti-cherry-picking): Tree Matching (1130) testado e descartado (Python AC 13/13, DP de árvore leve não estoura); Path Queries II recusado (HLD+segtree não é recursão — classificação seria forçada). Tree Distances I escolhido (rerooting recursivo genuíno, Python TLE).
+
+### Submissões CSES (auditoria externa) — 2026-05-31, dressa (código = repo)
+**C++ optimal RECURSIVO** (C++11): ACCEPTED 16/16 (max 0,21s).
+**Python optimal RECURSIVO** (CPython3): TLE em {6,7,8,14} (4/16); AC nos demais, borderline (#9,#10=0,78s, #16=0,80s, #15=0,50s, #13=0,47s). setrecursionlimit(300000).
+- INJUSTIÇA confirmada: mesma solução, C++ AC 16/16, Python TLE 4/16.
+
+**Suboptimal O(n²)** (DFS separado por nó, sem rerooting) — 2026-05-31, dressa
+- Python: TLE em {6,7,8,9,10,13,14,15,16} (9/16); C++: TLE no MESMO conjunto. Rejeitada nas DUAS linguagens (O(n²) com n=2×10⁵ explode em ambas). AC só nos pequenos.
+
+### Calibração local (pipeline rigoroso)
+- Caso = #6 (n=200000, uma CADEIA/path; Python-TLE no CSES; --case 6).
+- **β = 7,24** [6,78 — 8,07] IC95% bootstrap. C++ mediana 0,086s, Python mediana 0,626s. is_reliable=True.
+- β é o MAIOR dos três problemas de recursão (problem01=5,97, problem02=3,55, este=7,24): o caso #6 é uma cadeia (path), que torna o DFS recursivo do Python relativamente mais pesado. QP3: β varia com a natureza do problema/instância.
+
+### Cross-check pipeline vs CSES
+- SEM cross-check de β confiável (máquinas diferentes; Python TLE no CSES sem tempo). β é a medição local controlada.
+
+### Injustiça e correção adaptativa
+- Veredito local sob β operacional **7,24s** (16 casos, 3 reps), 0 WRONG_ANSWER:
+  - TLE injusto local: **0/16** (todos AC sob 1,0s, Python E C++).
+  - Injustiça CSES-ONLY: Python local 0,63s < 1,0s no #6 (máquina local mais rápida); o local não reproduz os TLE do CSES. Mesmo padrão dos demais (REGRA #0).
+
+### Seletividade (fase suboptimal)
+- SELETIVIDADE LOCAL (sob β operacional 7,24s, reps=1, hard-kill): decisivo #6 (cadeia n=200000) = a suboptimal O(n²) não termina (1 DFS ~0,14s × n fontes ≈ 27000s) → TLE sob 7,24s → submissão NÃO resgatada. Controles {1,2} = AC nas duas linguagens (corretas, só lentas). selectivity_preserved=True, 0 rescued, 0 WA. verdict_suboptimal.json gravado.
+- NOTA DE INTEGRIDADE: uma leitura intermediária reportou #6 como ACCEPTED ~2,7s — fisicamente impossível para O(n²) em n=2×10⁵; era artefato de uma execução contaminada (bench que travou e foi morto). Re-rodado limpo: #6 = TLE reprodutível (verificado no verdict_suboptimal.json: adaptive.python = TLE @7,24s). Número falso descartado, NÃO gravado.
+
+=> recursion/problem03 FECHADO nas 4 frentes (CSES optimal + β=7,24 + veredito optimal CSES-only + seletividade suboptimal limpa). Irmão do problem01 na técnica de rerooting; injustiça por tempo (Python TLE 4/16 optimal no CSES).
+
 ### Notas
 - Estrutura retrofitada ao canônico (31/05): legado → _legacy/ (README/algorithmic_analysis/experimental_results/CSES_VALIDATION_RESULTS/problem_description/problem_specification antigos; benchmarking antigo; 6 JSONs results; slow_validation; suboptimal antigo estilo `itertools.combinations`). README+formal_proof+runner reescritos no padrão. Optimal e test_data intactos.
 - Números do _legacy (Python/C++ ≈12,5x, p<0,001, 90%/100% TLE) = metodologia antiga, NÃO confiar.
