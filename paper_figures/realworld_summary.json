@@ -1,0 +1,186 @@
+{
+  "_about": "Dados estruturados do eixo REAL-WORLD (CSES), extraidos A MAO de experiments_realworld/cses_validation.md (fonte de verdade; NAO alterada). Espelha experiments/results_summary.json do eixo teorico. Para artigo + figuras. Numeros copiados do md; nada inventado.",
+  "_status": "COMPLETO - 12 problemas (graphs 3, dp 3, backtracking 2, recursion 3).",
+  "_schema": {
+    "role": "injustice = ha TLE injusto no optimal Python; control = caso justo (queens, input fixo 8x8, ambos AC)",
+    "styles": "lista por estilo de solucao; grafos/bt/rec = 1 (single); dp = 2 (iterative, recursive). Cada um tem seu beta e seu veredito CSES.",
+    "beta_operational": "limite aplicado = MAIOR beta entre estilos (resgata todo optimal correto); null quando nao aplicavel (queens)",
+    "injustice_cses_only": "true = injustica so aparece no CSES (veredito local 0 TLE, maquina local mais rapida; REGRA #0)",
+    "selectivity.applicable": "false quando nao ha alvo a rejeitar (queens: suboptimal so muda constante, C++ passa)",
+    "cost_driver": "o que torna um caso pesado (dirige quais casos dao TLE) - para a figura casos-TLE-vs-natureza"
+  },
+  "methodology": {
+    "beta_definition": "median(Python)/median(C++) no maior caso de teste; IC95 bootstrap (10000 resamples, seed 42)",
+    "adaptive_limit": "limite_Python = beta x 1.0s; limite_C++ = 1.0s",
+    "selectivity": "suboptimal continua TLE sob o limite adaptativo (caso decisivo); controles AC = correta, so lenta",
+    "cses_first": "o CSES (juiz oficial) decide a injustica; o veredito local e hardware-dependente"
+  },
+  "problems": {
+    "graphs/problem01": {
+      "name": "Shortest Routes II", "cses": 1672, "category": "graphs", "algorithm": "Floyd-Warshall",
+      "binding": "compute-bound", "cost_driver": "n*m (densidade do grafo)", "time_limit_s": 1.0, "role": "injustice",
+      "beta_operational": 120.12,
+      "styles": [
+        {"style": "single", "beta": 120.12, "ci95": [118.01, 124.26], "cpp_median_s": 0.1477, "python_median_s": 17.7412, "is_reliable": true,
+         "cses_cpp": {"result": "AC", "ac": 16, "total": 16, "max_time_s": 0.27},
+         "cses_python": {"result": "TLE", "tle_cases": [6,7,8,9,10,11,12,14,15], "tle_count": 9, "total": 16},
+         "local_unjust_tle": 9, "local_rescued": 9}
+      ],
+      "local_wrong_answer": 0, "injustice_cses_only": false,
+      "selectivity": {"applicable": true, "preserved": true, "decisive_case": [14], "controls": [1,13,16], "wrong_answer": 0},
+      "cross_check": "beta CSES direto indisponivel (Python TLE); hardware C++ #14 CSES 0.27s/local 0.1477s = 1.83x"
+    },
+    "graphs/problem02": {
+      "name": "Cycle Finding", "cses": 1197, "category": "graphs", "algorithm": "Bellman-Ford",
+      "binding": "compute-bound", "cost_driver": "n*m (sem early-stop)", "time_limit_s": 1.0, "role": "injustice",
+      "beta_operational": 35.58,
+      "styles": [
+        {"style": "single", "beta": 35.58, "ci95": [29.37, 36.94], "cpp_median_s": 0.0240, "python_median_s": 0.8542, "is_reliable": true,
+         "cses_cpp": {"result": "AC", "ac": 27, "total": 27, "max_time_s": 0.09},
+         "cses_python": {"result": "TLE", "tle_cases": [6,7,8,9,10,27], "tle_count": 6, "total": 27},
+         "local_unjust_tle": 0, "local_rescued": 0}
+      ],
+      "local_wrong_answer": 0, "injustice_cses_only": true,
+      "selectivity": {"applicable": true, "preserved": true, "decisive_case": [8], "controls": [1,25,26], "wrong_answer": 0},
+      "cross_check": "FORTE: beta local 35.58 ~ razao Python/C++ no CSES caso #13 = 35.5x"
+    },
+    "graphs/problem03": {
+      "name": "Planets Queries I", "cses": 1750, "category": "graphs", "algorithm": "Binary lifting",
+      "binding": "memory-bound", "cost_driver": "q*log (saltos aleatorios na tabela up; cache misses)", "time_limit_s": 1.0, "role": "injustice",
+      "beta_operational": 3.07,
+      "styles": [
+        {"style": "single", "beta": 3.07, "ci95": [2.85, 3.60], "cpp_median_s": 0.8442, "python_median_s": 2.5914, "is_reliable": true,
+         "cses_cpp": {"result": "AC", "ac": 14, "total": 14, "max_time_s": 0.99},
+         "cses_python": {"result": "TLE", "tle_cases": [6,7,8,9,10,12], "tle_count": 6, "total": 14},
+         "local_unjust_tle": 4, "local_rescued": 4}
+      ],
+      "local_wrong_answer": 0, "injustice_cses_only": false,
+      "selectivity": {"applicable": true, "preserved": true, "decisive_case": [12], "controls": [1,13], "wrong_answer": 0},
+      "cross_check": "fraco; C++ #12 local 0.844s/CSES 0.99s = 1.17x. beta baixo = memory-bound"
+    },
+    "dp/problem01": {
+      "name": "Coin Combinations I", "cses": 1635, "category": "dp", "algorithm": "DP (O(x*n))",
+      "binding": "compute-bound", "cost_driver": "x*n (tamanho da tabela)", "time_limit_s": 1.0, "role": "injustice",
+      "beta_operational": 34.80,
+      "styles": [
+        {"style": "iterative", "beta": 11.12, "ci95": [10.93, 12.04], "cpp_median_s": 0.566, "python_median_s": 6.29, "is_reliable": true,
+         "cses_cpp": {"result": "AC", "ac": 13, "total": 13, "max_time_s": 0.57},
+         "cses_python": {"result": "TLE", "tle_cases": [4,5,8,11,12], "tle_count": 5, "total": 13},
+         "local_unjust_tle": 4, "local_rescued": 4},
+        {"style": "recursive", "beta": 34.80, "ci95": [30.69, 35.45], "cpp_median_s": 0.324, "python_median_s": 11.28, "is_reliable": true,
+         "cses_cpp": {"result": "AC", "ac": 13, "total": 13, "max_time_s": 0.55},
+         "cses_python": {"result": "TLE", "tle_cases": [4,5,8,11], "tle_count": 4, "total": 13},
+         "local_unjust_tle": 4, "local_rescued": 4}
+      ],
+      "local_wrong_answer": 0, "injustice_cses_only": false,
+      "selectivity": {"applicable": true, "preserved": true, "decisive_case": [11], "controls": [1,9], "wrong_answer": 0},
+      "qp3_note": "recursao ~triplica o beta (11.12 -> 34.80)"
+    },
+    "dp/problem02": {
+      "name": "Grid Paths", "cses": 1638, "category": "dp", "algorithm": "DP (O(n^2))",
+      "binding": "compute-bound", "cost_driver": "n^2 (grid denso)", "time_limit_s": 1.0, "role": "injustice",
+      "beta_operational": 23.47,
+      "styles": [
+        {"style": "iterative", "beta": 12.03, "ci95": [11.65, 12.15], "cpp_median_s": 0.0114, "python_median_s": 0.1375, "is_reliable": true,
+         "cses_cpp": {"result": "AC", "ac": 15, "total": 15, "max_time_s": 0.02},
+         "cses_python": {"result": "AC", "tle_cases": [], "tle_count": 0, "total": 15},
+         "local_unjust_tle": 0, "local_rescued": 0},
+        {"style": "recursive", "beta": 23.47, "ci95": [21.50, 26.92], "cpp_median_s": 0.0172, "python_median_s": 0.4042, "is_reliable": true,
+         "cses_cpp": {"result": "AC", "ac": 15, "total": 15, "max_time_s": 0.03},
+         "cses_python": {"result": "TLE", "tle_cases": [6,7], "tle_count": 2, "total": 15},
+         "local_unjust_tle": 0, "local_rescued": 0}
+      ],
+      "local_wrong_answer": 0, "injustice_cses_only": true,
+      "selectivity": {"applicable": true, "preserved": true, "decisive_case": [6], "controls": [1,2,3,4,5], "wrong_answer": 0},
+      "qp3_note": "CASO LIMPO da injustica de recursao: iterativo AC nas 2 linguagens, recursivo Python TLE {6,7}. recursao ~dobra o beta (12.03 -> 23.47)"
+    },
+    "dp/problem03": {
+      "name": "Two Sets II", "cses": 1093, "category": "dp", "algorithm": "DP (O(n^3))",
+      "binding": "compute-bound", "cost_driver": "n^3 (n ate 500, soma par)", "time_limit_s": 1.0, "role": "injustice",
+      "beta_operational": 68.27,
+      "styles": [
+        {"style": "iterative", "beta": 68.27, "ci95": [64.91, 74.22], "cpp_median_s": 0.0312, "python_median_s": 2.13, "is_reliable": true,
+         "cses_cpp": {"result": "AC", "ac": 24, "total": 24, "max_time_s": 0.07},
+         "cses_python": {"result": "TLE", "tle_cases": [17,19,20,21,23,24], "tle_count": 6, "total": 24},
+         "local_unjust_tle": 5, "local_rescued": 5},
+        {"style": "recursive", "beta": 43.27, "ci95": [40.24, 47.86], "cpp_median_s": 0.191, "python_median_s": 8.26, "is_reliable": true,
+         "cses_cpp": {"result": "AC", "ac": 24, "total": 24, "max_time_s": 0.57},
+         "cses_python": {"result": "TLE", "tle_cases": [17,19,20,21,23,24], "tle_count": 6, "total": 24},
+         "local_unjust_tle": 6, "local_rescued": 6}
+      ],
+      "local_wrong_answer": 0, "injustice_cses_only": false,
+      "selectivity": {"applicable": true, "preserved": true, "decisive_case": [21], "controls": [3,4,7,8], "wrong_answer": 0},
+      "qp3_note": "INVERSAO: beta_rec (43.27) < beta_iter (68.27) - o C++ recursivo e penalizado pelo memo 2D de 250MB. IC95 nao se sobrepoem (robusto)."
+    },
+    "backtracking/problem01": {
+      "name": "Chessboard and Queens", "cses": 1624, "category": "backtracking", "algorithm": "DFS + poda (coluna/diagonais)",
+      "binding": "fixed-input", "cost_driver": "input FIXO 8x8 (nao escala)", "time_limit_s": 1.0, "role": "control",
+      "beta_operational": null,
+      "styles": [
+        {"style": "single", "beta": null, "ci95": null, "cpp_median_s": null, "python_median_s": null, "is_reliable": null,
+         "cses_cpp": {"result": "AC", "ac": 10, "total": 10, "max_time_s": 0.00},
+         "cses_python": {"result": "AC", "tle_cases": [], "tle_count": 0, "total": 10},
+         "local_unjust_tle": 0, "local_rescued": 0}
+      ],
+      "local_wrong_answer": 0, "injustice_cses_only": false,
+      "selectivity": {"applicable": false, "preserved": null, "decisive_case": [], "controls": [], "wrong_answer": 0},
+      "control_note": "CONTROLE (caso justo): optimal C++ e Python AC 10/10 (input fixo 8x8, nao escala) -> sem beta, anti-cherry-picking. A suboptimal (sem podas) mostra INJUSTICA DIFERENCIAL PURA: C++ AC 10/10, Python TLE {1,2,3,4,5,6} (6/10) - mesmo codigo, veredito diferente. NAO e teste de seletividade (input fixo: sem poda muda so a constante; C++ passa)."
+    },
+    "backtracking/problem02": {
+      "name": "Grid Paths", "cses": 1625, "category": "backtracking", "algorithm": "DFS caminho hamiltoniano + 3 podas",
+      "binding": "compute-bound", "cost_driver": "nro de '?' (tamanho da arvore de busca)", "time_limit_s": 1.0, "role": "injustice",
+      "beta_operational": 59.46,
+      "styles": [
+        {"style": "single", "beta": 59.46, "ci95": [56.79, 60.67], "cpp_median_s": 0.089, "python_median_s": 5.30, "is_reliable": true,
+         "cses_cpp": {"result": "AC", "ac": 20, "total": 20, "max_time_s": 0.19},
+         "cses_python": {"result": "TLE", "tle_cases": [4,6,7,10,11,12,13,14,15,16,20], "tle_count": 11, "total": 20},
+         "local_unjust_tle": 7, "local_rescued": 7}
+      ],
+      "local_wrong_answer": 0, "injustice_cses_only": false,
+      "selectivity": {"applicable": true, "preserved": true, "decisive_case": [11], "controls": [2,19], "wrong_answer": 0},
+      "qp3_note": "backtracking recursivo profundo (48 niveis) amplifica a penalidade do Python; TLE concentra nos casos de muitos '?'"
+    },
+    "recursion/problem01": {
+      "name": "Tree Distances II", "cses": 1133, "category": "recursion", "algorithm": "DFS rerooting (2 passadas), O(n)",
+      "binding": "recursion-linear", "cost_driver": "n (ate 2e5); trabalho O(1) por no", "time_limit_s": 1.0, "role": "injustice",
+      "beta_operational": 5.97,
+      "styles": [
+        {"style": "single", "beta": 5.97, "ci95": [5.08, 6.35], "cpp_median_s": 0.089, "python_median_s": 0.531, "is_reliable": true,
+         "cses_cpp": {"result": "AC", "ac": 15, "total": 15, "max_time_s": 0.22},
+         "cses_python": {"result": "TLE", "tle_cases": [6,7,8,14], "tle_count": 4, "total": 15},
+         "local_unjust_tle": 0, "local_rescued": 0}
+      ],
+      "local_wrong_answer": 0, "injustice_cses_only": true,
+      "selectivity": {"applicable": true, "preserved": true, "decisive_case": [6], "controls": [1,2,3], "wrong_answer": 0},
+      "qp3_note": "beta BAIXO (~6): DFS O(n) linear, pouco trabalho por no -> gap modesto. Fenomeno de pilha (n=2e5) tratado por ulimit 256MB."
+    },
+    "recursion/problem02": {
+      "name": "Distinct Colors", "cses": 1139, "category": "recursion", "algorithm": "DFS + small-to-large (sets), O(n log n)",
+      "binding": "recursion+data-structure", "cost_driver": "n log n; merge de sets", "time_limit_s": 1.0, "role": "injustice",
+      "beta_operational": 3.55,
+      "styles": [
+        {"style": "single", "beta": 3.55, "ci95": [3.09, 4.02], "cpp_median_s": 0.160, "python_median_s": 0.568, "is_reliable": true,
+         "cses_cpp": {"result": "AC", "ac": 16, "total": 16, "max_time_s": 0.41},
+         "cses_python": {"result": "TLE", "tle_cases": [6,7,8], "tle_count": 3, "total": 16},
+         "local_unjust_tle": 0, "local_rescued": 0}
+      ],
+      "local_wrong_answer": 0, "injustice_cses_only": true,
+      "selectivity": {"applicable": true, "preserved": true, "decisive_case": [6], "controls": [1,2], "wrong_answer": 0},
+      "qp3_note": "beta BAIXO (~3,5): gargalo parte recursao parte sets; std::set do C++ tb e lento -> razao menor. Injustica BORDERLINE (Python AC #15=1,00s no fio)."
+    },
+    "recursion/problem03": {
+      "name": "Tree Distances I", "cses": 1132, "category": "recursion", "algorithm": "DFS rerooting (2 passadas), O(n)",
+      "binding": "recursion-linear", "cost_driver": "n (ate 2e5); caso #6 = cadeia/path", "time_limit_s": 1.0, "role": "injustice",
+      "beta_operational": 7.24,
+      "styles": [
+        {"style": "single", "beta": 7.24, "ci95": [6.78, 8.07], "cpp_median_s": 0.086, "python_median_s": 0.626, "is_reliable": true,
+         "cses_cpp": {"result": "AC", "ac": 16, "total": 16, "max_time_s": 0.21},
+         "cses_python": {"result": "TLE", "tle_cases": [6,7,8,14], "tle_count": 4, "total": 16},
+         "local_unjust_tle": 0, "local_rescued": 0}
+      ],
+      "local_wrong_answer": 0, "injustice_cses_only": true,
+      "selectivity": {"applicable": true, "preserved": true, "decisive_case": [6], "controls": [1,2], "wrong_answer": 0},
+      "qp3_note": "beta o MAIOR dos 3 recursao (7,24): caso #6 e cadeia (path), DFS recursivo Python relativamente mais pesado. Irmao do problem01 (mesma tecnica rerooting)."
+    }
+  }
+}
