@@ -35,7 +35,7 @@ def create_benchmark():
 def get_benchmark(benchmark_id):
     
     try:
-        from ..models import Benchmark
+        from models import Benchmark
         
         benchmark = Benchmark.query.get(benchmark_id)
         
@@ -68,7 +68,7 @@ def get_benchmark(benchmark_id):
 def get_benchmarks_for_problem(problem_id):
     
     try:
-        from ..models import Benchmark
+        from models import Benchmark
         
         benchmarks = Benchmark.query.filter_by(problem_id=problem_id).order_by(
             Benchmark.created_at.desc()
@@ -96,7 +96,7 @@ def get_active_benchmark(problem_id):
         
         result = benchmark.to_dict()
         
-        from ..models import ProblemBenchmarkActive
+        from models import ProblemBenchmarkActive
         active_info = ProblemBenchmarkActive.get_active_benchmark(problem_id)
         if active_info:
             result['active_benchmark_info'] = active_info.to_dict()
@@ -173,7 +173,7 @@ def activate_benchmark(benchmark_id):
     try:
         data = request.get_json() or {}
         
-        from ..models import Benchmark
+        from models import Benchmark
         benchmark = Benchmark.query.get(benchmark_id)
         
         if not benchmark:

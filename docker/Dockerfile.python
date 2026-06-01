@@ -1,4 +1,6 @@
-FROM python:3.11-slim
+# Versao fixada no patch (era python:3.11-slim, patch flutuante). 3.11.15 = a versao
+# com que TODOS os experimentos foram rodados (Python 3.11.15). Ver docker/ENVIRONMENT.md.
+FROM python:3.11.15-slim
 
 RUN apt-get update && apt-get install -y \
     time \

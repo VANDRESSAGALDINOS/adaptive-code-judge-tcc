@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Aggregate the per-class theoretical-axis results into a single results_summary.json
+Aggregate the per-class theoretical-axis results into a single results/theoretical_summary.json
 for the article and figures. Source of truth stays the per-class JSONs under
 complexity_analysis/<class>/results/{calibration.json, selectivity.json}; this just
 collects them. Re-run after each class closes:  python3 aggregate_results.py
@@ -10,7 +10,8 @@ import glob
 import os
 
 BASE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'complexity_analysis')
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'results_summary.json')
+# consolidated results live in the root results/ folder (theoretical + real-world side by side)
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'results', 'theoretical_summary.json')
 
 # O(1) and O(log n) sit below the 10:1 scale-dominance floor (S3.2): runtime is
 # dominated by fixed overhead, so beta is not a calibrated algorithmic factor and
@@ -73,6 +74,7 @@ def main():
         },
         'classes': classes,
     }
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, 'w') as f:
         json.dump(out, f, indent=2)
     print(f'Wrote {OUT} with {len(classes)} class(es): {", ".join(classes) or "(none)"}')

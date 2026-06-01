@@ -1,4 +1,6 @@
-FROM gcc:latest
+# Versao fixada (era gcc:latest, tag flutuante). 16.1.0 = a versao com que TODOS
+# os experimentos foram rodados (g++ (GCC) 16.1.0). Ver docker/ENVIRONMENT.md.
+FROM gcc:16.1.0
 
 RUN apt-get update && apt-get install -y \
     time \

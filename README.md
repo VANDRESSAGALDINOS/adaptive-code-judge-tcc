@@ -1,293 +1,145 @@
-# Adaptive Code Judge - Linguistic Bias Detection in Online Judge Systems
 
-## Overview
+# Adaptive Code Judge: Fair Evaluation between C++ and Python
 
-This research project investigates linguistic bias in online judge systems through development and validation of an adaptive benchmarking framework. The system addresses performance differentials between compiled and interpreted languages in algorithmic evaluation environments.
+Research artifact for an **Adaptive Code Judge** that replaces the fixed time limit of
+online judges (and the fixed 2x-3x multipliers) with a per-language, per-problem
+calibration factor (**beta**) measured from controlled benchmarks in Docker containers.
 
-## Research Objectives
+> Anonymized for double-blind review. Author and affiliation are omitted here and added
+> in the camera-ready version.
 
-### Primary Objective
-Develop and validate a methodology for detecting and correcting linguistic bias in online judge systems, specifically addressing systematic disadvantages faced by interpreted languages (Python) compared to compiled languages (C++).
+## Problem and research questions
 
-### Secondary Objectives
-1. Quantify performance differentials across algorithmic complexity classes
-2. Establish statistical frameworks for bias detection
-3. Validate adaptive correction mechanisms through empirical testing
-4. Demonstrate practical applicability in real-world competitive programming scenarios
+Online judges set a single time limit calibrated on optimized C++. Applied to teaching,
+this penalizes correct solutions in interpreted languages (Python) with Time Limit
+Exceeded (TLE) verdicts that reflect the execution model, not an incorrect algorithm.
 
-## Methodology
+- **RQ1**: Do fixed multipliers (2x-3x over C++) capture the C++/Python execution gap
+  across complexity classes?
+- **RQ2**: Does adaptive calibration (empirical beta) reduce unfair TLE on correct Python
+  solutions **without** losing selectivity against inefficient solutions?
+- **RQ3**: Is beta a per-language constant, or does it vary with the nature of the problem
+  (deep recursion, dynamic programming, graphs, I/O)?
 
-### Binary Verdict Analysis
-Core methodology for objective bias detection through exact simulation of platform evaluation logic. Employs binary classification (ACCEPTED/REJECTED) mirroring real online judge systems.
+## Method (summary)
 
-### Experimental Framework
-- **Containerized execution environment** using Docker for consistent benchmarking
-- **Algorithmic equivalence validation** ensuring fair performance comparisons
-- **Statistical analysis** with rigorous hypothesis testing and validation protocols
-- **External validation** against real platform data (CSES Online Judge)
+- **beta = median(Python) / median(C++)** on the largest test case (where TLE is decided).
+- **Adaptive limit**: `limit_Python = beta x 1.0s`; `limit_C++ = 1.0s` (C++ is the ruler,
+  `beta_cpp = 1`). The model only grants the Python solution time proportional to the
+  measured disadvantage; it never tightens C++.
+- **Engine** (`experiments/lib/benchmark_engine.py`): compilation and process startup are
+  excluded from timing; microsecond timer; adaptive repetition (blocks of 5, cap 35) with
+  IQR stability (<15% C++, <20% Python); 95% CI by bootstrap (10000 resamples, seed 42).
+- **Symmetric I/O (fast-IO)**: all reference C++ use `sync_with_stdio(false)+cin.tie(NULL)`.
+- **CSES-first**: the official judge (CSES) decides whether an injustice is real; the local
+  pipeline measures beta and proposes the adaptive limit (it is hardware-dependent and is
+  not the source of the injustice verdict).
+- **Selectivity**: a deliberately inefficient solution must still TLE under the adaptive
+  limit; the reference solution is the accepted control.
 
-### Statistical Methodology
-Comprehensive statistical validation framework ensuring scientific rigor:
+## Two experimental axes
 
-#### Hypothesis Testing
-- **Mann-Whitney U Test**: Non-parametric significance testing for robust analysis
-- **Welch t-test**: Parametric testing for normally distributed data
-- **Shapiro-Wilk Test**: Normality assessment for appropriate test selection
-- **Significance Level**: α = 0.05 for all hypothesis tests
+- **Theoretical** (`experiments/`): 6 synthetic complexity classes — O(1), O(log n), O(n),
+  O(n^2), O(n^3), O(2^n).
+- **Real-world** (`experiments_realworld/`): 11 CSES problems across 4 categories —
+  graphs (3), dynamic programming (3), backtracking (2), recursion (3).
 
-#### Statistical Rigor Requirements
-- **Sample Size**: N ≥ 30 per condition (Central Limit Theorem compliance)
-- **Confidence Intervals**: 95% confidence intervals for all performance measurements
-- **Effect Size**: Cohen's d calculation for practical significance assessment
-- **Power Analysis**: Statistical power β ≥ 0.8 for adequate detection capability
+## Headline results
 
-#### Quality Assurance Metrics
-- **Descriptive Statistics**: Mean, median, standard deviation, and interquartile range
-- **Reliability Assessment**: IQR-based stability criteria (≤15% C++, ≤20% Python)
-- **Reproducibility Protocols**: Multiple repetitions with controlled environmental conditions
+beta is **not** a per-language constant; it spans a wide range and tracks the nature of the
+problem, so no fixed 2x-3x multiplier fits.
 
-### Problem Categories
+- Real-world beta range: ~3.07 (memory-bound, Planets Queries) to ~120 (compute-bound,
+  Floyd-Warshall). DP problems are calibrated by the slower correct style (the larger beta).
+- Theoretical spectrum: O(n) 3.87 < O(n^2) 4.48 < O(2^n) 33.84 < O(n^3) 77.22; O(1) and
+  O(log n) sit at an overhead floor (work too small to calibrate beta — reported as control).
 
-#### Complexity Analysis
-Six algorithmic complexity classes systematically analyzed:
-- **O(1) Constant**: Baseline performance establishment
-- **O(log n) Logarithmic**: Binary search implementations with anti-optimization
-- **O(n) Linear**: Array processing with 177% performance differential detected
-- **O(n²) Quadratic**: Matrix operations with 154% performance differential detected  
-- **O(n³) Cubic**: Three-dimensional array processing
-- **O(2^n) Exponential**: Subset enumeration problems
+Consolidated numbers and the per-problem evidence live in **`results/`** (see below).
 
-#### Real-World Problem Validation
-Competitive programming problems from CSES platform organized by algorithmic category:
+## Repository structure
 
-**Backtracking Problems:**
-- **Problem 1**: Chessboard Queens (N-Queens variant) - Severe bias detected
-- **Problem 2**: Grid Paths - 30% Python success vs 100% C++ success on CSES
-- **Problem 3**: Apple Division - No bias detected (100% success both languages)
-
-**Dynamic Programming Problems:**
-- **Problem 1**: Coin Combinations I (CSES 1635) - Iterative vs recursive analysis
-- **Problem 2**: Grid Paths (CSES 1638) - Path counting with memoization
-- **Problem 3**: Two Sets (CSES 1093) - Subset partitioning problem
-
-**Graph Algorithm Problems:**
-- **Problem 1**: Shortest Routes II (Floyd-Warshall) - 56.25% Python TLE rate
-- **Problem 2**: Cycle Finding (Bellman-Ford) - First binary verdict methodology application
-- **Problem 3**: Planets Queries I (Binary Lifting) - Platform variability analysis
-
-## Key Findings
-
-### Complexity Analysis Results
-Systematic analysis across six complexity classes revealed consistent patterns with quantified performance differentials:
-
-**Quantitative Performance Metrics:**
-- **O(n) Linear**: 177% algorithmic difference detected (1.2s vs 0.4s execution times)
-- **O(n²) Quadratic**: 154% algorithmic difference detected (1000×1000 matrix operations)
-- **Validation Success Rate**: Improved from 33% to 100% through methodological refinement
-- **Algorithmic Dominance Ratio**: Achieved 5:1 algorithmic-to-overhead ratio (vs initial 0.03:1)
-
-**Key Principles Discovered:**
-- **Scale dependency principle**: Large input sizes amplify algorithmic differences while minimizing containerization overhead
-- **Critical threshold identification**: Input sizes >5MB required for scientific validity
-- **Anti-optimization requirements**: Compiler optimizations can invalidate performance comparisons
-- **Docker overhead quantification**: ~0.3s constant startup cost with O(1) scaling behavior
-
-### Real-World Validation
-Analysis of competitive programming problems demonstrated:
-- **Variable bias presence**: Not all problems exhibit linguistic bias
-- **Severity spectrum**: Bias ranges from absent to severe depending on algorithmic characteristics
-- **Architectural limitations**: Deep recursion problems reveal fundamental language limitations beyond performance differences
-
-### Methodological Contributions
-1. **Binary verdict analysis methodology**: First formalization for online judge bias detection
-2. **Platform-agnostic framework**: Applicable across different online judge systems
-3. **Adaptive correction mechanisms**: Validated approaches for bias mitigation
-4. **Statistical rigor**: Comprehensive validation protocols
-
-## Technical Architecture
-
-### Core Components
 ```
-adaptive-code-judge/
-├── src/                          # System implementation
-│   ├── api/                     # REST API endpoints
-│   ├── models/                  # Database models
-│   ├── services/                # Business logic
-│   └── executor/                # Docker execution engine
-├── experiments/                  # Scientific experiments
-│   ├── complexity_analysis/     # Complexity class studies
-│   └── experiments_realworld/   # Real-world problem validation
-├── documentation/               # Research documentation
-│   ├── methodology/            # Core methodologies
-│   ├── insights/               # Scientific discoveries
-│   ├── frameworks/             # Technical frameworks
-│   └── protocols/              # Experimental protocols
-└── docker/                     # Containerization setup
+.
+├── results/                     # Consolidated results (single place)
+│   ├── theoretical_summary.json   # theoretical axis: 6 classes (beta + CI95 + selectivity)
+│   ├── theoretical_validation.md  # theoretical validation log
+│   ├── realworld_summary.json     # real-world axis: 11 problems (beta + CI95 + verdicts)
+│   └── realworld_validation.md    # real-world validation log (CSES submissions, cross-checks)
+├── experiments/                 # Theoretical axis (synthetic complexity classes)
+│   ├── lib/benchmark_engine.py    # measurement engine (source of the paper's numbers)
+│   ├── run_experiment_direct.py   # runner (calibration + selectivity)
+│   ├── aggregate_results.py       # aggregates per-class JSONs -> results/theoretical_summary.json
+│   └── complexity_analysis/<class>/{problem_definition.py, reference_solutions/,
+│                                     slow_solutions/, FORMAL_PROOF.md, results/}
+├── experiments_realworld/       # Real-world axis (CSES problems)
+│   └── <category>/<problem>/{README.md, formal_proof.md, implementations/, test_data/,
+│                             benchmarking/, results/}
+├── docker/                      # Pinned execution environment (Dockerfiles + run scripts)
+│   └── ENVIRONMENT.md             # exact toolchain/versions used in all runs
+├── figuras/                     # All figures
+│   ├── paper_figures/             # Figure generators + original figures
+│   └── paper_figures_regeneradas/ # Regenerated figures (plotnine) + reading guide/captions
+├── src/                         # Adaptive Code Judge MVP (Flask service)
+│   ├── api/  models/  services/  executor/  config/  main.py
+├── scripts/init_db.py           # MVP database bootstrap
+├── requirements.txt             # MVP dependencies (Flask service)
+├── start_server.py  run.sh      # MVP launchers
+└── data/                        # MVP runtime DB location (created on demand; gitignored)
 ```
 
-### Execution Environment
-- **Python 3.11+** for analysis and system implementation
-- **Docker** for containerized code execution
-- **SQLite/PostgreSQL** for data persistence
-- **Flask** for API implementation
+### Note on `src/` (the MVP) vs the validated pipeline
 
-## Scientific Contributions
+`src/` is the **architectural MVP** of the judge (the system described in the paper):
+REST API, Docker execution engine, data model, calibration/judging services. **The paper's
+measured numbers come from the experiments pipeline** (`experiments/lib` + the per-problem
+benchmarking under `experiments_realworld/`), not from the MVP service. The MVP's calibration
+is a simplified version of the full protocol; treat `src/` as the architecture, and
+`experiments*/` + `results/` as the validated measurements.
 
-### Methodological Innovations
-1. **Binary Verdict Analysis**: Novel methodology for objective bias detection in online judge systems
-2. **Adaptive Benchmarking Framework**: Platform-agnostic system for bias correction
-3. **Statistical Validation Protocols**: Rigorous approaches for experimental validation
-4. **Containerized Performance Analysis**: Systematic study of Docker impact on algorithmic benchmarking
+## Environment (reproducibility)
 
-### Empirical Discoveries
-1. **Algorithmic Complexity Correlation**: Performance differentials vary systematically by complexity class
-2. **Platform Variability Analysis**: Identical algorithms exhibit environment-dependent performance variations
-3. **Architectural Limitation Identification**: Deep recursion reveals categorical differences between language paradigms
-4. **Bias Variability Spectrum**: Comprehensive characterization of when and why bias occurs
+All experiments ran in pinned Docker images (verified inside the images):
 
-## Experimental Validation
+- C++: `gcc:16.1.0` → g++ (GCC) 16.1.0
+- Python: `python:3.11.15-slim` → Python 3.11.15
+- Debian GLIBC 2.41 (Debian 13), arm64; Docker Desktop on macOS host
+- Flags: `-O2`; memory `512m`; CPUs `1.0`; bootstrap seed `42`
 
-### Statistical Rigor
-- **Confidence intervals** for all performance measurements
-- **Significance testing** for bias detection claims
-- **External validation** against real platform data
-- **Reproducibility protocols** for independent verification
+See `docker/ENVIRONMENT.md` for image ids and full details.
 
-### Quality Assurance
-- **Algorithmic equivalence proofs** for all solution pairs
-- **Correctness validation** on sample inputs
-- **Performance consistency** verification across multiple runs
-- **Platform correlation** analysis
+## Reproducing
 
-## Usage Instructions
-
-### System Requirements
-- Python 3.11 or higher
-- Docker Engine
-- Minimum 4GB RAM
-- Linux/Unix environment (recommended)
-
-### Installation
 ```bash
-# Install dependencies
-pip install -r requirements.txt
+# 1. Build the pinned images (from repo root)
+docker build -f docker/Dockerfile.cpp    -t adaptive-judge-cpp:latest .
+docker build -f docker/Dockerfile.python -t adaptive-judge-python:latest .
 
-# Initialize database
-python scripts/init_db.py
-
-# Verify Docker setup
-docker --version
-```
-
-### Running Experiments
-```bash
-# Individual complexity analysis
+# 2. Theoretical axis (one class at a time), then aggregate
 cd experiments
-python run_experiment_with_validation.py On_linear
+python3 run_experiment_direct.py On_linear     # O1_constant, O_log_n, On2_quadratic, On3_cubic, O2n_exponential
+python3 aggregate_results.py                    # -> ../results/theoretical_summary.json
 
-# Complete experimental suite
-./run_all_experiments.sh
+# 3. Real-world axis (per problem)
+python3 experiments_realworld/<category>/<problem>/benchmarking/run_benchmark.py
 
-# Real-world problem validation
-cd experiments_realworld
-python run_benchmark.py
+# 4. Figures (need: matplotlib, plotnine, pandas, numpy, scipy)
+python3 figuras/paper_figures/make_figures.py
+python3 figuras/paper_figures_regeneradas/make_fig1_plotnine.py   # fig2/fig3 likewise
 ```
 
-### API Usage
+Dependency note: `requirements.txt` covers the **MVP service** (Flask/SQLAlchemy/docker). The
+analysis/figure scripts additionally require `matplotlib`, `plotnine`, `pandas`, `numpy`,
+`scipy`.
+
+## Running the MVP service (optional)
+
 ```bash
-# Start system
-python start_server.py
-
-# Access endpoints
-curl http://localhost:8000/api/problems
-curl http://localhost:8000/api/submissions
+pip install -r requirements.txt
+python3 scripts/init_db.py        # bootstrap the database
+python3 start_server.py           # or: ./run.sh server
+curl http://localhost:8000/health
 ```
 
-## Research Applications
+## License
 
-### Academic Research
-- Comparative language performance studies
-- Online judge fairness analysis
-- Algorithmic bias detection methodology development
-- Educational platform equity assessment
-
-### Industry Applications
-- Quality assurance for programming contest platforms
-- Technical interview bias detection
-- Educational tool fairness verification
-- Competitive programming equity improvement
-
-### Policy Development
-- Regulatory framework foundation for algorithmic fairness
-- Industry standard development for online judge systems
-- Best practices documentation for platform operators
-- Certification criteria establishment
-
-## Future Research Directions
-
-### Methodological Extensions
-- Multi-dimensional bias analysis beyond temporal factors
-- Machine learning integration for automated bias detection
-- Cross-platform comparative studies
-- Real-time monitoring system development
-
-### Broader Applications
-- Extension to additional programming languages
-- Analysis of memory-based bias factors
-- Integration with existing online judge platforms
-- Development of standardized fairness metrics
-
-## Documentation Structure
-
-Complete research documentation is organized in the `documentation/` directory:
-- **Methodology**: Core research methodologies and frameworks
-- **Insights**: Scientific discoveries and empirical findings
-- **Protocols**: Experimental procedures and validation protocols
-- **Frameworks**: Technical implementation guidelines
-
-## Technical Specifications
-
-**Research Context**: Computer Science - Computational Systems  
-**Methodology**: Empirical software engineering with statistical validation  
-**Platform**: Cross-platform with Linux optimization  
-**License**: Academic research use  
-**Status**: Research validation complete, ready for peer review
-
-## Reproducibility
-
-All experimental procedures, data analysis scripts, and validation protocols are documented and available for independent replication. Raw data, analysis code, and complete methodology documentation ensure full reproducibility of results.
-
-## Architectural Design and Development
-
-### Initial Architecture Planning
-The system architecture was initially documented through a comprehensive RFC (Request for Comments) that outlined the theoretical framework and design principles. This architectural planning document is available at:
-
-**RFC 001 - Adaptive Code Judge Architecture**: https://github.com/VANDRESSAGALDINOS/adaptive-code-judge-rfc/blob/main/RFC001.md
-
-The RFC documents the original system design, including container architecture, API specifications, and component interactions. As typical in software development, the actual implementation evolved from this initial design based on empirical findings and practical requirements discovered during development.
-
-### Implementation Evolution
-The final system architecture incorporates significant refinements from the original RFC design, particularly in:
-- Enhanced statistical validation protocols
-- Refined binary verdict analysis methodology  
-- Expanded experimental framework for real-world validation
-- Advanced anti-optimization strategies for compiler interference
-
-## Author Information
-
-**Author**: Vandressa Galdino Soares  
-**Student ID**: 120210147  
-**Institution**: Universidade Federal de Campina Grande (UFCG)  
-**Email**: vandressa.soares@ccc.ufcg.edu.br  
-
-### Academic Profiles and Validation Data
-- **Codeforces Profile**: https://codeforces.com/profile/dressa_galdin
-- **CSES Profile**: https://cses.fi/user/255266
-- **Submission History**: All submissions used in this study can be verified at https://codeforces.com/submissions/dressa_galdin
-- **Thesis Document**: https://drive.google.com/file/d/1wB7t_6ghTc5mGiledNRpA1E99-kqb4aA/view?usp=drive_link
-
-The author's competitive programming profiles demonstrate practical experience with the algorithmic problems analyzed in this research, with 137 submissions on CSES (63.50% C++, 35.77% Python3) providing empirical validation data for the bias detection methodology.
-
-## Contact Information
-
-This research was conducted as part of a Computer Science thesis project at UFCG focusing on algorithmic fairness and linguistic bias detection in computational evaluation systems. The work represents a comprehensive investigation into systematic biases affecting competitive programming platforms and educational assessment tools.
+Academic research use.

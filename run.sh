@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script para executar o Adaptive Code Judge com a versão correta do Python
+# Script para executar o Adaptive Code Judge com a versao correta do Python
 
 export PYTHON_CMD="/usr/bin/python3"
 
@@ -12,39 +12,28 @@ case "$1" in
         echo "Starting server..."
         $PYTHON_CMD start_server.py
         ;;
-    "test")
-        echo "Running complete tests..."
-        $PYTHON_CMD test.py
-        ;;
-    "demo")
-        echo "Running demonstration..."
-        $PYTHON_CMD demo_final.py
-        ;;
     "docker-test")
-        echo "Testing Docker..."
-        echo "Testando execução direta via Docker..."
+        echo "Testing Docker images directly..."
         echo 'print("Hello Docker Python!")' > /tmp/test.py
-        docker run --rm -v /tmp:/workspace -w /workspace adaptivejudge-python:latest python3 test.py
+        docker run --rm -v /tmp:/workspace -w /workspace adaptive-judge-python:latest python3 test.py
         echo 'echo "Hello Docker C++!"' > /tmp/test.sh
-        docker run --rm -v /tmp:/workspace -w /workspace adaptivejudge-cpp:latest bash test.sh
+        docker run --rm -v /tmp:/workspace -w /workspace adaptive-judge-cpp:latest bash test.sh
         ;;
     "health")
-        echo "🏥 Verificando saúde do sistema..."
+        echo "Verificando saude do sistema..."
         sleep 2
-        curl -s http://localhost:8000/health || echo "Servidor não está rodando"
+        curl -s http://localhost:8000/health || echo "Servidor nao esta rodando"
         ;;
     *)
-        echo "📋 Uso: ./run.sh [comando]"
+        echo "Uso: ./run.sh [comando]"
         echo ""
-        echo "Comandos disponíveis:"
-        echo "  server     - Iniciar o servidor web"
-        echo "  test       - Executar testes completos do sistema"
-        echo "  demo       - Executar demonstração completa"
-        echo "  docker-test- Testar Docker images diretamente"
-        echo "  health     - Verificar status do servidor"
+        echo "Comandos disponiveis:"
+        echo "  server      - Iniciar o servidor web"
+        echo "  docker-test - Testar as imagens Docker diretamente"
+        echo "  health      - Verificar status do servidor"
         echo ""
         echo "Exemplos:"
         echo "  ./run.sh server    # Inicia o servidor"
-        echo "  ./run.sh test      # Executa testes"
+        echo "  ./run.sh health    # Verifica o servidor"
         ;;
 esac
